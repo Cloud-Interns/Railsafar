@@ -1,0 +1,38 @@
+const express = require ('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyparser = require('body-parser');
+require('dotenv/config');
+
+//const bookingRoute = require('./routes/booking');
+//const getPnrRoute = require('./routes/getPnr');
+//const postPnrRoute= require('./routes/postPnr');
+//const trainFareRoute= require('./routes/trainFare');
+//const trainBetweenStationRoute = require('./routes/trainBetweenStation');
+//const trainRouteRoute = require('./routes/trainRoute');
+//const trainStatusRoute = require('./routes/trainStatus');
+const resetPasswordRoute = require('./routes/user/resetPassword');
+const forgotRoute = require('./routes/user/forgot');
+const resetRoute = require('./routes/user/reset');
+const loginRoute = require('./routes/user/login');
+const getPostsRoute = require('./routes/user/getPosts');
+const signupRoute = require('./routes/user/signup');
+app.use(bodyparser.json());
+//app.use('/booking', bookingRoute);
+//app.use('/postPnr', postPnrRoute);
+//app.use('/getPnr', getPnrRoute);
+//app.use('/trainFareRoute', trainFareRoute);
+//app.use('/trainBetweenStation', trainBetweenStationRoute);
+//app.use('/trainRoute', trainRouteRoute);
+//app.use('/trainStatus', trainStatusRoute);
+app.use('/resetPassword', resetPasswordRoute);
+app.use('/forgot', forgotRoute);
+app.use('/reset', resetRoute);
+app.use('/login', loginRoute);
+app.use('/getPosts', getPostsRoute);
+app.use('/signup', signupRoute);
+app.get('/',(req,res)=>{
+    res.send('We are on Home Page!!');
+});
+mongoose.connect(process.env.DB_CONNECTION,{ useNewUrlParser: true }, () => console.log('Connected to DB!'));
+app.listen(3000);

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../../models/Post');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 router.post('/', async (req,res) =>{
@@ -9,11 +10,14 @@ router.post('/', async (req,res) =>{
         if(!post) return res.send('Invalid Username');
         const isMatched = await bcrypt.compare(req.body.password,post.password);
         if(!isMatched) return res.send('Invalid Password');    
+        
+        const token=jwt.sign({_id:post._id}, process.env.SECRET_KEY);
+        res.header('session-token', token).send(token);
+        res.send('Logged in!');
     }
     catch(err){
         res.send(err.message);
     }   
-    res.send('Logged in!');
 });
 
 module.exports=router;

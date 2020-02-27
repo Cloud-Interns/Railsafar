@@ -3,8 +3,9 @@ const router = express.Router();
 const Post = require('../../models/Post');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
+const verify = require('./verifyToken');
 
-router.post('/', async (req,res)=>{
+router.post('/', verify, async (req,res)=>{
     try{
         const transporter = nodemailer.createTransport({
             service : 'gmail',
@@ -16,7 +17,7 @@ router.post('/', async (req,res)=>{
         const token = crypto.randomBytes(20).toString('hex');
         const mailOption={
             from:'aleenmacwan7619@gmail.com',
-            to:req.body.to,
+            to:req.body.email,
             subject:'Test',
             text:'Click the below link to reset your password'
             +'\nhttp://'+ req.headers.host +'/reset/'+token
