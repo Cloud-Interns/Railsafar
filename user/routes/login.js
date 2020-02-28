@@ -10,10 +10,10 @@ router.post('/', async (req,res) =>{
         if(!post) return res.send('Invalid Username');
         const isMatched = await bcrypt.compare(req.body.password,post.password);
         if(!isMatched) return res.send('Invalid Password');    
-        
         const token=jwt.sign({_id:post._id}, process.env.SECRET_KEY);
-        res.header('session-token', token).send(token);
-        res.send('Logged in!');
+        post.sessionToken = token;
+        post.save();
+        res.send('Logged in!')
     }
     catch(err){
         res.send(err.message);

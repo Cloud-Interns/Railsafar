@@ -11,7 +11,7 @@ router.post('/', verify, async (req,res)=>{
         const isMatched = await bcrypt.compare(req.body.password,post.password);
         if(!isMatched) return res.send('Invalid Password');
 
-        agree(req,res,post);
+        reset(req,res,post);
     }
     catch(err){
         res.send(err.message);
@@ -24,20 +24,31 @@ router.get('/:token', async (req,res)=>{
         if(!post) return res.send('No results found!');
         if(Date.now()>post.sessionTimeout) return res.send('Timeout!');
         
-        agree(req,res,post);
+        reset(req,res,post);
     }
     catch(err){
         res.send(err.message);
     }
 });
 
-function agree(req,res,post){
-    res.send('Are you really '+post.firstName+'?');
-    //two buttons with yes and no values, on clicking yes it will redirect to resetPassword page, on clicking no will got to home page.
-    const boolean=req.body.answer;
-    if(boolean==true){
-        return res.header('email', post.email);
+async function reset(req,res,post)
+{
+    try{
+        const salt = await bcrypt.genSalt(10);
+        const validation= new Validator(req.body, 
+        {
+            newPassword: 'required|minLength:8|same:confirmPassword'
+        });    
+        validation.check().then((matched) => {
+            if (!matched) return res.send(validation.errors);
+        });
+        const hashedPassword = await bcrypt.hash(req.body.newPassword,salt);
+        const upd = await Post.updateOne(post,{$set:{password: hashedPassword}});
+        if(!upd) return res.send('Invalid Credentials');
+        return res.send('Updated!');
     }
-    else return res.send('Go Back!');
+    catch(err){
+        res.json({message:err});
+    }
 }
 module.exports=router;
