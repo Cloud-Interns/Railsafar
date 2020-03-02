@@ -13,7 +13,7 @@ router.get('/', verify, async (req,res) => {
     }
 });
 
-router.get('/:email', verify, async (req,res) => {
+router.get('/:email', async (req,res) => {
     try{
         const post = await Post.findOne({email:req.params.email});
         res.json(post);

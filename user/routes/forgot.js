@@ -3,9 +3,8 @@ const router = express.Router();
 const Post = require('../../models/Post');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
-const verify = require('./verifyToken');
 
-router.post('/', verify, async (req,res)=>{
+router.post('/', async (req,res)=>{
     try{
         const transporter = nodemailer.createTransport({
             service : 'gmail',

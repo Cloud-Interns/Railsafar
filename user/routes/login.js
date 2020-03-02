@@ -13,6 +13,7 @@ router.post('/', async (req,res) =>{
         const token=jwt.sign({_id:post._id}, process.env.SECRET_KEY);
         post.sessionToken = token;
         post.save();
+        res.set({'sessionToken':token});
         res.send('Logged in!')
     }
     catch(err){
