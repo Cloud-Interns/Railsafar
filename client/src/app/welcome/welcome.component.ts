@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -8,7 +9,11 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class WelcomeComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private route : ActivatedRoute, private router : Router) { }
+
+  onLogin(){
+    this.router.navigate(['/login'],{relativeTo:this.route});
+  }
 
   ngOnInit() {
   }

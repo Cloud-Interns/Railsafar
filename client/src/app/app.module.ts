@@ -8,6 +8,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ActiveDirective } from './shared/active.directive';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,10 +20,13 @@ import { ActiveDirective } from './shared/active.directive';
     WelcomeComponent,
     AboutComponent,
     ContactusComponent,
-    ActiveDirective
+    ActiveDirective,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
