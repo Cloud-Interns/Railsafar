@@ -1,0 +1,18 @@
+input.ng-invalid.ng-touched{
+    border-color: red;  
+}
+
+input.ng-valid{
+    border-color: rgb(100, 204, 100);
+}
+
+#signup{
+    /* border: 1px solid lightgray; */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 3px 3px 1px 1px lightgray;
+}
+
+button {
+    margin-bottom: -10px;
+}

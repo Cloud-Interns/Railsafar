@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   private email : string = '';
   private password : string = '';
-  alertClosed : boolean = false;
+ 
 
   loginForm : FormGroup;
 
@@ -35,5 +35,4 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['../'],{relativeTo : this.route});
 
   }
-
 }

@@ -7,10 +7,10 @@ input.ng-valid{
 }
 
 #login{
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     border-radius: 5px;
     padding: 15px;
-    box-shadow: 1px 1px 3px 3px lightgray;
+    box-shadow: 3px 3px 1px 1px lightgray;
 }
 
 button {
