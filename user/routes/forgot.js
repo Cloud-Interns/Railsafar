@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../../models/Post');
+const User = require('../../models/User');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 
@@ -21,11 +21,11 @@ router.post('/', async (req,res)=>{
             text:'Click the below link to reset your password'
             +'\nhttp://'+ req.headers.host +'/reset/'+token
         };
-        const post = await Post.findOne({email:mailOption.to});
-        if(!post) return res.send('No such user exists!');
-        post.resetToken = token;
-        post.resetTimeout = Date.now() + 3600000;
-        post.save();
+        const user = await User.findOne({email:mailOption.to});
+        if(!user) return res.send('No such user exists!');
+        user.resetToken = token;
+        user.resetTimeout = Date.now() + 3600000;
+        user.save();
         transporter.sendMail(mailOption, (err,data)=>{
             if(err) return res.send('Error!');
 
