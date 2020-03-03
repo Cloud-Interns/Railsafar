@@ -16,3 +16,8 @@ input.ng-valid{
 button {
     margin-bottom: -10px;
 }
+
+.error{
+    color: red;
+    font-weight: bolder;
+}

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import {ConfirmPasswordValidator} from './confirmPassword-validator';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -33,7 +35,7 @@ export class SignupComponent implements OnInit {
       'dob' : new FormControl(this.dob,Validators.required),
       'gender' : new FormControl(this.gender,Validators.required),
       'phone' : new FormControl(this.phone,[Validators.required,Validators.pattern(/^[0-9]{10}$/)]),
-    })
+    }, { validators: ConfirmPasswordValidator.MatchPassword });
   }
 
   // checkPasswords(control : FormControl){

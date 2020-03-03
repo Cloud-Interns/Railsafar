@@ -11,6 +11,8 @@ import { ActiveDirective } from './shared/active.directive';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactusComponent,
     ActiveDirective,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

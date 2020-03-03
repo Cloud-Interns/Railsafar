@@ -2,7 +2,6 @@
     <div class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4">
             <img src="../../assets/images/signup.svg" alt="Signup" class="img-responsive" style="width: 70px; position: absolute; top: -15%; left: 42%;">
       <h3 style="text-align: center;letter-spacing: 0.1cm;">Sign Up</h3>
-          <br />
       <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" id="signup">
         <!--<ngb-alert  *ngIf="!alertClosed" (close)="alertClosed = true">Password must contain a lowercase,uppercase,number & special character and must be atleast 8 characters long!</ngb-alert>-->
   
@@ -44,6 +43,10 @@
                     </div>
                     <input placeholder="Confirm Password" type="password" id="confirmPassword" formControlName="confirmPassword" name="confirmPassword" class="form-control">
             </div>
+            <div class="error" *ngIf="signUpForm.get('confirmPassword').errors && 
+                signUpForm.get('confirmPassword').errors.ConfirmPassword">   
+                Sorry!! Passwords didn't match.  
+            </div>
           </div>
           <div class="form-group">
             <div class="input-group date">
@@ -79,6 +82,8 @@
           <button  type="button" (click)="onCancel()" class="btn btn-danger form-control">Cancel</button>
         </div>
       </form>
+      <br />&nbsp;
+      <a style="cursor: pointer;" routerLink="/login">Already a member ? Login</a>
     </div>
   </div>
   
