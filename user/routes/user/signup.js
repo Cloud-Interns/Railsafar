@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../../models/Post');
+const User = require('../../models/User');
 const { Validator } = require('node-input-validator');
 const bcrypt = require('bcryptjs');
 
 router.post('/', async (req,res)=>{
     try{
-        const user = await Post.findOne({email: req.body.email});
+        const user = await User.findOne({email: req.body.email});
         if(user) return res.send('User already exists!');
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(req.body.password,salt); 
@@ -23,7 +23,7 @@ router.post('/', async (req,res)=>{
         validation.check().then((matched) => {
             if (!matched) return res.status(422).send(validation.errors);
         
-            const post = new Post({
+            const user = new User({
                 email : req.body.email,
                 password: hashedPassword,
                 firstName: req.body.firstName,
@@ -31,7 +31,7 @@ router.post('/', async (req,res)=>{
                 gender: req.body.gender,
                 phoneNumber: req.body.phoneNumber    
             });
-            post.save()
+            user.save()
             .then(savedPost => {
             res.json(savedPost.email);
             })

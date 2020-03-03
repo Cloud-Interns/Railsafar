@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const PostSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
     email: String,
     password: String,
     confirmPassword: String,
@@ -10,7 +10,8 @@ const PostSchema = mongoose.Schema({
     lastName: String,
     sessionToken: String,
     resetToken: String,
-    resetTimeout:Date
+    resetTimeout: Date,
+    dateOfBirth: Date
 });
 
-module.exports = mongoose.model('Post',PostSchema);
+module.exports = mongoose.model('User',UserSchema);
