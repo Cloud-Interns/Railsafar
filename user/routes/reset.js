@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../../models/User');
 const bcrypt = require('bcryptjs');
 const verify = require('./verifyToken');
+const { Validator } = require('node-input-validator');
 
 router.post('/', verify, async (req,res)=>{
     try{
