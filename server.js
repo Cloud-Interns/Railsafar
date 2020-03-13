@@ -1,5 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
@@ -8,6 +10,12 @@ const PORT = process.env.PORT || 4000;
 
 //Database connection
 connectDB();
+
+//enabling cors
+app.use(cors);
+
+//setting static folder for angular
+app.use(express.static(path.join(__dirname,'angular-src')));
 
 //Init Middleware
 app.use(express.json({ extended:false})); 
