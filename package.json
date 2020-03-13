@@ -1,14 +1,32 @@
 {
   "name": "railsafar",
   "version": "1.0.0",
-  "description": "Railway App",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run start"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cloud-Interns/Railsafar.git"
+  },
+  "author": "cloud team",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cloud-Interns/Railsafar/issues"
+  },
+  "homepage": "https://github.com/Cloud-Interns/Railsafar#readme",
   "dependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^6.0.0"
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

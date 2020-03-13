@@ -1,0 +1,4 @@
+{
+    "MongoURI" : "mongodb+srv://kunal:JRCoIhaDtnqgn3Wp@railsafar-ztpxz.mongodb.net/users?retryWrites=true&w=majority",
+    "jwtSecret" : "volansyscloudteam"
+}
