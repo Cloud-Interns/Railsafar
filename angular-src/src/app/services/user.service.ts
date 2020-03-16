@@ -15,7 +15,7 @@ export class UserService {
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("http://localhost:4000/api/user/register", JSON.stringify(newUser), { headers: headers })
-      .pipe(map((response: any) => response.json()));
+      .post("http://localhost:4000/api/user/register",newUser,{headers : headers})
+      .pipe(map((response: any) => response));
   }
 }

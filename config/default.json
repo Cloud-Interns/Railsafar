@@ -1,4 +1,4 @@
 {
-    "MongoURI" : "mongodb+srv://kunal:JRCoIhaDtnqgn3Wp@railsafar-ztpxz.mongodb.net/users?retryWrites=true&w=majority",
+    "MongoURI" : "mongodb+srv://kunal:QT52tE0TAUZuUu0b@railsafar-ztpxz.mongodb.net/userDB?retryWrites=true&w=majority",
     "jwtSecret" : "volansyscloudteam"
 }

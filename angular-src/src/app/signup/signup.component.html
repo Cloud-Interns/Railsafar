@@ -29,6 +29,7 @@
           </div>
         </div>
         <div class="form-group">
+
           <div class="input-group">
                   <show-hide-password btnStyle="light" [btnOutline]="false">
                     <input placeholder="Password" type="password" id="passwordSignUp" formControlName="password" name="password" class="form-control">
@@ -41,6 +42,8 @@
               <show-hide-password  btnStyle="light" [btnOutline]="false">
                     <input placeholder="Confirm Password" type="password" id="confirmPassword" formControlName="confirmPassword" name="confirmPassword" class="form-control">
               </show-hide-password>      
+
+            
             </div>
             <div class="error" *ngIf="signUpForm.get('confirmPassword').errors && 
                 signUpForm.get('confirmPassword').errors.ConfirmPassword">   
