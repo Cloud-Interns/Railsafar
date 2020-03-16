@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -31,7 +31,9 @@ import { UserService } from './services/user.service';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShowHidePasswordModule 
+    
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
