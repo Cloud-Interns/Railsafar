@@ -33,16 +33,15 @@
                     <div class="input-group-prepend">
                       <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-lock fa-fw"></i></div>
                     </div>
-                    <input placeholder="Password" type="password" id="passwordSignUp" formControlName="password" name="password" class="form-control">
+                      <input placeholder="Password" type="password" id="passwordSignUp" formControlName="password" name="password" class="form-control">
             </div>
           </div>
-          <!--PENDING.....-->
           <div class="form-group">
             <div class="input-group">
                     <div class="input-group-prepend">
                       <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-lock fa-fw"></i></div>
                     </div>
-                    <input placeholder="Confirm Password" type="password" id="confirmPassword" formControlName="confirmPassword" name="confirmPassword" class="form-control">
+                      <input placeholder="Confirm Password" type="password" id="confirmPassword" formControlName="confirmPassword" name="confirmPassword" class="form-control">
             </div>
             <div class="error" *ngIf="signUpForm.get('confirmPassword').errors && 
                 signUpForm.get('confirmPassword').errors.ConfirmPassword">   

@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { UserService } from './services/user.service';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 
 
 
@@ -31,7 +32,8 @@ import { UserService } from './services/user.service';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShowHidePasswordModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
