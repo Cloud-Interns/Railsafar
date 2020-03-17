@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
 
   private email : string = '';
   private password : string = '';
-  private token : string;
 
   loginForm : FormGroup;
   
@@ -39,7 +38,6 @@ export class LoginComponent implements OnInit {
 
   authenticateUser(email : string,password : string){
     this.userService.authenticateUser(email,password).subscribe(token => {
-      this.token = token;
       console.log(token);
     });;
   }

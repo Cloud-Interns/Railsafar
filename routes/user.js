@@ -59,7 +59,7 @@ router.post(
       //searching user based on email
       let user = await User.findOne({ email });
       if (user) {
-        res.send(JSON.stringify(req.flash('error','User already exists!')));
+        res.status(400).json({msg :"User already exists!"});
       }
 
       //else creating a new instance of "User" model
