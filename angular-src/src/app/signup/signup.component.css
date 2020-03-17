@@ -7,10 +7,8 @@ input.ng-valid{
 }
 
 #signup{
-    /* border: 1px solid lightgray; */
-    border-radius: 5px;
     padding: 15px;
-    box-shadow: 3px 3px 1px 1px lightgray;
+    box-shadow: 9px 9px 20px #2C3335, -9px -9px 20px    #DAE0E2;
 }
 
 button {

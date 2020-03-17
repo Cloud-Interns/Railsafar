@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,7 +18,6 @@ import { UserService } from './services/user.service';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,15 +27,15 @@ import { UserService } from './services/user.service';
     ContactusComponent,
     LoginComponent,
     SignupComponent,
-    FooterComponent
-  ],
+    FooterComponent    
+ ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ShowHidePasswordModule 
-
+    ShowHidePasswordModule,
+    FlashMessagesModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
