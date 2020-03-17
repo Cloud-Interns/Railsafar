@@ -18,4 +18,16 @@ export class UserService {
       .post("http://localhost:4000/api/user/register",newUser,{headers : headers})
       .pipe(map((response: any) => response));
   }
+
+  //Authenticate a user
+  authenticateUser(email : string, password : string): Observable<any> {
+    const userDetails = {
+      email,
+      password
+    }
+    const headers = new HttpHeaders();
+    headers.append("Content-Type", "application/json");
+    return this.http.post("http://localhost:4000/api/user/login",userDetails,{headers : headers})
+    .pipe(map((response: any) => response));
+  }
 }

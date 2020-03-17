@@ -12,8 +12,7 @@ import { UserService } from "../services/user.service";
   styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
-  
-  token : string = null;
+  token: string = null;
   signUpForm: FormGroup;
 
   constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) {}

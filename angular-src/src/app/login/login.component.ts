@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -12,11 +13,14 @@ export class LoginComponent implements OnInit {
 
   private email : string = '';
   private password : string = '';
- 
+  private token : string;
 
   loginForm : FormGroup;
+  
 
-  constructor(private route : ActivatedRoute, private router : Router) {}
+  constructor(private route : ActivatedRoute, 
+              private router : Router,
+              private userService : UserService) {}
 
   ngOnInit(): void {
 
@@ -27,8 +31,17 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("form submitted...");
+    this.email = this.loginForm.value.email;
+    this.password = this.loginForm.value.password;
+    this.authenticateUser(this.email,this.password);
     this.loginForm.reset();
+  }
+
+  authenticateUser(email : string,password : string){
+    this.userService.authenticateUser(email,password).subscribe(token => {
+      this.token = token;
+      console.log(token);
+    });;
   }
 
   onCancel(){

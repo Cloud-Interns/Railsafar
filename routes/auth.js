@@ -74,8 +74,6 @@ router.post(
 //@route GET api/user
 //@desc Get loggedin user
 //@access Private
-router.get("", [], (req, res) => {
-
-});
+router.get("", [], (req, res) => {});
 
 module.exports = router;

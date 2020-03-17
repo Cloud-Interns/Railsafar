@@ -1,88 +1,186 @@
 <div class="row">
-    <div class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4">
-            <img src="../../assets/images/signup.svg" alt="Signup" class="img-responsive" style="width: 70px; position: absolute; top: -15%; left: 42%;">
-      <h3 style="text-align: center;letter-spacing: 0.1cm;">Sign Up</h3>
-      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm)" id="signup">
-        <!--<ngb-alert  *ngIf="!alertClosed" (close)="alertClosed = true">Password must contain a lowercase,uppercase,number & special character and must be atleast 8 characters long!</ngb-alert>-->
-  
-        <div class="form-group form-row">
-          <div class="input-group col">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-user-circle fa-fw"></i></div>
-                  </div>
-                  <input type="firstName" placeholder="Firstname" id="firstName" formControlName="firstName" name="firstName" class="form-control">
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <img
+      src="../../assets/images/signup.svg"
+      alt="Signup"
+      class="img-responsive"
+      style="width: 70px; position: absolute; top: -15%; left: 42%;"
+    />
+    <h3 style="text-align: center;letter-spacing: 0.1cm;">Sign Up</h3>
+    <form
+      [formGroup]="signUpForm"
+      (ngSubmit)="onSubmit(signUpForm)"
+      id="signup"
+    >
+      <div class="form-group form-row">
+        <div class="input-group col">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-user-circle fa-fw"></i>
+            </div>
           </div>
-          <div class="input-group col">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-user-circle fa-fw"></i></div>
-                  </div>
-                  <input type="lastName" placeholder="Lastname" id="lastName" formControlName="lastName" name="lastName" class="form-control">
-          </div>
+          <input
+            type="firstName"
+            placeholder="Firstname"
+            id="firstName"
+            formControlName="firstName"
+            name="firstName"
+            class="form-control"
+          />
         </div>
+        <div class="input-group col">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-user-circle fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="lastName"
+            placeholder="Lastname"
+            id="lastName"
+            formControlName="lastName"
+            name="lastName"
+            class="form-control"
+          />
+        </div>
+      </div>
 
-        <div class="form-group">
-          <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-envelope fa-fw"></i></div>
-                  </div>
-                  <input placeholder="Email Address" type="email" id="email" formControlName="email" name="email" class="form-control">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-envelope fa-fw"></i>
+            </div>
           </div>
+          <input
+            placeholder="Email Address"
+            type="email"
+            id="email"
+            formControlName="email"
+            name="email"
+            class="form-control"
+          />
         </div>
-        <div class="form-group">
-            <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-lock fa-fw"></i></div>
-                    </div>
-                      <input placeholder="Password" type="password" id="passwordSignUp" formControlName="password" name="password" class="form-control">
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-lock fa-fw"></i>
             </div>
           </div>
-          <div class="form-group">
-            <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-lock fa-fw"></i></div>
-                    </div>
-                      <input placeholder="Confirm Password" type="password" id="confirmPassword" formControlName="confirmPassword" name="confirmPassword" class="form-control">
-            </div>
-            <div class="error" *ngIf="signUpForm.get('confirmPassword').errors && 
-                signUpForm.get('confirmPassword').errors.ConfirmPassword">   
-                Sorry!! Passwords didn't match.  
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group date">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-calendar fa-fw"></i></div>
-                    </div>
-                    <input  type="date" id="dob" formControlName="dob" name="dob" value="12-02-2000" class="form-control">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-male fa-fw"></i></div>
-                    </div>
-                    <select type="text" id="gender" formControlName="gender" name="gender" class="form-control">
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                    </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-phone fa-fw"></i></div>
-                    </div>
-                    <input  placeholder="eg : +91 0123456789" type="number" id="phone" formControlName="phone" name="phone" class="form-control">
-            </div>
-          </div>
-        <div class="form-group">
-          <button  type="submit" class="btn btn-success form-control" [disabled]="!signUpForm.valid">Create Account</button>&nbsp;
-          <button  type="button" (click)="onCancel()" class="btn btn-danger form-control">Cancel</button>
+          <input
+            placeholder="Password"
+            type="password"
+            id="passwordSignUp"
+            formControlName="password"
+            name="password"
+            class="form-control"
+          />
         </div>
-      </form>
-      <br />&nbsp;
-      <a style="cursor: pointer;" routerLink="/login">Already have account ? Login</a>
-    </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-lock fa-fw"></i>
+            </div>
+          </div>
+          <input
+            placeholder="Confirm Password"
+            type="password"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            name="confirmPassword"
+            class="form-control"
+          />
+        </div>
+        <div
+          class="error"
+          *ngIf="
+            signUpForm.get('confirmPassword').errors &&
+            signUpForm.get('confirmPassword').errors.ConfirmPassword
+          "
+        >
+          Sorry!! Passwords didn't match.
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group date">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-calendar fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="date"
+            id="dob"
+            formControlName="dob"
+            name="dob"
+            value="12-02-2000"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-male fa-fw"></i>
+            </div>
+          </div>
+          <select
+            type="text"
+            id="gender"
+            formControlName="gender"
+            name="gender"
+            class="form-control"
+          >
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-phone fa-fw"></i>
+            </div>
+          </div>
+          <input
+            placeholder="eg : +91 0123456789"
+            type="number"
+            id="phone"
+            formControlName="phone"
+            name="phone"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-success form-control"
+          [disabled]="!signUpForm.valid"
+        >
+          Create Account</button
+        >&nbsp;
+        <button
+          type="button"
+          (click)="onCancel()"
+          class="btn btn-danger form-control"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+    <br />&nbsp;
+    <a style="cursor: pointer;" routerLink="/login"
+      >Already have account ? Login</a
+    >
   </div>
-  
+</div>

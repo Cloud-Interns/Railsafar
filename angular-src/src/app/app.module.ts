@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +15,6 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { UserService } from './services/user.service';
-import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-
 
 
 @NgModule({
@@ -26,14 +26,15 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
     ContactusComponent,
     LoginComponent,
     SignupComponent,
-    FooterComponent
-  ],
+    FooterComponent    
+ ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ShowHidePasswordModule
+    ShowHidePasswordModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
