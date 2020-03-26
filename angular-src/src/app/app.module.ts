@@ -6,14 +6,13 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { AboutComponent } from './about/about.component';
-import { ContactusComponent } from './contactus/contactus.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
 import { UserService } from './services/user.service';
 
 
@@ -26,9 +25,8 @@ import { UserService } from './services/user.service';
     AboutComponent,
     ContactusComponent,
     LoginComponent,
-    SignupComponent,
-    FooterComponent    
- ],
+    SignupComponent
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

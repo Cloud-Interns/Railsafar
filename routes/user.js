@@ -59,7 +59,7 @@ router.post(
       //searching user based on email
       let user = await User.findOne({ email });
       if (user) {
-        res.status(400).json({msg :"User already exists!"});
+        res.status(400).json({ msg: "User already exists!" });
       }
 
       //else creating a new instance of "User" model
@@ -77,7 +77,6 @@ router.post(
       const salt = await bcrypt.genSalt(10);
       //hashing and encrypting password before it is being saved in database
       user.password = await bcrypt.hash(password, salt);
-
       //saving user to database
       await user.save();
 

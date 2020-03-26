@@ -1,6 +1,6 @@
-const express = require('express');
-const connectDB = require('./config/db');
-const cors = require('cors');
+const express = require("express");
+const connectDB = require("./config/db");
+const cors = require("cors");
 
 const app = express();
 
@@ -17,13 +17,13 @@ app.use(cors());
 //app.use(express.static('angular-src'));
 
 //Init Middleware
-app.use(express.json({ extended:false})); 
+app.use(express.json({ extended: false }));
 
 //Registering Routes
-app.use('/api/user',require('./routes/user'));
-app.use('/api/user',require('./routes/auth'));
+app.use("/api/user", require("./routes/user"));
+app.use("/api/user", require("./routes/auth"));
 
-//Starting server 
+//Starting server
 app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-})
+  console.log(`Server started on port ${PORT}`);
+});
