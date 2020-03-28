@@ -12,7 +12,10 @@ import { UserService } from "../../services/user.service";
   styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
-  token: string = null;
+
+  message: String = '';
+  displayAlert: Boolean = false;
+  alertType: String = '';
   signUpForm: FormGroup;
 
   constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) { }
@@ -38,9 +41,13 @@ export class SignupComponent implements OnInit {
 
   //calls a service to register a new user
   saveData(newUser) {
-    this.userService.registerUsers(newUser).subscribe(token => {
-      this.token = token;
-      console.log(token);
+    this.userService.registerUsers(newUser).subscribe(response => {
+      this.message = response.msg;
+      this.displayAlert = true;
+      this.alertType = response.type;
+      if (this.alertType === 'warning') {
+        this.router.navigate(["../login"], { relativeTo: this.route });
+      }
     });
   }
 
@@ -63,4 +70,5 @@ export class SignupComponent implements OnInit {
   onCancel() {
     this.router.navigate(["../"], { relativeTo: this.route });
   }
+
 }

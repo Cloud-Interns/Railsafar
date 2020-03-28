@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { error } from 'util';
 
 
 @Component({
@@ -14,6 +15,8 @@ export class LoginComponent implements OnInit {
   private email: string = '';
   private password: string = '';
 
+  errorMessage: String = '';
+  displayAlert: Boolean = false;
   loginForm: FormGroup;
 
 
@@ -37,8 +40,19 @@ export class LoginComponent implements OnInit {
   }
 
   authenticateUser(email: string, password: string) {
-    this.userService.authenticateUser(email, password).subscribe(token => {
-      console.log(token);
+    this.userService.authenticateUser(email, password).subscribe(response => {
+      //if any error occur 
+      if (response.errMsg) {
+        this.errorMessage = response.errMsg;
+        this.displayAlert = true;
+      }
+
+      //else login is successfull store token in localstorage & his session starts for 1 hr
+      else {
+        console.log(response.token)
+        localStorage.setItem('currentUser', JSON.stringify(response.token));
+      }
+
     });;
   }
 
