@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const nodemailer = require("nodemailer");
 const { check, validationResult } = require("express-validator");
 
 const User = require("../models/User");
@@ -79,6 +80,38 @@ router.post(
         const salt = await bcrypt.genSalt(10);
         //hashing and encrypting password before it is being saved in database
         user.password = await bcrypt.hash(password, salt);
+
+        //sending mail to user for verification
+        let transporter = nodemailer.createTransport({
+          service: "gmail",
+          // port: 587,
+          // secure: false, // true for 465, false for other ports
+          auth: {
+            user: "railsafar6599@gmail.com", // generated ethereal user
+            pass: "volansyscloudteam" // generated ethereal password
+          }
+          // tls: {
+          //   rejectUnauthorized: false
+          // }
+        });
+
+        // send mail with defined transport object
+        let info = await transporter.sendMail({
+          from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
+          to: user.email,
+          subject: "Thanks & Welcome to Railsafar!!", // Subject line
+          html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
+                <h1 style="align : center;">We're from Railsafar Team</h1>
+                <img src="https://images.unsplash.com/photo-1487662701465-ee09afb4e1fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=834&q=80" alt="image" /><br />
+                <h4 style="align : center;">In your service always :)</h4><br /><br />
+                <p>Thank you for registering !!</p>
+                <p>Have a great day ahead :)</p>
+                <p>Regards,</p>
+                <p>Railsafar Team</p>
+                `
+        });
+
+        //console.log("Message sent: %s", info.messageId);
         //saving user to database
         await user.save();
         return res.status(200).json({
