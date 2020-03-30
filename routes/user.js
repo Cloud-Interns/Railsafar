@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const config = require("config");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const { check, validationResult } = require("express-validator");
@@ -85,8 +86,8 @@ router.post(
         let transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: "railsafar6599@gmail.com",
-            pass: "volansyscloudteam"
+            user: config.get("GmailID"),
+            pass: config.get("GmailPwd")
           }
         });
 
@@ -144,8 +145,8 @@ router.post("/changepassword", async (req, res) => {
         let transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: "railsafar6599@gmail.com",
-            pass: "volansyscloudteam"
+            user: config.get("GmailID"),
+            pass: config.get("GmailPwd")
           }
         });
 

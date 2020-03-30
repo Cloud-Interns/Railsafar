@@ -1,4 +1,6 @@
 {
   "MongoURI": "mongodb+srv://kunal:U8gVSsBZhOcMsBjR@railsafar-ztpxz.mongodb.net/userDB?retryWrites=true&w=majority",
-  "jwtSecret": "volansyscloudteam"
+  "jwtSecret": "volansyscloudteam",
+  "GmailID": "railsafar6599@gmail.com",
+  "GmailPwd": "volansyscloudteam"
 }
