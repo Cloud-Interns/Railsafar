@@ -84,15 +84,10 @@ router.post(
         //sending mail to user for verification
         let transporter = nodemailer.createTransport({
           service: "gmail",
-          // port: 587,
-          // secure: false, // true for 465, false for other ports
           auth: {
-            user: "railsafar6599@gmail.com", // generated ethereal user
-            pass: "volansyscloudteam" // generated ethereal password
+            user: "railsafar6599@gmail.com",
+            pass: "volansyscloudteam"
           }
-          // tls: {
-          //   rejectUnauthorized: false
-          // }
         });
 
         // send mail with defined transport object
@@ -127,4 +122,62 @@ router.post(
     }
   }
 );
+
+//@route POST api/user/changepassword
+//@desc Change user's password
+//@access Public
+router.post("/changepassword", async (req, res) => {
+  //creating six-digit OTP(random & unique everytime)
+  const otp = Math.floor(100000 + Math.random() * 900000);
+  const { email, sentOTP, newPassword } = req.body;
+
+  try {
+    if (email) {
+      //searching user based on email
+      let user = await User.findOne({ email });
+      if (!user) {
+        return res.json({
+          msg: "No such user exists!!"
+        });
+      } else {
+        //sending mail to user with OTP
+        let transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: "railsafar6599@gmail.com",
+            pass: "volansyscloudteam"
+          }
+        });
+
+        // send mail with defined transport object
+        let info = await transporter.sendMail({
+          from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
+          to: email,
+          subject: "OTP for Railsafar account password", // Subject line
+          html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
+                <h1 style="align : center;">We're from Railsafar Team</h1>
+                <br />
+                <h1 style="align : center;">Below is your OTP </h1>
+                <h2>${otp}</h2>
+                <p>Please do not share with anyone!</p>
+                <p>Have a great day ahead :)</p>
+                <p>Regards,</p>
+                <p>Railsafar Team</p>
+                `
+        });
+        return res.json({ msg: "OTP sent to your email!" });
+      }
+    } else {
+      //logic to change pwd in database
+      //compare generated & entered OTP
+      //if matches update pwd in database
+    }
+  } catch (err) {
+    console.log(err.message);
+    return res.status(500).json({
+      msg: "An error occured during registration!!"
+    });
+  }
+});
+
 module.exports = router;
