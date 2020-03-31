@@ -14,6 +14,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 
 
@@ -26,7 +27,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     ContactusComponent,
     LoginComponent,
     SignupComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { ConfirmPasswordValidator } from '../shared/confirmPassword-validator';
 
 @Component({
   selector: 'app-resetpassword',
@@ -10,39 +11,38 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ResetpasswordComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) { }
-
   resetForm: FormGroup;
-
-  message: string = '';
+  message: string;
   displayAlert: Boolean = false;
 
-  private email: string;
+  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.resetForm = new FormGroup({
-      'email': new FormControl(this.email, [Validators.required, Validators.email])
-    })
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ]),
+      confirmPassword: new FormControl(null, Validators.required),
+    }, { validators: ConfirmPasswordValidator.MatchPassword }
+    );
   }
 
   onSubmit() {
-    this.email = this.resetForm.value.email;
-    this.sendEmail(this.email);
-    this.resetForm.reset();
-  }
+    const newPassword = this.resetForm.value.password;
+    const id = this.route.queryParams;
 
-  sendEmail(email: string) {
-    this.userService.sendEmailWithOTP(email).subscribe(response => {
-      //console.log("Hello");
+    //calling method in user service to call API to change password
+    this.userService.resetPassword(newPassword, id).subscribe(response => {
       this.displayAlert = true;
       this.message = response.msg;
-    });
+    })
+    this.resetForm.reset();
 
   }
 
-  onCancel() {
+  onLogin() {
     this.router.navigate(['../login'], { relativeTo: this.route });
-
   }
 
 }
