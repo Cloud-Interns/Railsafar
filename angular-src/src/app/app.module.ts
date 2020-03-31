@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -14,6 +12,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ShPasswordDirective } from './Directives/sh-password.directive';
 
 
 
@@ -26,7 +25,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     ContactusComponent,
     LoginComponent,
     SignupComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    ShPasswordDirective
   ],
   imports: [
     BrowserModule,
