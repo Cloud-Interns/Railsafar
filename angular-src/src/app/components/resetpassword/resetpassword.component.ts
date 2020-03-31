@@ -30,7 +30,7 @@ export class ResetpasswordComponent implements OnInit {
 
   onSubmit() {
     const newPassword = this.resetForm.value.password;
-    const id = this.route.queryParams;
+    const id = this.route.queryParams; //not working
 
     //calling method in user service to call API to change password
     this.userService.resetPassword(newPassword, id).subscribe(response => {
