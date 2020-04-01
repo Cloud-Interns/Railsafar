@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 //It will look for PORT in env else will start on 1235
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 6000;
 
 //Database connection
 connectDB();

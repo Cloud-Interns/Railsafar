@@ -12,8 +12,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
-import { ShPasswordDirective } from './Directives/sh-password.directive';
 import { WelcomeBarComponent } from './components/welcome-bar/welcome-bar.component';
+import { ShPasswordDirective } from './directives/sh-password.directive';
+
 
 
 

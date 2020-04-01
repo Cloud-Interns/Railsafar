@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 
-import { ConfirmPasswordValidator } from "./confirmPassword-validator";
+import { ConfirmPasswordValidator } from "../shared/confirmPassword-validator";
 import { User } from "../../models/user.model";
 import { UserService } from "../../services/user.service";
 

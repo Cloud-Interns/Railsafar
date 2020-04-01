@@ -6,7 +6,9 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -15,9 +17,10 @@ const routes: Routes = [
   { path: 'register', component: SignupComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact-us', component: ContactusComponent },
-  { path: 'resetpassword', component: ResetpasswordComponent },
-  {path:'after-login',component:WelcomeBarComponent }
-
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'resetpassword/:id', component: ResetpasswordComponent },
+  { path:'after-login',component:WelcomeBarComponent }
+  
 ];
 
 @NgModule({
