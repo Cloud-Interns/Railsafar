@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
       else {
         console.log(response.token)
         localStorage.setItem('currentUser', JSON.stringify(response.token));
+        this.router.navigate(['../after-login'], { relativeTo: this.route });
+        
       }
 
     });;

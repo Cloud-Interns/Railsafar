@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { WelcomeBarComponent } from './components/welcome-bar/welcome-bar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { AboutComponent } from './components/about/about.component';
@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'register', component: SignupComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact-us', component: ContactusComponent },
-  { path: 'resetpassword', component: ResetpasswordComponent }
+  { path: 'resetpassword', component: ResetpasswordComponent },
+  {path:'after-login',component:WelcomeBarComponent }
 
 ];
 
