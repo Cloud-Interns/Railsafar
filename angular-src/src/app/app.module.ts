@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ShPasswordDirective } from './directives/sh-password.directive';
-
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 
 @NgModule({
@@ -26,7 +26,9 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     LoginComponent,
     SignupComponent,
     ResetpasswordComponent,
-    ShPasswordDirective
+    ShPasswordDirective,
+    ForgotpasswordComponent
+
   ],
   imports: [
     BrowserModule,

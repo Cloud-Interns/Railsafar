@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { ConfirmPasswordValidator } from '../shared/confirmPassword-validator';
 
@@ -30,7 +30,10 @@ export class ResetpasswordComponent implements OnInit {
 
   onSubmit() {
     const newPassword = this.resetForm.value.password;
-    const id = this.route.queryParams; //not working
+    let id = 0;
+    this.route.params.subscribe((params: Params) => {
+      id = params['id'];
+    });
 
     //calling method in user service to call API to change password
     this.userService.resetPassword(newPassword, id).subscribe(response => {
@@ -42,7 +45,7 @@ export class ResetpasswordComponent implements OnInit {
   }
 
   onLogin() {
-    this.router.navigate(['../login'], { relativeTo: this.route });
+    this.router.navigate(['../../login'], { relativeTo: this.route });
   }
 
 }

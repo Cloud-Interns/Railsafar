@@ -159,9 +159,8 @@ router.post("/sendemail", async (req, res) => {
         subject: "OTP for Railsafar account password", // Subject line
         html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
                 <h1 style="align : center;">We're from Railsafar Team</h1>
-                <br />
                 <h2>You requested for the password reset</h2>
-                <img src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="image" />
+                <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-padlock-vector-icon-png-image_3725460.jpg" class="img-responsive" style="width:100px;height:100px" alt="image" />
                 <h1 style="align : center;">Click on the below link to reset password</h1>         
                 <a href="http://localhost:4200/resetpassword/${payload.id}">Click here</a>
                 <p>Please do not share with anyone!</p>
@@ -183,13 +182,9 @@ router.post("/sendemail", async (req, res) => {
 //@desc Change user's password
 //@access Public
 router.post("/resetpassword/:id", async (req, res) => {
-  const { id } = req.params.id;
-  console.log(id);
-  console.log(req.body.password);
-  const { newPassword } = req.body.password;
   try {
     //get the user based on ID
-    let user = await User.findOne({ id });
+    let user = await User.findById(req.params.id);
     if (!user) {
       return res.json({
         msg: "No such user exists!!"
@@ -198,7 +193,7 @@ router.post("/resetpassword/:id", async (req, res) => {
       //generating SALT(like a secret code or key) using bcryptjs
       const salt = await bcrypt.genSalt(10);
       //hashing and encrypting  new password before it is being saved in database
-      user.password = await bcrypt.hash(newPassword, salt);
+      user.password = await bcrypt.hash(req.body.newPassword, salt);
 
       //updating DB
       await user.save();

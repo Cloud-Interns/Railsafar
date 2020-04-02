@@ -15,7 +15,7 @@ export class UserService {
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("http://localhost:6000/api/user/register", newUser, { headers: headers })
+      .post("http://localhost:8000/api/user/register", newUser, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
@@ -27,7 +27,7 @@ export class UserService {
     }
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post("http://localhost:6000/api/user/login", userDetails, { headers: headers })
+    return this.http.post("http://localhost:8000/api/user/login", userDetails, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
@@ -36,17 +36,18 @@ export class UserService {
     const userEmail = { email };
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post("http://localhost:6000/api/user/sendemail", userEmail, { headers: headers })
+    return this.http.post("http://localhost:8000/api/user/sendemail", userEmail, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
   //Reset User's Password
   resetPassword(newPassword: string, id: any): Observable<any> {
     console.log(id);
+    console.log(newPassword);
     const password = { newPassword }
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post(`http://localhost:6000/api/user/resetpassword/:${id}`, password, { headers: headers })
+    return this.http.post(`http://localhost:8000/api/user/resetpassword/${id}`, password, { headers: headers })
       .pipe(map((response: any) => response));
   }
 }
