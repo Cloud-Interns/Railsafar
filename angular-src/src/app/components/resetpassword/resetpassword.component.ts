@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+
+import { ToastrService } from 'ngx-toastr';
+
 import { UserService } from 'src/app/services/user.service';
 import { ConfirmPasswordValidator } from '../shared/confirmPassword-validator';
 
@@ -12,10 +15,31 @@ import { ConfirmPasswordValidator } from '../shared/confirmPassword-validator';
 export class ResetpasswordComponent implements OnInit {
 
   resetForm: FormGroup;
-  message: string;
-  displayAlert: Boolean = false;
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
+  constructor(private route: ActivatedRoute,
+    private userService: UserService,
+    private router: Router,
+    private toastr: ToastrService) { }
+
+  //Toast Methods
+  showSuccess() {  //FOR Success
+    this.toastr.success('Success!', 'Password changed successfully!', {
+      timeOut: 3000
+    });
+  }
+
+  showWarning() {  // FOR Warnings
+    this.toastr.warning('Warning!', 'No such user exists!', {
+      timeOut: 3000
+    });
+  }
+
+  showError() {   // FOR Errors 
+    this.toastr.error('Sorry!', 'Error occured!!', {
+      timeOut: 3000
+    });
+  }
+
 
   ngOnInit() {
     this.resetForm = new FormGroup({
@@ -37,8 +61,14 @@ export class ResetpasswordComponent implements OnInit {
 
     //calling method in user service to call API to change password
     this.userService.resetPassword(newPassword, id).subscribe(response => {
-      this.displayAlert = true;
-      this.message = response.msg;
+      if (response.status === 'success') {
+        this.showSuccess();
+      } else if (response.status === 'warning') {
+        this.showWarning();
+      } else {
+        this.showError();
+      }
+
     })
     this.resetForm.reset();
 

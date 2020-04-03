@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Third party imports
-import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 
 //App Routing File
 import { AppRoutingModule } from './app-routing.module';
@@ -47,8 +47,7 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({ positionClass: 'inline' }), // ToastrModule added
-    ToastContainerModule,
+    ToastrModule.forRoot(), // ToastrModule added
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule

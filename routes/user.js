@@ -3,8 +3,6 @@ const router = express.Router();
 const config = require("config");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
-const jwt = require("jsonwebtoken");
-const { check, validationResult } = require("express-validator");
 
 const User = require("../models/User");
 
@@ -12,92 +10,51 @@ const User = require("../models/User");
 //@desc Register a user
 //@access Public
 
-router.post(
-  "/register",
-  [
-    check("firstname", "Please enter valid firstname!")
-      .not()
-      .isEmpty(),
-    check("lastname", "Please enter valid lastname!")
-      .not()
-      .isEmpty(),
-    check("email", "Please enter valid email address!")
-      .not()
-      .isEmpty()
-      .isEmail(),
-    check(
-      "password",
-      "Please enter password with 8 or more characters!"
-    ).isLength({ min: 8 }),
-    check("dob", "Please enter valid date of birth!")
-      .not()
-      .isEmpty(),
-    check("gender", "Please enter valid gender!")
-      .not()
-      .isEmpty(),
-    check("phone", "Please enter valid phone number!").isLength({ min: 10 })
-  ],
-  async (req, res) => {
-    //collecting all the errors occurred in validation
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      //if there are errors
-      return res.status(400).json({ errors: errors.array() });
+router.post("/register", async (req, res) => {
+  //destructuring the request body content
+  const { firstname, lastname, email, password, dob, gender, phone } = req.body;
+
+  try {
+    //searching user based on email
+    let user = await User.findOne({ email });
+    if (user) {
+      return res.status(200).json({
+        status: "warning"
+      });
     }
 
-    //else destructuring the request body content
-    const {
-      firstname,
-      lastname,
-      email,
-      password,
-      dob,
-      gender,
-      phone
-    } = req.body;
+    //else creating a new instance of "User" model
+    else {
+      user = new User({
+        firstname,
+        lastname,
+        email,
+        password,
+        dob,
+        gender,
+        phone
+      });
 
-    try {
-      //searching user based on email
-      let user = await User.findOne({ email });
-      if (user) {
-        return res.status(200).json({
-          msg: "User already exists!!",
-          type: "warning"
-        });
-      }
+      //generating SALT(like a secret code or key) using bcryptjs
+      const salt = await bcrypt.genSalt(10);
+      //hashing and encrypting password before it is being saved in database
+      user.password = await bcrypt.hash(password, salt);
 
-      //else creating a new instance of "User" model
-      else {
-        user = new User({
-          firstname,
-          lastname,
-          email,
-          password,
-          dob,
-          gender,
-          phone
-        });
+      //sending mail to user for verification
+      let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: config.get("GmailID"),
+          pass: config.get("GmailPwd")
+        }
+      });
 
-        //generating SALT(like a secret code or key) using bcryptjs
-        const salt = await bcrypt.genSalt(10);
-        //hashing and encrypting password before it is being saved in database
-        user.password = await bcrypt.hash(password, salt);
-
-        //sending mail to user for verification
-        let transporter = nodemailer.createTransport({
-          service: "gmail",
-          auth: {
-            user: config.get("GmailID"),
-            pass: config.get("GmailPwd")
-          }
-        });
-
-        // send mail with defined transport object
-        let info = await transporter.sendMail({
-          from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
-          to: user.email,
-          subject: "Thanks & Welcome to Railsafar!!", // Subject line
-          html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
+      // send mail with defined transport object
+      let info = await transporter.sendMail({
+        from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
+        to: user.email,
+        subject: "Thanks & Welcome to Railsafar!!", // Subject line
+        html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
                 <h1 style="align : center;">We're from Railsafar Team</h1>
                 <img src="https://images.unsplash.com/photo-1487662701465-ee09afb4e1fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=834&q=80" alt="image" /><br />
                 <h4 style="align : center;">In your service always :)</h4><br /><br />
@@ -106,23 +63,20 @@ router.post(
                 <p>Regards,</p>
                 <p>Railsafar Team</p>
                 `
-        });
+      });
 
-        //console.log("Message sent: %s", info.messageId);
-        //saving user to database
-        await user.save();
-        return res.status(200).json({
-          msg: "Success!! Verify Email to complete registration.",
-          type: "success"
-        });
-      }
-    } catch (err) {
-      return res.status(500).json({
-        msg: "An error occured during registration!!"
+      //saving user to database
+      await user.save();
+      return res.status(200).json({
+        status: "success"
       });
     }
+  } catch (err) {
+    return res.status(500).json({
+      status: "error"
+    });
   }
-);
+});
 
 //@route POST api/user/sendemail
 //@desc Look for user & send email
@@ -135,7 +89,7 @@ router.post("/sendemail", async (req, res) => {
     let user = await User.findOne({ email });
     if (!user) {
       return res.json({
-        msg: "No such user exists!!"
+        status: "warning"
       });
     } else {
       const payload = {
@@ -169,11 +123,11 @@ router.post("/sendemail", async (req, res) => {
                 <p>Railsafar Team</p>
                 `
       });
-      return res.json({ msg: "OTP sent to your email!" });
+      return res.json({ status: "success" });
     }
   } catch (err) {
     return res.status(500).json({
-      msg: "An error occured during registration!!"
+      status: "error"
     });
   }
 });
@@ -187,7 +141,7 @@ router.post("/resetpassword/:id", async (req, res) => {
     let user = await User.findById(req.params.id);
     if (!user) {
       return res.json({
-        msg: "No such user exists!!"
+        status: "warning"
       });
     } else {
       //generating SALT(like a secret code or key) using bcryptjs
@@ -197,11 +151,11 @@ router.post("/resetpassword/:id", async (req, res) => {
 
       //updating DB
       await user.save();
-      return res.status(200).json({ msg: "Password changed successfully!!" });
+      return res.status(200).json({ status: "success" });
     }
   } catch (err) {
     return res.status(500).json({
-      msg: "An error occured during registration!!"
+      status: "error"
     });
   }
 });

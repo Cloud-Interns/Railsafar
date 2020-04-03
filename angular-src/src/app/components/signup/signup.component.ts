@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 
-import { ToastrService, ToastContainerDirective } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 import { ConfirmPasswordValidator } from "../shared/confirmPassword-validator";
 import { User } from "../../models/user.model";
@@ -14,23 +14,31 @@ import { UserService } from "../../services/user.service";
   styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
-  @ViewChild(ToastContainerDirective, { static: false }) toastContainer: ToastContainerDirective;
-
-  message: String = '';
-  displayAlert: Boolean = false;
-  alertType: String = '';
   signUpForm: FormGroup;
 
   constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private toastr: ToastrService) { }
 
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!', {
-      timeOut: 5000
+  //Toast Methods
+  showSuccess() {  //FOR Success
+    this.toastr.success('Success!', 'Please verify your email!', {
+      timeOut: 3000
     });
   }
 
+  showWarning() {  // FOR Warnings
+    this.toastr.warning('User already exists!', 'Kindly Login!', {
+      timeOut: 3000
+    });
+  }
+
+  showError() {   // FOR Errors 
+    this.toastr.error('Sorry!', 'Error occured in registration!', {
+      timeOut: 3000
+    });
+  }
+
+
   ngOnInit(): void {
-    this.toastr.overlayContainer = this.toastContainer;
     this.signUpForm = new FormGroup(
       {
         firstName: new FormControl(null, Validators.required),
@@ -48,22 +56,18 @@ export class SignupComponent implements OnInit {
       { validators: ConfirmPasswordValidator.MatchPassword }
     );
   }
-
-  // onClick() {
-  //   this.toastr.success('in div');
-  // }
-
   //calls a service to register a new user
   saveData(newUser) {
     this.userService.registerUsers(newUser).subscribe(response => {
-      this.toastr.success('in div');
-      //this.showSuccess();
-      // this.message = response.msg;
-      // this.displayAlert = true;
-      // this.alertType = response.type;
-      // if (this.alertType === 'warning') {
-      //   this.router.navigate(["../login"], { relativeTo: this.route });
-      // }
+      if (response.status === 'success') {
+        this.showSuccess();
+      }
+      else if (response.status === 'warning') {
+        this.showWarning();
+      }
+      else {
+        this.showError();
+      }
     });
   }
 

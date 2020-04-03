@@ -2,17 +2,6 @@
   <div
     class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
   >
-    <div *ngIf="displayAlert" class="alert alert-danger" role="alert">
-      {{ errorMessage }}
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
     <img
       src="../../assets/images/login.svg"
       alt="Login"
@@ -21,7 +10,7 @@
     />
     <h3 style="text-align: center;letter-spacing: 0.1cm;">Login</h3>
     <br />
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" id="login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login">
       <!--<ngb-alert  *ngIf="!alertClosed" (close)="alertClosed = true">Password must contain a lowercase,uppercase,number & special character and must be atleast 8 characters long!</ngb-alert>-->
 
       <div class="form-group">

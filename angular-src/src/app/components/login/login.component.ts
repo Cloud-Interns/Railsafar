@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
+
+import { ToastrService } from 'ngx-toastr';
+
 import { UserService } from '../../services/user.service';
 
 
@@ -13,15 +17,27 @@ export class LoginComponent implements OnInit {
 
   private email: string = '';
   private password: string = '';
-
-  errorMessage: String = '';
-  displayAlert: Boolean = false;
   loginForm: FormGroup;
 
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private userService: UserService) { }
+    private userService: UserService,
+    private toastr: ToastrService) { }
+
+  //Toast Methods
+  showWarning() {  //FOR Success
+    this.toastr.success('Warning!', 'Please verify your email first!', {
+      timeOut: 3000
+    });
+  }
+
+  showError() {   // FOR Errors 
+    this.toastr.error('Sorry!', 'Invalid Credentials!', {
+      timeOut: 3000
+    });
+  }
+
 
   ngOnInit(): void {
 
@@ -40,12 +56,14 @@ export class LoginComponent implements OnInit {
 
   authenticateUser(email: string, password: string) {
     this.userService.authenticateUser(email, password).subscribe(response => {
-      //if any error occur 
-      if (response.errMsg) {
-        this.errorMessage = response.errMsg;
-        this.displayAlert = true;
-      }
 
+      //If errors or warnings
+      if (response.status === 'error') {
+        this.showError();
+      }
+      else if (response.status === 'warning') {
+        this.showWarning();
+      }
       //else login is successfull store token in localstorage & his session starts for 1 hr
       else {
         console.log(response.token)
@@ -54,7 +72,6 @@ export class LoginComponent implements OnInit {
 
     });;
   }
-
   onCancel() {
     this.router.navigate(['../'], { relativeTo: this.route });
 

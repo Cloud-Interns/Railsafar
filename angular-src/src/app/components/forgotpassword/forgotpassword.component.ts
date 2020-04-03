@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { ToastrService } from 'ngx-toastr';
+
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -19,7 +22,28 @@ export class ForgotpasswordComponent implements OnInit {
   private email: string;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private toastr: ToastrService) { }
+
+
+  //Toast Methods
+  showSuccess() {  //FOR Success
+    this.toastr.success('Mail sent!', 'Please check your inbox!', {
+      timeOut: 3000
+    });
+  }
+
+  showWarning() {  // FOR Warnings
+    this.toastr.warning('Warning!', 'No such user exists!', {
+      timeOut: 3000
+    });
+  }
+
+  showError() {   // FOR Errors 
+    this.toastr.error('Sorry!', 'Error occured!!', {
+      timeOut: 3000
+    });
+  }
+
 
   ngOnInit() {
     this.emailForm = new FormGroup({
@@ -30,8 +54,13 @@ export class ForgotpasswordComponent implements OnInit {
   onSubmit() {
     this.email = this.emailForm.value.email;
     this.userService.sendEmail(this.email).subscribe(response => {
-      this.displayAlert = true;
-      this.message = response.msg;
+      if (response.status === 'success') {
+        this.showSuccess();
+      } else if (response.status === 'warning') {
+        this.showWarning();
+      } else {
+        this.showError();
+      }
     });
     this.emailForm.reset();
   }
