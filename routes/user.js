@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
     //searching user based on email
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(200).json({
+      return res.json({
         status: "warning"
       });
     }
@@ -123,7 +123,7 @@ router.post("/sendemail", async (req, res) => {
                 <p>Railsafar Team</p>
                 `
       });
-      return res.json({ status: "success" });
+      return res.status(200).json({ status: "success" });
     }
   } catch (err) {
     return res.status(500).json({
