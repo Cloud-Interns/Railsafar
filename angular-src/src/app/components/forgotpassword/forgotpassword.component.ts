@@ -27,19 +27,19 @@ export class ForgotpasswordComponent implements OnInit {
 
   //Toast Methods
   showSuccess() {  //FOR Success
-    this.toastr.success('Mail sent!', 'Please check your inbox!', {
+    this.toastr.success('Mail sent', 'Please check your inbox!', {
       timeOut: 3000
     });
   }
 
   showWarning() {  // FOR Warnings
-    this.toastr.warning('Warning!', 'No such user exists!', {
+    this.toastr.warning('Warning', 'No such user exists!', {
       timeOut: 3000
     });
   }
 
   showError() {   // FOR Errors 
-    this.toastr.error('Sorry!', 'Error occured!!', {
+    this.toastr.error('Sorry', 'Error occured!!', {
       timeOut: 3000
     });
   }

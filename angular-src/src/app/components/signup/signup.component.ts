@@ -20,19 +20,19 @@ export class SignupComponent implements OnInit {
 
   //Toast Methods
   showSuccess() {  //FOR Success
-    this.toastr.success('Success!', 'Please verify your email!', {
+    this.toastr.success('Success', 'Please verify your email!', {
       timeOut: 3000
     });
   }
 
   showWarning() {  // FOR Warnings
-    this.toastr.warning('User already exists!', 'Kindly Login!', {
+    this.toastr.warning('Warning', 'User already exists!', {
       timeOut: 3000
     });
   }
 
   showError() {   // FOR Errors 
-    this.toastr.error('Sorry!', 'Error occured in registration!', {
+    this.toastr.error('Sorry', 'Error occured in registration!', {
       timeOut: 3000
     });
   }

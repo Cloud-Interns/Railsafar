@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 
 import { ToastrService } from 'ngx-toastr';
@@ -20,20 +20,21 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
 
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
     private toastr: ToastrService) { }
 
   //Toast Methods
   showWarning() {  //FOR Success
-    this.toastr.success('Warning!', 'Please verify your email first!', {
+    this.toastr.success('Warning', 'Please verify your email first!', {
       timeOut: 3000
     });
   }
 
   showError() {   // FOR Errors 
-    this.toastr.error('Sorry!', 'Invalid Credentials!', {
+    this.toastr.error('Sorry', 'Invalid Credentials!', {
       timeOut: 3000
     });
   }
@@ -72,6 +73,7 @@ export class LoginComponent implements OnInit {
 
     });;
   }
+
   onCancel() {
     this.router.navigate(['../'], { relativeTo: this.route });
 
