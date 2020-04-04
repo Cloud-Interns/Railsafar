@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Third party imports
 import { ToastrModule } from 'ngx-toastr';
+import { JwtModule } from "@auth0/angular-jwt"
 
 //App Routing File
 import { AppRoutingModule } from './app-routing.module';
@@ -21,13 +22,16 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 //Services Imports
 import { UserService } from './services/user.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+
 
 //Custom Directives Imports
 import { ShPasswordDirective } from './directives/sh-password.directive';
-
 
 
 @NgModule({
@@ -41,7 +45,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     SignupComponent,
     ResetpasswordComponent,
     ShPasswordDirective,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    DashboardComponent
 
   ],
   imports: [
@@ -50,9 +55,16 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     ToastrModule.forRoot(), // ToastrModule added
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JwtModule.forRoot({
+      config: {
+        //tokenGetter: tokenGetter,
+        //whitelistedDomains: ["example.com"],
+        //blacklistedRoutes: ["example.com/examplebadroute/"]
+      }
+    })
   ],
-  providers: [UserService],
+  providers: [UserService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

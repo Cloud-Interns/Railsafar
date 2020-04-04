@@ -43,7 +43,7 @@ router.post("/login", async (req, res) => {
       (err, token) => {
         if (err) throw err;
         else {
-          return res.status(200).json({ token: token, status: "success" });
+          return res.status(200).json({ token: token });
         }
       }
     );

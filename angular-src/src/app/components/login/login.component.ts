@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService) { }
 
   //Toast Methods
-  showWarning() {  //FOR Success
-    this.toastr.success('Warning', 'Please verify your email first!', {
+  showWarning() {  //FOR Warnings
+    this.toastr.warning('Warning', 'Please verify your email first!', {
       timeOut: 3000
     });
   }
@@ -67,8 +67,8 @@ export class LoginComponent implements OnInit {
       }
       //else login is successfull store token in localstorage & his session starts for 1 hr
       else {
-        console.log(response.token)
         localStorage.setItem('currentUser', JSON.stringify(response.token));
+        this.router.navigate(['../dashboard'], { relativeTo: this.route })
       }
 
     });;
