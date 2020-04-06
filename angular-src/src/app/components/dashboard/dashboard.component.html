@@ -1,1 +1,94 @@
-<p>dashboard works!</p>
+<div class="row">
+  <div class="col-sm-2 offset-sm-10">
+    <div class="dropdown">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Kunal Kathe
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item">Profile</button>
+        <button class="dropdown-item">Booking History</button>
+        <button class="dropdown-item" (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Train Search</h5>
+        <p class="card-text">
+          Search all the trains between stations.
+        </p>
+        <a href="#" class="btn btn-success btn-block">Search</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Book Ticket</h5>
+        <p class="card-text">
+          Book tickets and plan your journey.
+        </p>
+        <a href="#" class="btn btn-success btn-block">Book</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Get Availability</h5>
+        <p class="card-text">
+          Get the seat availability for different classes.
+        </p>
+        <a href="#" class="btn btn-success btn-block">Check Availability</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Get Schedule</h5>
+        <p class="card-text">
+          Get the time wise schedule for specific train.
+        </p>
+        <a href="#" class="btn btn-success btn-block">Show Schedule</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Live Status</h5>
+        <p class="card-text">
+          Get live status of trains.
+        </p>
+        <a href="#" class="btn btn-success btn-block">Live Status</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">PNR Details</h5>
+        <p class="card-text">
+          Get your booking details with PNR number.
+        </p>
+        <a href="#" class="btn btn-success btn-block">Get Details using PNR</a>
+      </div>
+    </div>
+  </div>
+</div>

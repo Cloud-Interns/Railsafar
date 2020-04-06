@@ -1,13 +1,13 @@
 const jwt = require("jsonwebtoken");
 const config = require("config");
 
-module.exports = function(req, res, next) {
+module.exports = function (req, res, next) {
   //Extract the token from header
   const token = req.header("x-auth-token");
 
   //Check for the existence of token
   if (!token) {
-    return res.status(401).json({ msg: "No token, authorization denied!" });
+    return res.status(401).json({ msg: "error" });
   }
   try {
     //Verify the token and verify() method gives us the payload which is just userID in our case
@@ -17,6 +17,6 @@ module.exports = function(req, res, next) {
     req.user = decoded.user;
     next();
   } catch (err) {
-    res.status(401).json({ msg: "Not a valid token!" });
+    res.status(401).json({ msg: "error" });
   }
 };

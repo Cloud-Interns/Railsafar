@@ -4,32 +4,35 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   firstname: {
     type: String,
-    required: true
+    required: true,
   },
   lastname: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   dob: {
     type: Date,
-    required: true
+    required: true,
   },
   gender: {
     type: String,
-    required: true
+    required: true,
   },
   phone: {
     type: Number,
-    required: true
-  }
+    required: true,
+  },
+  isVerified: {
+    type: Boolean,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

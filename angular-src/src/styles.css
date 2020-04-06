@@ -1,9 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-     font-family: 'Montserrat';
-     color: black;
-     background-color: #FFFFFF;
-     width: 100%;
-     min-height: 100%;
-    
+body {
+  font-family: "Raleway", sans-serif;
+  color: black;
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 100%;
 }

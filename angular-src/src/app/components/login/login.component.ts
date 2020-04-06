@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 import { ToastrService } from 'ngx-toastr';
 
 import { UserService } from '../../services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -24,9 +25,16 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private authService: AuthService) { }
 
   //Toast Methods
+  showSuccess() {  //FOR Success
+    this.toastr.success('Welcome!!', 'Login Sucessfull!', {
+      timeOut: 3000
+    });
+  }
+
   showWarning() {  //FOR Warnings
     this.toastr.warning('Warning', 'Please verify your email first!', {
       timeOut: 3000
@@ -41,6 +49,9 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if (this.authService.isAuthenticated) {
+      this.router.navigate(['/dashboard']);
+    }
 
     this.loginForm = new FormGroup({
       'email': new FormControl(this.email, [Validators.required, Validators.email]),
@@ -58,17 +69,18 @@ export class LoginComponent implements OnInit {
   authenticateUser(email: string, password: string) {
     this.userService.authenticateUser(email, password).subscribe(response => {
 
-      //If errors or warnings
-      if (response.status === 'error') {
+      //If Login issuccessfull goto dashboard
+      if (response.status === 'success') {
+        this.showSuccess();
+        localStorage.setItem('currentUser', JSON.stringify(response.token));
+        this.router.navigate(['../dashboard'], { relativeTo: this.route })
+      }
+      //Else display errors or warnings
+      else if (response.status === 'error') {
         this.showError();
       }
       else if (response.status === 'warning') {
         this.showWarning();
-      }
-      //else login is successfull store token in localstorage & his session starts for 1 hr
-      else {
-        localStorage.setItem('currentUser', JSON.stringify(response.token));
-        this.router.navigate(['../dashboard'], { relativeTo: this.route })
       }
 
     });;

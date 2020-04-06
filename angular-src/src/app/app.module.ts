@@ -52,7 +52,7 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
