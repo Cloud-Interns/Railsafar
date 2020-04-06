@@ -1,11 +1,11 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
 import { ToastrService } from 'ngx-toastr';
 
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 

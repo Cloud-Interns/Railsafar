@@ -42,12 +42,17 @@ export class UserService {
 
   //Reset User's Password
   resetPassword(newPassword: string, id: any): Observable<any> {
-    console.log(id);
-    console.log(newPassword);
     const password = { newPassword }
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     return this.http.post(`http://localhost:8000/api/user/resetpassword/${id}`, password, { headers: headers })
       .pipe(map((response: any) => response));
+  }
+
+  //Get Loggedin user details
+  getUserDetails(): Observable<any> {
+    return this.http.get('http://localhost:8000/api/user/details')
+      .pipe(map((response: any) => response));
+
   }
 }

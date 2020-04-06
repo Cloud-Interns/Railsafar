@@ -15,4 +15,9 @@ export class AuthService {
             return true;
         }
     }
+
+    //Returns JWT Token stored in localstorage
+    public getToken(): string {
+        return localStorage.getItem('currentUser');
+    }
 }

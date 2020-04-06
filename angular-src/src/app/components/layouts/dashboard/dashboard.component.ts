@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,16 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  private userDetails = {};
+
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUserDetails().subscribe(response => {
+      this.userDetails = response.user;
+      console.log(this.userDetails);
+    });
+
   }
 
   onLogout() {

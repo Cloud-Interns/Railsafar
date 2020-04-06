@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormGroup, FormControl, Validators, NgForm } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 
 import { ToastrService } from 'ngx-toastr';
 
-import { ConfirmPasswordValidator } from "../shared/confirmPassword-validator";
-import { User } from "../../models/user.model";
-import { UserService } from "../../services/user.service";
+import { ConfirmPasswordValidator } from "../../shared/confirmPassword-validator";
+import { User } from "../../../models/user.model";
+import { UserService } from "../../../services/user.service";
 
 @Component({
   selector: "app-signup",

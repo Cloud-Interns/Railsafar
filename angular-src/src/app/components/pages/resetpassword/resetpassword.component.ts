@@ -5,7 +5,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 import { UserService } from 'src/app/services/user.service';
-import { ConfirmPasswordValidator } from '../shared/confirmPassword-validator';
+import { ConfirmPasswordValidator } from '../../shared/confirmPassword-validator';
 
 @Component({
   selector: 'app-resetpassword',
