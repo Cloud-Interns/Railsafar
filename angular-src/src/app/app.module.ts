@@ -23,6 +23,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ErrorComponent } from './components/error/error.component';
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -32,6 +33,7 @@ import { AuthService } from './services/auth.service';
 
 //Custom Directives Imports
 import { ShPasswordDirective } from './directives/sh-password.directive';
+
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     ResetpasswordComponent,
     ShPasswordDirective,
     ForgotpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    ErrorComponent
 
   ],
   imports: [

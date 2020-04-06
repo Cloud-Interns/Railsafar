@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
     let user = await User.findOne({ email });
     if (user) {
       return res.json({
-        status: "warning"
+        status: "warning",
       });
     }
 
@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
         password,
         dob,
         gender,
-        phone
+        phone,
       });
 
       //generating SALT(like a secret code or key) using bcryptjs
@@ -45,8 +45,8 @@ router.post("/register", async (req, res) => {
         service: "gmail",
         auth: {
           user: config.get("GmailID"),
-          pass: config.get("GmailPwd")
-        }
+          pass: config.get("GmailPwd"),
+        },
       });
 
       // send mail with defined transport object
@@ -62,18 +62,18 @@ router.post("/register", async (req, res) => {
                 <p>Have a great day ahead :)</p>
                 <p>Regards,</p>
                 <p>Railsafar Team</p>
-                `
+                `,
       });
 
       //saving user to database
       await user.save();
       return res.status(200).json({
-        status: "success"
+        status: "success",
       });
     }
   } catch (err) {
     return res.status(500).json({
-      status: "error"
+      status: "error",
     });
   }
 });
@@ -89,12 +89,12 @@ router.post("/sendemail", async (req, res) => {
     let user = await User.findOne({ email });
     if (!user) {
       return res.json({
-        status: "warning"
+        status: "warning",
       });
     } else {
       const payload = {
         id: user.id,
-        email: email
+        email: email,
       };
 
       //sending mail to user with OTP
@@ -102,15 +102,15 @@ router.post("/sendemail", async (req, res) => {
         service: "gmail",
         auth: {
           user: config.get("GmailID"),
-          pass: config.get("GmailPwd")
-        }
+          pass: config.get("GmailPwd"),
+        },
       });
 
       // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
         to: email,
-        subject: "OTP for Railsafar account password", // Subject line
+        subject: "Railsafar account password reset ", // Subject line
         html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
                 <h1 style="align : center;">We're from Railsafar Team</h1>
                 <h2>You requested for the password reset</h2>
@@ -121,13 +121,13 @@ router.post("/sendemail", async (req, res) => {
                 <p>Have a great day ahead :)</p>
                 <p>Regards,</p>
                 <p>Railsafar Team</p>
-                `
+                `,
       });
       return res.status(200).json({ status: "success" });
     }
   } catch (err) {
     return res.status(500).json({
-      status: "error"
+      status: "error",
     });
   }
 });
@@ -141,7 +141,7 @@ router.post("/resetpassword/:id", async (req, res) => {
     let user = await User.findById(req.params.id);
     if (!user) {
       return res.json({
-        status: "warning"
+        status: "warning",
       });
     } else {
       //generating SALT(like a secret code or key) using bcryptjs
@@ -155,7 +155,7 @@ router.post("/resetpassword/:id", async (req, res) => {
     }
   } catch (err) {
     return res.status(500).json({
-      status: "error"
+      status: "error",
     });
   }
 });
