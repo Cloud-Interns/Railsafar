@@ -56,13 +56,13 @@ export class ResetpasswordComponent implements OnInit {
   onSubmit() {
     this.loading = true;
     const newPassword = this.resetForm.value.password;
-    let id = 0;
+    let token = 0;
     this.route.params.subscribe((params: Params) => {
-      id = params['id'];
+      token = params['token'];
     });
 
     //calling method in user service to call API to change password
-    this.userService.resetPassword(newPassword, id).subscribe(response => {
+    this.userService.resetPassword(newPassword, token).subscribe(response => {
       this.loading = false;
       if (response.status === 'success') {
         this.showSuccess();
