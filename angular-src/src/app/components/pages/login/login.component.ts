@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   private email: string = '';
   private password: string = '';
   loginForm: FormGroup;
+  loading: boolean = false;
 
 
   constructor(
@@ -67,8 +68,10 @@ export class LoginComponent implements OnInit {
   }
 
   authenticateUser(email: string, password: string) {
+    this.loading = true;
     this.userService.authenticateUser(email, password).subscribe(response => {
 
+      this.loading = false;
       //If Login issuccessfull goto dashboard
       if (response.status === 'success') {
         this.showSuccess();

@@ -15,6 +15,7 @@ import { UserService } from "../../../services/user.service";
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
+  loading: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private toastr: ToastrService) { }
 
@@ -58,7 +59,9 @@ export class SignupComponent implements OnInit {
   }
   //calls a service to register a new user
   saveData(newUser) {
+    this.loading = true;
     this.userService.registerUsers(newUser).subscribe(response => {
+      this.loading = false;
       if (response.status === 'success') {
         this.showSuccess();
       }

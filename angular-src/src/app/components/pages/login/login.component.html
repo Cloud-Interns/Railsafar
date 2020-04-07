@@ -8,7 +8,7 @@
       class="img-responsive"
       style="width: 70px; position: absolute; top: -18%; left: 42%;"
     />
-    <h3 style="text-align: center;letter-spacing: 0.1cm;">Login</h3>
+    <h3 style="text-align: center; letter-spacing: 0.1cm;">Login</h3>
     <br />
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login">
       <!--<ngb-alert  *ngIf="!alertClosed" (close)="alertClosed = true">Password must contain a lowercase,uppercase,number & special character and must be atleast 8 characters long!</ngb-alert>-->
@@ -54,6 +54,12 @@
           class="btn btn-primary form-control"
           [disabled]="!loginForm.valid"
         >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
           Login</button
         >&nbsp;
         <button

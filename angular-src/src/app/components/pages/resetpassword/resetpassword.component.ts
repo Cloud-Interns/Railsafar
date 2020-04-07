@@ -15,6 +15,7 @@ import { ConfirmPasswordValidator } from '../../shared/confirmPassword-validator
 export class ResetpasswordComponent implements OnInit {
 
   resetForm: FormGroup;
+  loading: boolean = false;
 
   constructor(private route: ActivatedRoute,
     private userService: UserService,
@@ -53,6 +54,7 @@ export class ResetpasswordComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading = true;
     const newPassword = this.resetForm.value.password;
     let id = 0;
     this.route.params.subscribe((params: Params) => {
@@ -61,6 +63,7 @@ export class ResetpasswordComponent implements OnInit {
 
     //calling method in user service to call API to change password
     this.userService.resetPassword(newPassword, id).subscribe(response => {
+      this.loading = false;
       if (response.status === 'success') {
         this.showSuccess();
       } else if (response.status === 'warning') {

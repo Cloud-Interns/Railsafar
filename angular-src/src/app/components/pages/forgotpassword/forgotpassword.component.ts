@@ -15,7 +15,7 @@ export class ForgotpasswordComponent implements OnInit {
 
 
   emailForm: FormGroup;
-
+  loading: boolean = false;
   message: string = '';
   displayAlert: Boolean = false;
 
@@ -52,8 +52,10 @@ export class ForgotpasswordComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading = true;
     this.email = this.emailForm.value.email;
     this.userService.sendEmail(this.email).subscribe(response => {
+      this.loading = false;
       if (response.status === 'success') {
         this.showSuccess();
       } else if (response.status === 'warning') {

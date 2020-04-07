@@ -166,6 +166,12 @@
           class="btn btn-success form-control"
           [disabled]="!signUpForm.valid"
         >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
           Create Account</button
         >&nbsp;
         <button
