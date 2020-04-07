@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
       //If Login issuccessfull goto dashboard
       if (response.status === 'success') {
         this.showSuccess();
-        localStorage.setItem('currentUser', JSON.stringify(response.token));
+        localStorage.setItem('currentUser', response.token);
         this.router.navigate(['../dashboard'], { relativeTo: this.route })
       }
       //Else display errors or warnings

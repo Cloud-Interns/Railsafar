@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
-const auth = require("../middleware/auth");
+const verifytoken = require("../middleware/verifytoken");
 
 //@route POST api/user
 //@desc Authenticate User
@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
       payload,
       secret,
       {
-        expiresIn: 3600000,
+        expiresIn: "24h",
       },
       (err, token) => {
         if (err) throw err;
@@ -57,12 +57,12 @@ router.post("/login", async (req, res) => {
 //@route GET api/user
 //@desc Get loggedin user
 //@access Private
-router.get("/details", auth, async (req, res) => {
+router.get("/details", verifytoken, async (req, res) => {
   try {
     //fetching the user from database excluding the password using the ID we've attached to the request object
     //removing password from res object because we don't need it
     const user = await User.findById(req.user).select("-password");
-    res.json(user);
+    res.json({ user: user });
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ msg: "error" });

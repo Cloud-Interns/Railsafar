@@ -3,8 +3,19 @@ const config = require("config");
 
 module.exports = function (req, res, next) {
   //Extract the token from header
-  const token = req.headers.authorization;
-  console.log(token);
+  const bearerHeader = req.headers["authorization"];
+  let token = "";
+
+  //check if bearer is undefined
+  if (typeof bearerHeader !== "undefined") {
+    //split at the space
+    const bearer = bearerHeader.split(" ");
+    //get token from array
+    token = bearer[1];
+  } else {
+    //forbidden
+    res.json({ msg: "error" });
+  }
 
   //Check for the existence of token
   if (!token) {
