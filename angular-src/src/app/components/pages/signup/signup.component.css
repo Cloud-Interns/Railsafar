@@ -1,0 +1,26 @@
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+input.ng-valid {
+  border-color: rgb(100, 204, 100);
+}
+
+#signup {
+  padding: 15px;
+  box-shadow: 9px 9px 20px #2c3335, -9px -9px 20px #dae0e2;
+}
+
+button {
+  margin-bottom: -10px;
+}
+
+.error {
+  color:red;
+  font-weight: lighter;
+}
+
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}

@@ -1,11 +1,37 @@
 {
   "name": "railsafar",
   "version": "1.0.0",
-  "description": "Railway App",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cloud-Interns/Railsafar.git"
+  },
+  "author": "cloud team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cloud-Interns/Railsafar/issues"
+  },
+  "homepage": "https://github.com/Cloud-Interns/Railsafar#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.0.2",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.4",
+    "nodemailer": "^6.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
