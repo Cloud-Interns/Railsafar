@@ -25,6 +25,8 @@ import { ResetpasswordComponent } from './components/pages/resetpassword/resetpa
 import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/layouts/dashboard/dashboard.component';
 import { ErrorComponent } from './components/pages/error/error.component';
+import { SearchComponent } from './components/pages/search/search.component';
+
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -51,7 +53,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     ShPasswordDirective,
     ForgotpasswordComponent,
     DashboardComponent,
-    ErrorComponent
+    ErrorComponent,
+    SearchComponent
 
   ],
   imports: [

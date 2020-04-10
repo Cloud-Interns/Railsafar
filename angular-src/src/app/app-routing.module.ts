@@ -12,6 +12,7 @@ import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgo
 import { ResetpasswordComponent } from './components/pages/resetpassword/resetpassword.component';
 import { DashboardComponent } from './components/layouts/dashboard/dashboard.component';
 import { ErrorComponent } from './components/pages/error/error.component';
+import { SearchComponent } from './components/pages/search/search.component';
 
 //Services Imports
 import {
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: '**', component: ErrorComponent }
 
 ];
