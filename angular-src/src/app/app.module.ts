@@ -35,7 +35,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 
 //Custom Directives Imports
 import { ShPasswordDirective } from './directives/sh-password.directive';
-import { SearchComponent } from './search/search.component';
+
 
 
 
@@ -52,8 +52,7 @@ import { SearchComponent } from './search/search.component';
     ShPasswordDirective,
     ForgotpasswordComponent,
     DashboardComponent,
-    ErrorComponent,
-    SearchComponent
+    ErrorComponent
 
   ],
   imports: [
