@@ -7,7 +7,9 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const verifytoken = require("../middleware/verifytoken");
 
-//@route POST api/user
+//<-----------------------------LOGIN ROUTE-------------------------------------------->
+
+//@route POST api/user/login
 //@desc Authenticate User
 //@access Public
 router.post("/login", async (req, res) => {
@@ -54,8 +56,12 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//@route GET api/user
-//@desc Get loggedin user
+//<-----------------------------END OF LOGIN ROUTE-------------------------------------------->
+
+//<-----------------------------DETAILS ROUTE-------------------------------------------->
+
+//@route GET api/user/details
+//@desc Get loggedin user details
 //@access Private
 router.get("/details", verifytoken, async (req, res) => {
   try {
@@ -68,5 +74,7 @@ router.get("/details", verifytoken, async (req, res) => {
     res.status(500).json({ msg: "error" });
   }
 });
+
+//<-----------------------------END OF DETAILS ROUTE-------------------------------------------->
 
 module.exports = router;

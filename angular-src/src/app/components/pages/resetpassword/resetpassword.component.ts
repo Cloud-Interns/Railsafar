@@ -74,10 +74,10 @@ export class ResetpasswordComponent implements OnInit {
 
     })
     this.resetForm.reset();
-
   }
 
   onLogin() {
+    localStorage.removeItem('currentUser');
     this.router.navigate(['../../login'], { relativeTo: this.route });
   }
 

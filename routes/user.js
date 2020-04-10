@@ -7,7 +7,9 @@ const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
 
-//@route POST api/user
+//<-----------------------------REGISTER ROUTE-------------------------------------------->
+
+//@route POST api/user/register
 //@desc Register a user
 //@access Public
 
@@ -54,7 +56,7 @@ router.post("/register", async (req, res) => {
       let info = await transporter.sendMail({
         from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
         to: user.email,
-        subject: "Thanks & Welcome to Railsafar!!", // Subject line
+        subject: "Welcome to Railsafar!!", // Subject line
         html: `<h3>Hello ${user.firstname}&nbsp;${user.lastname},</h3><br />
                 <h1 style="align : center;">We're from Railsafar Team</h1>
                 <img src="https://images.unsplash.com/photo-1487662701465-ee09afb4e1fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=834&q=80" alt="image" /><br />
@@ -79,9 +81,14 @@ router.post("/register", async (req, res) => {
   }
 });
 
+//<-----------------------------END OF REGISTER ROUTE-------------------------------------------->
+
+//<-----------------------------SEND_EMAIL ROUTE------------------------------------------------->
+
 //@route POST api/user/sendemail
 //@desc Look for user & send email
 //@access Public
+
 router.post("/sendemail", async (req, res) => {
   const { email } = req.body;
 
@@ -137,9 +144,13 @@ router.post("/sendemail", async (req, res) => {
   }
 });
 
-//@route POST api/user/resetpassword/:id
+//<-----------------------------END OF SEND_EMAIL ROUTE-------------------------------------------->
+
+//<-----------------------------RESETPASSWORD ROUTE-------------------------------------------->
+//@route POST api/user/resetpassword/:token
 //@desc Change user's password
 //@access Public
+
 router.post("/resetpassword/:token", async (req, res) => {
   try {
     //decode token & extract id
@@ -169,5 +180,7 @@ router.post("/resetpassword/:token", async (req, res) => {
     });
   }
 });
+
+//<-----------------------------END OF RESETPASSWORD ROUTE-------------------------------------------->
 
 module.exports = router;
