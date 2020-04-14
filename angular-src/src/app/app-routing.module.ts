@@ -13,6 +13,7 @@ import { ResetpasswordComponent } from './components/pages/resetpassword/resetpa
 import { DashboardComponent } from './components/layouts/dashboard/dashboard.component';
 import { ErrorComponent } from './components/pages/error/error.component';
 import { SearchComponent } from './components/pages/search/search.component';
+import {LiveStatusComponent} from './components/pages/live-status/live-status.component';
 
 //Services Imports
 import {
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  {path: 'livestatus', component:LiveStatusComponent,canActivate:[AuthGuard]},
   { path: '**', component: ErrorComponent }
 
 ];

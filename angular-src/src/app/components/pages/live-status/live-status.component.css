@@ -1,0 +1,13 @@
+h2{
+    position: absolute;
+    top: 5px;
+    left:39%;
+    color: steelblue;
+    font-family: sans-serif;
+}
+td, th { 
+    width: 10%;
+    height:40px;
+    border-bottom:2px solid lightgray;
+    text-align: center;
+}

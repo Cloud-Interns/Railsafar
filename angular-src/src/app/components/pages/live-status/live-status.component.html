@@ -1,0 +1,42 @@
+<h2>Live/Running Train Status</h2><br><br><br>
+<div class="shadow p-3 mb-7 bg-secondary text-white h rounded"><br>
+  <div class="form-group">
+    <label style="font-size:12px;filter:blur(0.57px);">TRAIN NO:</label>
+    <input type="text" class="form-control" style="width:65%;" placeholder="Please enter train number(Try:1427,12665,13410 for Demo)" id="train_number"><br><br>
+   <button type="submit" 
+     style="width:30%; height:53px;color:whitesmoke;background-color:sandybrown;border-color: sandybrown;"
+     class="form-control" 
+     id="checkstatus"
+     (click)="Search()">
+      CHECK STATUS
+   </button>
+   
+  </div>
+</div>
+<br><br>
+<p id="error" *ngIf="!this.arr1" style="color: red;"></p>
+<table id="text" cellspacing= 0>  
+  <tr *ngIf= "this.arr1" style="height:80px;background-color: coral;color:white;">
+    <th>Train_no</th>
+    <th>Station</th>
+    <th>Arrivaing_time</th>
+    <th>Train_status</th>
+    <th>Halt_time</th>
+    <th>Plateform_no</th>
+  </tr>
+  
+  <tbody *ngFor="let data of this.arr1">
+    
+      <tr>
+        <td> {{ data.Train_no }} </td>
+        <td> {{ data.Station }} </td>
+        <td>{{data.Arrivaing_time}}</td>
+        <td>{{data.Train_status}}</td>
+        <td>{{data.Halt_time}}</td>
+        <td>{{data.Plateform_no}}</td>
+      </tr>
+  </tbody>
+</table>
+
+
+

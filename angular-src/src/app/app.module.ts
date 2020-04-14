@@ -26,8 +26,7 @@ import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgo
 import { DashboardComponent } from './components/layouts/dashboard/dashboard.component';
 import { ErrorComponent } from './components/pages/error/error.component';
 import { SearchComponent } from './components/pages/search/search.component';
-
-
+import { LiveStatusComponent } from './components/pages/live-status/live-status.component';
 //Services Imports
 import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -37,6 +36,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 
 //Custom Directives Imports
 import { ShPasswordDirective } from './directives/sh-password.directive';
+
 
 
 
@@ -54,7 +54,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     ForgotpasswordComponent,
     DashboardComponent,
     ErrorComponent,
-    SearchComponent
+    SearchComponent,
+    LiveStatusComponent
 
   ],
   imports: [
