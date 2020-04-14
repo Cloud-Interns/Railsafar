@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-search",
@@ -9,7 +10,8 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   x: any;
-  constructor() {}
+  loading: boolean = false;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.searchForm = new FormGroup({
@@ -26,7 +28,15 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading = true;
     console.log(this.searchForm);
-    // this.searchForm.reset();
+  }
+
+  onClear() {
+    this.searchForm.reset();
+  }
+
+  onBack() {
+    this.router.navigate(['/dashboard']);
   }
 }

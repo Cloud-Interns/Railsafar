@@ -55,7 +55,6 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     DashboardComponent,
     ErrorComponent,
     SearchComponent
-
   ],
   imports: [
     BrowserModule,
