@@ -57,6 +57,7 @@
             name="doj"
             value="12-02-2000"
             class="form-control"
+            min="{{ minDate }}"
           />
         </div>
       </div>
@@ -128,6 +129,7 @@
             placeholder="Age"
             class="form-control"
             formControlName="age"
+            min="1"
           />
           <select type="text" formControlName="gender" class="form-control">
             <option>Male</option>
@@ -155,6 +157,7 @@
         type="button"
         class="btn btn-primary btn-block"
         (click)="onAddPassenger()"
+        [disabled]="!bookingForm.valid"
       >
         Add Passenger
       </button>

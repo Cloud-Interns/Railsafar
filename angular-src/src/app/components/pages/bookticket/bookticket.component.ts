@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 import { ToastrService } from 'ngx-toastr';
@@ -16,6 +16,12 @@ export class BookticketComponent implements OnInit {
 
   bookingForm: FormGroup;
   loading: boolean = false;
+  isFilled: boolean = false;
+  todayDate: Date = new Date();
+  nextDate: Date = new Date(new Date(this.todayDate).setDate(this.todayDate.getDate() + 1));
+  minDate = this.nextDate.toISOString().split('T')[0];
+
+
 
   constructor(
     private router: Router,
@@ -32,6 +38,12 @@ export class BookticketComponent implements OnInit {
   showError() {   // FOR Errors 
     this.toastr.error('Sorry', 'Error occured in booking!', {
       timeOut: 3000
+    });
+  }
+
+  showFatalError() {   // FOR Incomplete Form
+    this.toastr.error('OOPS!!', 'Please add passenger details!', {
+      timeOut: 5000
     });
   }
 
@@ -55,6 +67,8 @@ export class BookticketComponent implements OnInit {
       this.loading = false;
       if (response.status === 'success') {
         this.showSuccess();
+      } else if (response.status === 'fatal') {
+        this.showFatalError();
       } else {
         this.showError();
       }

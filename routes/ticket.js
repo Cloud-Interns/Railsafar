@@ -22,6 +22,10 @@ router.post("/bookticket", verifytoken, async (req, res) => {
     passenger,
   } = req.body;
 
+  //Checking if passengers list is empty
+  if (passenger.length === 0) {
+    return res.json({ status: "fatal" });
+  }
   //Generating 10 digit random ticket ID
   ticketId = Math.floor(Math.random() * 9000000000) + 1000000000;
 
