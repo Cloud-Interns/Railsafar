@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { TicketService } from 'src/app/services/ticket.service';
 
+
 @Component({
   selector: 'app-bookticket',
   templateUrl: './bookticket.component.html',
@@ -49,7 +50,6 @@ export class BookticketComponent implements OnInit {
 
   //Submitting form
   onSubmit() {
-    //console.log(this.bookingForm.value)
     this.loading = true;
     this.ticketService.bookTicket(this.bookingForm.value).subscribe(response => {
       this.loading = false;

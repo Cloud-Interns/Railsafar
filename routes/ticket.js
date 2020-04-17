@@ -37,6 +37,12 @@ router.post("/bookticket", verifytoken, async (req, res) => {
       class: className,
       passengerDetails: passenger,
     });
+
+    //Getting passengers array
+    const passengers = [];
+    for (let i = 0; i < ticket.passengerDetails.length; i++) {
+      passengers.push(ticket.passengerDetails[i]);
+    }
     //sending mail to user for verification
     let transporter = nodemailer.createTransport({
       service: "gmail",
@@ -51,12 +57,21 @@ router.post("/bookticket", verifytoken, async (req, res) => {
       to: user.email,
       subject: "Booked Ticket Details", // Subject line
       html: `<h1>Below are your booking details:</h1><br />
-      <p>TICKET ID : ${ticket.ticketId}</p><br />
-      <p>SOURCE : ${ticket.source}</p><br />
-      <p>DESTINATION : ${ticket.destination}</p><br />
-      <p>DATE OF JOURNEY : ${ticket.dateOfJourney}</p><br />
-      <p>TRAIN : ${ticket.train}</p><br />
-      <p>CLASS : ${ticket.class}</p><br />
+      <p>TICKET ID : ${ticket.ticketId}</p>
+      <p>SOURCE : ${ticket.source}</p>
+      <p>DESTINATION : ${ticket.destination}</p>
+      <p>DATE OF JOURNEY : ${ticket.dateOfJourney}</p>
+      <p>TRAIN : ${ticket.train}</p>
+      <p>CLASS : ${ticket.class}</p>
+      <p>PASSENGER DETAILS : ${passengers.map((passenger) => {
+        return `
+            <p>PNR Number : ${passenger.pnrId}</p>
+            <p>NAME : ${passenger.name}</p>
+            <p>AGE : ${passenger.age}</p>
+            <p>GENDER : ${passenger.gender}</p>
+            <p>FOOD : ${passenger.food}</p>
+            <hr />`;
+      })}</p><br />
       <p>Thank You for booking ticket witn us!</p><br />
       <p>Have a safe & happy journey :)</p><br />
       <p>Regards,</p><br />

@@ -9,7 +9,6 @@ export class TicketService {
 
     //Book Ticket
     bookTicket(bookingDetails): Observable<any> {
-        console.log(bookingDetails);
         const headers = new HttpHeaders();
         headers.append("Content-Type", "application/json");
         return this.http
