@@ -27,15 +27,19 @@ import { DashboardComponent } from './components/layouts/dashboard/dashboard.com
 import { ErrorComponent } from './components/pages/error/error.component';
 import { SearchComponent } from './components/pages/search/search.component';
 import { LiveStatusComponent } from './components/pages/live-status/live-status.component';
+import { BookticketComponent } from './components/pages/bookticket/bookticket.component';
+
 //Services Imports
 import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
+import { TicketService } from './services/ticket.service';
 import { TokenInterceptor } from './services/token.interceptor';
 
 
 //Custom Directives Imports
 import { ShPasswordDirective } from './directives/sh-password.directive';
+
 
 
 
@@ -55,7 +59,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     DashboardComponent,
     ErrorComponent,
     SearchComponent,
-    LiveStatusComponent
+    LiveStatusComponent,
+    BookticketComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,7 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
       }
     })
   ],
-  providers: [UserService, AuthGuardService, AuthService, {
+  providers: [TicketService, UserService, AuthGuardService, AuthService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true

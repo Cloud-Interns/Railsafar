@@ -22,6 +22,7 @@ app.use(express.json({ extended: false }));
 //Registering Routes
 app.use("/api/user", require("./routes/user"));
 app.use("/api/user", require("./routes/auth"));
+app.use("/api/ticket", require("./routes/ticket"));
 
 //Starting server
 app.listen(PORT, () => {

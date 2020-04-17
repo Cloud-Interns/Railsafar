@@ -1,0 +1,191 @@
+<div class="row">
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <img
+      src="../../assets/images/booking.svg"
+      alt="Booking"
+      class="img-responsive"
+      style="width: 70px; position: absolute; top: -15%; left: 42%;"
+    />
+    <h3 style="text-align: center; letter-spacing: 0.1cm;">Book Ticket</h3>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" id="booking">
+      <div class="form-group form-row">
+        <div class="input-group col">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-subway fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="sourceName"
+            placeholder="From"
+            id="sourceName"
+            formControlName="sourceName"
+            name="sourceName"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group col">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-subway fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="destinationName"
+            placeholder="To"
+            id="destinationName"
+            formControlName="destinationName"
+            name="destinationName"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group date">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-calendar fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="date"
+            id="doj"
+            formControlName="doj"
+            name="doj"
+            value="12-02-2000"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-train fa-fw"></i>
+            </div>
+          </div>
+          <select
+            type="text"
+            id="train"
+            formControlName="train"
+            name="train"
+            class="form-control"
+          >
+            <option>12934 Karnavati SF Exp</option>
+            <option>12932 Double Decker SF Exp</option>
+            <option>12933 Tejas SF Exp</option>
+            <option>12935 Howrah SF Exp</option>
+            <option>12936 Gujarat Decker SF Exp</option>
+            <option>12937 Link SF Exp</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-bed fa-fw"></i>
+            </div>
+          </div>
+          <select
+            type="text"
+            id="className"
+            formControlName="className"
+            name="className"
+            class="form-control"
+          >
+            <option>Sleeper(SL)</option>
+            <option>AC Chair Car(CC)</option>
+            <option>AC Executive Chair Car(EC)</option>
+            <option>Two Tier AC(II AC)</option>
+            <option>Three Tier AC(III AC)</option>
+            <option>AC First Class(I AC)</option>
+          </select>
+        </div>
+      </div>
+      <div formArrayName="passenger">
+        <div
+          class="form-group"
+          *ngFor="
+            let passengerControl of bookingForm.get('passenger').controls;
+            let i = index
+          "
+          [formGroupName]="i"
+          style="margin-top: 10px;"
+        >
+          <input
+            type="text"
+            placeholder="Name (as per Govt ID Proof)"
+            class="form-control"
+            formControlName="name"
+          />
+          <input
+            type="number"
+            placeholder="Age"
+            class="form-control"
+            formControlName="age"
+          />
+          <select type="text" formControlName="gender" class="form-control">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Others</option>
+          </select>
+          <select type="text" formControlName="food" class="form-control">
+            <option>Veg</option>
+            <option>Non Veg</option>
+            <option>No Food</option>
+          </select>
+          &nbsp;&nbsp;
+          <div class="col-xs-2">
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDeletePassenger(i)"
+            >
+              Remove Passenger
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary btn-block"
+        (click)="onAddPassenger()"
+      >
+        Add Passenger
+      </button>
+      &nbsp;
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-success form-control"
+          [disabled]="!bookingForm.valid"
+        >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Book Ticket
+        </button>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-light btn-md" (click)="onClear()">
+          Clear</button
+        >&nbsp;
+        <button
+          type="button"
+          class="btn btn-secondary btn-md"
+          (click)="onCancel()"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
