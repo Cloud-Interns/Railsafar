@@ -111,7 +111,7 @@
         <div
           class="form-group"
           *ngFor="
-            let passengerControl of bookingForm.get('passenger').controls;
+            let passengerControl of bookingForm.get('passenger')['controls'];
             let i = index
           "
           [formGroupName]="i"
