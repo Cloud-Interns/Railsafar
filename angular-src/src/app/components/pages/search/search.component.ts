@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 
+import { ToastrService } from 'ngx-toastr';
+
+
 @Component({
   selector: "app-search",
   templateUrl: "./search.component.html",
@@ -11,9 +14,18 @@ export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   x: any;
   loading: boolean = false;
-  constructor(private router: Router) { }
+  userDetails = {};
+  constructor(private router: Router, private toastr: ToastrService) { }
+
+  //Toast Methods
+  showError() {   // FOR Errors 
+    this.toastr.error('OOPS!!', 'Something went wrong...', {
+      timeOut: 3000
+    });
+  }
 
   ngOnInit(): void {
+
     this.searchForm = new FormGroup({
       source: new FormControl(null, [
         Validators.required,

@@ -15,6 +15,7 @@ import { ErrorComponent } from './components/pages/error/error.component';
 import { SearchComponent } from './components/pages/search/search.component';
 import { LiveStatusComponent } from './components/pages/live-status/live-status.component';
 import { BookticketComponent } from './components/pages/bookticket/bookticket.component';
+import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
 
 //Services Imports
 import {
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'show-tickets', component: ShowticketsComponent, canActivate: [AuthGuard] },
   { path: 'book', component: BookticketComponent, canActivate: [AuthGuard] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'livestatus', component: LiveStatusComponent, canActivate: [AuthGuard] },

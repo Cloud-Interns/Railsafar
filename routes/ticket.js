@@ -94,4 +94,22 @@ router.post("/bookticket", verifytoken, async (req, res) => {
   }
 });
 
+//<--------------------TICKET BOOKING COMPLETED----------------------------------------------------->
+
+//@route GET api/ticket
+//@desc Get all tickets of logged in user
+//@access Private
+router.get("/gettickets", verifytoken, async (req, res) => {
+  try {
+    let user = await User.findById(req.user);
+    const { _id } = user;
+    let tickets = await Ticket.find({ user: _id });
+    return res.status(200).json({ tickets: tickets });
+  } catch (err) {
+    return res.status(500).json({
+      status: "error",
+    });
+  }
+});
+
 module.exports = router;

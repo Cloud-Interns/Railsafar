@@ -28,6 +28,7 @@ import { ErrorComponent } from './components/pages/error/error.component';
 import { SearchComponent } from './components/pages/search/search.component';
 import { LiveStatusComponent } from './components/pages/live-status/live-status.component';
 import { BookticketComponent } from './components/pages/bookticket/bookticket.component';
+import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -39,8 +40,6 @@ import { TokenInterceptor } from './services/token.interceptor';
 
 //Custom Directives Imports
 import { ShPasswordDirective } from './directives/sh-password.directive';
-
-
 
 
 
@@ -60,7 +59,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     ErrorComponent,
     SearchComponent,
     LiveStatusComponent,
-    BookticketComponent
+    BookticketComponent,
+    ShowticketsComponent
   ],
   imports: [
     BrowserModule,

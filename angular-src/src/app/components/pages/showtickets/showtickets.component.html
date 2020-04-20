@@ -1,0 +1,25 @@
+<div class="row">
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <div *ngIf="!isTickets">
+      <h4 style="text-align: center;">Sorry!! No tickets found</h4>
+    </div>
+    <div *ngFor="let ticket of tickets">
+      <ul class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          Ticket ID : {{ ticket.ticketId }}<br />
+          {{ ticket.source }} ==> {{ ticket.destination }}<br />
+          DOJ : {{ ticket.dateOfJourney | date: "shortDate" }}<br />
+          {{ ticket.train }}<br />
+          {{ ticket.class }}<br />
+          Passenger Details<br />
+          <span class="badge badge-success badge-pill">Booked</span>
+        </li>
+      </ul>
+      <br />
+    </div>
+  </div>
+</div>

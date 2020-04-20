@@ -15,4 +15,13 @@ export class TicketService {
             .post("http://localhost:8000/api/ticket/bookticket", bookingDetails, { headers: headers })
             .pipe(map((response: any) => response));
     }
+
+    //Get Tickets of logged in user
+    getTickets(): Observable<any> {
+        return this.http
+            .get("http://localhost:8000/api/ticket/gettickets")
+            .pipe(map((response: any) => response));
+
+    }
 }
+
