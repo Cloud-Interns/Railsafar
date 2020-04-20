@@ -87,6 +87,8 @@ router.post("/bookticket", verifytoken, async (req, res) => {
       <p>PASSENGER DETAILS : ${passengers.map((passenger) => {
         return `
             <p>NAME : ${passenger.name}</p>
+            <p>PNR Number : ${passenger.pnrNo}</p>
+            <p>Seat Number : ${passenger.seatNo}</p>
             <p>AGE : ${passenger.age}</p>
             <p>GENDER : ${passenger.gender}</p>
             <p>FOOD : ${passenger.food}</p>
