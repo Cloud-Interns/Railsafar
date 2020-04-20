@@ -33,6 +33,10 @@ const TicketSchema = new Schema({
     type: String,
     required: true,
   },
+  fare: {
+    type: Number,
+    required: true,
+  },
   passengerDetails: {
     type: Array,
     required: true,

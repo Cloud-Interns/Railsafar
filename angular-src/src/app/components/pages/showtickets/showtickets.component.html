@@ -2,24 +2,129 @@
   <div
     class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
   >
-    <div *ngIf="!isTickets">
-      <h4 style="text-align: center;">Sorry!! No tickets found</h4>
-    </div>
+    <h3
+      *ngIf="tickets.length > 0"
+      style="text-align: center; letter-spacing: 0.1cm;"
+    >
+      Booked Tickets&nbsp;<i class="fa fa-check-circle"></i>
+    </h3>
+    <br />
     <div *ngFor="let ticket of tickets">
-      <ul class="list-group">
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          Ticket ID : {{ ticket.ticketId }}<br />
-          {{ ticket.source }} ==> {{ ticket.destination }}<br />
-          DOJ : {{ ticket.dateOfJourney | date: "shortDate" }}<br />
-          {{ ticket.train }}<br />
-          {{ ticket.class }}<br />
-          Passenger Details<br />
-          <span class="badge badge-success badge-pill">Booked</span>
-        </li>
-      </ul>
+      <div class="card">
+        <div class="card-header">
+          <span class="badge badge-success">Booked</span>&nbsp;
+          <span class="badge badge-primary"
+            >Total Passengers : {{ noOfPassengers }}</span
+          >
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Ticket ID : {{ ticket.ticketId }}</li>
+          <li class="list-group-item">
+            {{ ticket.source }} ==> {{ ticket.destination }}
+          </li>
+          <li class="list-group-item">
+            DOJ : {{ ticket.dateOfJourney | date: "shortDate" }}
+          </li>
+          <li class="list-group-item">Train : {{ ticket.train }}</li>
+          <li class="list-group-item">Class : {{ ticket.class }}</li>
+          <li class="list-group-item">Fare : Rs {{ ticket.fare }}/-</li>
+          <li class="list-group-item">
+            <button
+              type="button"
+              class="btn btn-danger btn-block"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+            >
+              Cancel Ticket
+            </button>
+          </li>
+        </ul>
+      </div>
       <br />
+    </div>
+
+    <!-- <div *ngFor="let passenger of passengers">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name : {{ passenger.name }}</li>
+          <li class="list-group-item">Age : {{ passenger.age }}</li>
+          <li class="list-group-item">Gender : {{ passenger.gender }}</li>
+          <li class="list-group-item">Food : {{ passenger.food }}</li>
+        </ul>
+      </div> -->
+  </div>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">
+            Please enter the Ticket ID on the ticket
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form
+            [formGroup]="cancelForm"
+            (ngSubmit)="onCancelTicket()"
+            id="cancelticket"
+          >
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" id="btnGroupAddon">
+                    <i class="fa fa-info fa-lg fa-fw"></i>
+                  </div>
+                </div>
+                <input
+                  type="number"
+                  id="ticketId"
+                  formControlName="ticketId"
+                  name="ticketId"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            (click)="onCancel()"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="onCancelTicket()"
+            [disabled]="!cancelForm.valid"
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            Confirm Cancel
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

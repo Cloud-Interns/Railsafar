@@ -7,6 +7,8 @@ const Ticket = require("../models/Ticket");
 const User = require("../models/User");
 const verifytoken = require("../middleware/verifytoken");
 
+//<--------------------TICKET BOOKING ---------------------------------------------------------->
+
 //@route POST api/ticket
 //@desc Book a ticket
 //@access Private
@@ -29,6 +31,9 @@ router.post("/bookticket", verifytoken, async (req, res) => {
   //Generating 10 digit random ticket ID
   ticketId = Math.floor(Math.random() * 9000000000) + 1000000000;
 
+  //Fare
+  fare = 1050 * passenger.length;
+
   try {
     let user = await User.findById(req.user).select("-password");
     let ticket = new Ticket({
@@ -39,6 +44,7 @@ router.post("/bookticket", verifytoken, async (req, res) => {
       dateOfJourney: doj,
       train,
       class: className,
+      fare: fare,
       passengerDetails: passenger,
     });
 
@@ -59,7 +65,7 @@ router.post("/bookticket", verifytoken, async (req, res) => {
     let info = await transporter.sendMail({
       from: '"RailSafar Team" <railsafar6599@gmail.com>', // sender address
       to: user.email,
-      subject: "Booked Ticket Details", // Subject line
+      subject: "Ticket Details", // Subject line
       html: `<h1>Below are your booking details:</h1><br />
       <p>TICKET ID : ${ticket.ticketId}</p>
       <p>SOURCE : ${ticket.source}</p>
@@ -69,7 +75,6 @@ router.post("/bookticket", verifytoken, async (req, res) => {
       <p>CLASS : ${ticket.class}</p>
       <p>PASSENGER DETAILS : ${passengers.map((passenger) => {
         return `
-            <p>PNR Number : ${passenger.pnrId}</p>
             <p>NAME : ${passenger.name}</p>
             <p>AGE : ${passenger.age}</p>
             <p>GENDER : ${passenger.gender}</p>
@@ -96,6 +101,8 @@ router.post("/bookticket", verifytoken, async (req, res) => {
 
 //<--------------------TICKET BOOKING COMPLETED----------------------------------------------------->
 
+//<--------------------GET USER'S TICKETS------------------------------------------------------------->
+
 //@route GET api/ticket
 //@desc Get all tickets of logged in user
 //@access Private
@@ -111,5 +118,29 @@ router.get("/gettickets", verifytoken, async (req, res) => {
     });
   }
 });
+//<--------------------GET USER'S TICKET COMPLETED----------------------------------------------------->
+
+//<--------------------CANCEL TICKET----------------------------------------------------------------->
+
+//@route DELETE api/ticket
+//@desc Cancel ticket
+//@access Public
+router.delete("/cancelticket/:ticketId", async (req, res) => {
+  try {
+    let ticket = await Ticket.findOne({ ticketId: req.params.ticketId });
+    if (ticket) {
+      await Ticket.deleteOne({ ticketId: req.params.ticketId });
+      return res.status(200).json({ status: "success" });
+    } else {
+      return res.json({ status: "error" });
+    }
+  } catch (err) {
+    return res.status(500).json({
+      status: "error",
+    });
+  }
+});
+
+//<--------------------CANCEL TICKET COMPLETED----------------------------------------------------->
 
 module.exports = router;

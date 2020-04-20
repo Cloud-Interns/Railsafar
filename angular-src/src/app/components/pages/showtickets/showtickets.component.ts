@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TicketService } from 'src/app/services/ticket.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { ToastrService } from 'ngx-toastr';
+
+import { TicketService } from '../../../services/ticket.service';
 
 @Component({
   selector: 'app-showtickets',
@@ -9,20 +14,65 @@ import { TicketService } from 'src/app/services/ticket.service';
 export class ShowticketsComponent implements OnInit {
 
   tickets = null;
-  isTickets = false;
+  noOfPassengers: number = 0;
+  passengersArray = null;
+  loading: boolean = false;
+  ticketId: string = ''
+  cancelForm: FormGroup;
 
-  constructor(private ticketService: TicketService) { }
+  constructor(
+    private ticketService: TicketService,
+    private router: Router,
+    private toastr: ToastrService) { }
+
+  //Toast Methods
+  showSuccess() {  //FOR Success
+    this.toastr.success('Success', 'Your ticket has been cancelled!', {
+      timeOut: 3000
+    });
+  }
+
+  showError() {   // FOR Errors 
+    this.toastr.error('Sorry', 'Error occured!!', {
+      timeOut: 3000
+    });
+  }
+
+  showTypeError() {   // FOR Type Errors 
+    this.toastr.error('Sorry', 'Please check the ticket ID', {
+      timeOut: 3000
+    });
+  }
 
   ngOnInit() {
-    this.ticketService.getTickets().subscribe(response => {
-      if (response !== null) {
-        this.isTickets = true;
-        this.tickets = response.tickets;
-        console.log(this.tickets);
-      } else {
-        this.isTickets = false;
-      }
+    this.cancelForm = new FormGroup({
+      'ticketId': new FormControl(this.ticketId, [Validators.required])
     })
+
+    this.ticketService.getTickets().subscribe(response => {
+      this.tickets = response.tickets;
+      this.passengersArray = this.tickets.map(ticket => ticket.passengerDetails);
+      this.noOfPassengers = this.passengersArray[0].length;
+    })
+  }
+
+
+  onCancelTicket() {
+    this.loading = true;
+    this.ticketId = this.cancelForm.value.ticketId;
+    this.ticketService.cancelTicket(this.ticketId).subscribe(response => {
+      this.loading = false;
+      if (response.status === 'success') {
+        this.showSuccess();
+      } else {
+        this.showError();
+      }
+    });
+    this.cancelForm.reset();
+  }
+
+  onCancel() {
+    this.router.navigate(['../show-tickets']);
   }
 
 }
