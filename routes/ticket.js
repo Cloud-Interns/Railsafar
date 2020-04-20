@@ -5,6 +5,7 @@ const nodemailer = require("nodemailer");
 
 const Ticket = require("../models/Ticket");
 const User = require("../models/User");
+const PnrDetails = require("../models/PnrDetails");
 const verifytoken = require("../middleware/verifytoken");
 
 //<--------------------TICKET BOOKING ---------------------------------------------------------->
@@ -53,6 +54,15 @@ router.post("/bookticket", verifytoken, async (req, res) => {
     for (let i = 0; i < ticket.passengerDetails.length; i++) {
       passengers.push(ticket.passengerDetails[i]);
     }
+
+    //creating 10 digit PNR No & 3 digit Seat No for each passenger and saving it in Pnr collection
+    passengers.map(async (passenger) => {
+      passenger.pnrNo = Math.floor(Math.random() * 9000000000) + 1000000000;
+      passenger.seatNo = Math.floor(Math.random() * 900) + 100;
+      let pnrDetails = new PnrDetails(passenger);
+      await pnrDetails.save();
+    });
+
     //sending mail to user for verification
     let transporter = nodemailer.createTransport({
       service: "gmail",
