@@ -38,11 +38,6 @@ export class ShowticketsComponent implements OnInit {
     });
   }
 
-  showTypeError() {   // FOR Type Errors 
-    this.toastr.error('Sorry', 'Please check the ticket ID', {
-      timeOut: 3000
-    });
-  }
 
   ngOnInit() {
     this.cancelForm = new FormGroup({

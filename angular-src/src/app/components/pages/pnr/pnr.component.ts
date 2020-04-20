@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
+import { TicketService } from '../../../services/ticket.service';
 
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-pnr',
@@ -12,45 +13,50 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class PnrComponent implements OnInit {
 
-  private pnr: string = '';
-  PnrForm: FormGroup;
+  pnrNo: string = '';
+  pnrForm: FormGroup;
+  pnrDetails = null;
+  loading: boolean = false;
 
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router)
-    // private userService: UserService,
-    // private toastr: ToastrService) 
-    { }
+    private router: Router,
+    private toastr: ToastrService,
+    private ticketService: TicketService) { }
 
-  // //Toast Methods
-  // showWarning() {  //FOR Success
-  //   this.toastr.success('Warning', 'Please verify your email first!', {
-  //     timeOut: 3000
-  //   });
-  // }
-
-  // showError() {   // FOR Errors 
-  //   this.toastr.error('Sorry', 'Invalid Credentials!', {
-  //     timeOut: 3000
-  //   });
-  // }
+  //Toast Methods  
+  showError() {   // FOR Errors 
+    this.toastr.error('Sorry', 'Please check PNR Number!', {
+      timeOut: 3000
+    });
+  }
 
 
   ngOnInit(): void {
-
-    this.PnrForm = new FormGroup({
-      'pnr': new FormControl(this.pnr, [Validators.required]),
+    this.pnrForm = new FormGroup({
+      'pnrNo': new FormControl(this.pnrNo, [Validators.required]),
     })
   }
 
   onSubmit() {
-    //this.pnr = this.PnrForm.value.email;
-    this.PnrForm.reset();
+    this.loading = true;
+    this.ticketService.getPnrDetails(this.pnrForm.value.pnrNo).subscribe(response => {
+      this.loading = false;
+      if (response.status === 'success') {
+        this.pnrDetails = response.pnrDetails;
+        console.log(this.pnrDetails);
+      } else {
+        this.showError();
+      }
+    })
+    this.pnrForm.reset();
   }
 
-  
-  onCancel() {
-    this.router.navigate(['../'], { relativeTo: this.route });
+  onClear() {
+    this.pnrForm.reset();
+  }
+
+  onBack() {
+    this.router.navigate(['/dashboard']);
   }
 }

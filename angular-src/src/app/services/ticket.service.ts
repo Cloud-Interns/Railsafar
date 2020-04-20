@@ -24,10 +24,15 @@ export class TicketService {
 
     }
 
+    //Get PNR Details of logged in user
+    getPnrDetails(pnrNo): Observable<any> {
+        return this.http
+            .get(`http://localhost:8000/api/ticket/getPnrDetails/${pnrNo}`)
+            .pipe(map((response: any) => response));
+    }
+
     //Cancel Ticket
     cancelTicket(ticketId): Observable<any> {
-        // const headers = new HttpHeaders();
-        // headers.append("Content-Type", "application/json");
         return this.http
             .delete(`http://localhost:8000/api/ticket/cancelticket/${ticketId}`)
             .pipe(map((response: any) => response));

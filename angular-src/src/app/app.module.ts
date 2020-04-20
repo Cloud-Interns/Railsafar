@@ -29,6 +29,7 @@ import { SearchComponent } from './components/pages/search/search.component';
 import { LiveStatusComponent } from './components/pages/live-status/live-status.component';
 import { BookticketComponent } from './components/pages/bookticket/bookticket.component';
 import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
+import { PnrComponent } from './components/pages/pnr/pnr.component';
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -60,7 +61,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     SearchComponent,
     LiveStatusComponent,
     BookticketComponent,
-    ShowticketsComponent
+    ShowticketsComponent,
+    PnrComponent
   ],
   imports: [
     BrowserModule,

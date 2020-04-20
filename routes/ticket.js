@@ -156,4 +156,27 @@ router.delete("/cancelticket/:ticketId", async (req, res) => {
 
 //<--------------------CANCEL TICKET COMPLETED----------------------------------------------------->
 
+//<--------------------GET PNR DETAILS------------------------------------------------------------>
+
+//@route GET api/ticket
+//@desc Get PNR Details of logged in user
+//@access Public
+router.get("/getPnrDetails/:pnrNo", async (req, res) => {
+  try {
+    let pnrDetails = await PnrDetails.findOne({ pnrNo: req.params.pnrNo });
+    if (pnrDetails) {
+      return res
+        .status(200)
+        .json({ pnrDetails: pnrDetails, status: "success" });
+    } else {
+      return res.json({ status: "error" });
+    }
+  } catch (err) {
+    return res.status(500).json({
+      status: "error",
+    });
+  }
+});
+//<--------------------GET PNR DETAILS COMPLETED----------------------------------------------------->
+
 module.exports = router;
