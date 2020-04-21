@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-  userDetails = {};
+
 
   constructor(
     private router: Router,
@@ -28,16 +28,6 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-    this.userService.getUserDetails().subscribe(response => {
-
-      //If errors
-      if (response.msg === 'error') {
-        this.showError();
-      } else {
-        //get details of logged in user
-        this.userDetails = response.user;
-      }
-    });
 
   }
 

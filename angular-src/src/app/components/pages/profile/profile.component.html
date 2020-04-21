@@ -1,0 +1,90 @@
+<div class="row">
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <img
+      src="../../assets/images/profile.svg"
+      alt="Login"
+      class="img-responsive"
+      style="width: 70px; position: absolute; top: -18%; left: 42%;"
+    />
+    <h3 style="text-align: center;"><strong>Your Profile</strong></h3>
+    <div class="card">
+      <div class="card-header">Hello, {{ userDetails.firstname }}</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Email ID : {{ userDetails.email }}</li>
+        <li class="list-group-item">Phone No : {{ userDetails.phone }}</li>
+      </ul>
+    </div>
+    <br />
+    <hr />
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" id="update">
+      <div class="form-group">
+        <label for="email">Update Profile :</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-envelope fa-lg fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="email"
+            id="newEmail"
+            formControlName="newEmail"
+            name="newEmail"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Enter New Email"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-phone fa-lg fa-fw"></i>
+            </div>
+          </div>
+          <input
+            type="number"
+            id="newPhone"
+            formControlName="newPhone"
+            name="newPhone"
+            class="form-control"
+            placeholder="Enter New Phone"
+            minlength="10"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-success form-control"
+          [disabled]="!updateForm.valid"
+        >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          Update Details
+        </button>
+      </div>
+    </form>
+    <a
+      class="btn btn-primary btn-block"
+      type="button"
+      routerLink="/forgotpassword"
+    >
+      Update Password </a
+    ><br />
+    <button
+      class="btn btn-secondary btn-block"
+      type="button"
+      (click)="onBack()"
+    >
+      Back to Dashboard
+    </button>
+  </div>
+</div>

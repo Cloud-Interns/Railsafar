@@ -31,6 +31,18 @@ export class UserService {
       .pipe(map((response: any) => response));
   }
 
+  //Update Profile
+  updateProfile(newEmail, newPhone): Observable<any> {
+    const updationDetails = {
+      newEmail,
+      newPhone
+    }
+    const headers = new HttpHeaders();
+    headers.append("Content-Type", "application/json");
+    return this.http.post("http://localhost:8000/api/user/updateProfile", updationDetails, { headers: headers })
+      .pipe(map((response: any) => response));
+  }
+
   //Send Email containing link to reset password
   sendEmail(email: string): Observable<any> {
     const userEmail = { email };

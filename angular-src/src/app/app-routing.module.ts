@@ -17,6 +17,7 @@ import { LiveStatusComponent } from './components/pages/live-status/live-status.
 import { BookticketComponent } from './components/pages/bookticket/bookticket.component';
 import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
 import { PnrComponent } from './components/pages/pnr/pnr.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 //Services Imports
 import {
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'show-tickets', component: ShowticketsComponent, canActivate: [AuthGuard] },
   { path: 'book', component: BookticketComponent, canActivate: [AuthGuard] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },

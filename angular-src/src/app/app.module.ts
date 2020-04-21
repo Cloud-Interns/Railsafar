@@ -30,6 +30,8 @@ import { LiveStatusComponent } from './components/pages/live-status/live-status.
 import { BookticketComponent } from './components/pages/bookticket/bookticket.component';
 import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
 import { PnrComponent } from './components/pages/pnr/pnr.component';
+import { ProfileComponent } from './components/pages//profile/profile.component';
+
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -39,7 +41,7 @@ import { TicketService } from './services/ticket.service';
 import { TokenInterceptor } from './services/token.interceptor';
 
 
-//Custom Directives Imports
+//Custom Directives Imports./components/pages/profile/profile.component
 import { ShPasswordDirective } from './directives/sh-password.directive';
 
 
@@ -62,7 +64,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     LiveStatusComponent,
     BookticketComponent,
     ShowticketsComponent,
-    PnrComponent
+    PnrComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

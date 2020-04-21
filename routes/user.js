@@ -6,6 +6,7 @@ const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
+const verifytoken = require("../middleware/verifytoken");
 
 //@route POST api/user
 //@desc Register a user
@@ -167,6 +168,38 @@ router.post("/resetpassword/:token", async (req, res) => {
     return res.status(500).json({
       status: "error",
     });
+  }
+});
+
+//@route POST api/user/updateProfile
+//@desc Update User's Profile
+//@access Private
+router.post("/updateProfile", verifytoken, async (req, res) => {
+  const id = req.user;
+  const { newEmail, newPhone } = req.body;
+  try {
+    const user = await User.findById(id);
+    if (user) {
+      if (newEmail !== null && newPhone !== null) {
+        await User.updateOne(
+          { _id: id },
+          { $set: { email: newEmail, phone: newPhone } }
+        );
+        return res.status(200).json({ status: "success" });
+      } else if (newEmail !== null) {
+        await User.updateOne({ _id: id }, { $set: { email: newEmail } });
+        return res.status(200).json({ status: "success" });
+      } else if (newPhone !== null) {
+        await User.updateOne({ _id: id }, { $set: { phone: newPhone } });
+        return res.status(200).json({ status: "success" });
+      } else {
+        return res.json({ status: "error" });
+      }
+    } else {
+      return res.json({ status: "error" });
+    }
+  } catch (err) {
+    return res.status(500).json({ status: "error" });
   }
 });
 
