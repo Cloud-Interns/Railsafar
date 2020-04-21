@@ -1,0 +1,69 @@
+[
+
+    {
+         
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr']",
+        "Class: 1A": "['AVL-3','NA','NA']",
+        "Class: 2A": "['AVL-2','AVL-1','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1']",
+        "Class: SL": "['AVL-5','NA','NA']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr','Fri, 01-May','Sat,02-May']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA','NA','WL-4','NA']",
+        "Class: 2A": "['AVL-2','AVL-1','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA',''WL-2','WL-3','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA',''WL-1','NA','NA']",
+        "Class: SL": "['AVL-5','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA',''WL-2',''WL-3',''WL-4','NA']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr','Fri, 01-May','Sat,02-May']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','WL-4','NA','NA','NA','NA']",
+        "Class: 2A": "['AVL-2','AVL-1','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA','WL-6','WL-3','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA','WL-5','NA','NA']",
+        "Class: SL": "['AVL-5','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','WL-1','NA','NA','WL-4']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr','Fri, 01-May','Sat,02-May','Sun,03-May','Mon,04-May','Tue,05-May']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','RAC-5','NA','NA','NA','RAC-3','NA','NA']",
+        "Class: 2A": "['AVL-2','AVL-1','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA','WL-6','WL-3','WL-3','NA','NA','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1','AVL-3','AVL-2','AVL-1','AVL-1','RAC-10','NA','WL-5','WL-3','WL-3','NA','NA','NA']",
+        "Class: SL": "['AVL-5','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','WL-1','NA','NA','WL-4','NA','NA','NA']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','RAC-10','RAC-1','NA','RAC-5','RAC-3']",
+        "Class: 2A": "['AVL-2','AVL-1','AVL-3','AVL-2','WL-6','WL-3','WL-3','NA','NA','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-3','AVL-2','RAC-10','NA','WL-5','WL-3','WL-3','NA']",
+        "Class: SL": "['AVL-5','AVL-3','AVL-2','AVL-1','AVL-1','NA','WL-1','WL-4','NA','NA']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr']",
+        "Class: 1A": "['NA','NA','NA']",
+        "Class: 2A": "['AVL-2','WL-6','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1']",
+        "Class: SL": "['NA','NA','NA']"
+    },
+    
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','RAC-10','RAC-1','NA','RAC-5','RAC-3']",
+        "Class: 2A": "['AVL-2','AVL-1','AVL-3','AVL-2','WL-6','WL-3','WL-3','NA','NA','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-3','AVL-2','RAC-10','NA','WL-5','WL-3','WL-3','NA']",
+        "Class: SL": "['AVL-5','AVL-3','AVL-2','AVL-1','AVL-1','NA','WL-1','WL-4','NA','NA']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr','Fri, 01-May','Sat,02-May','Sun,03-May','Mon,04-May','Tue,05-May']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','RAC-5','NA','NA','NA','RAC-3','NA','NA']",
+        "Class: 2A": "['AVL-2','AVL-1','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA','WL-6','WL-3','WL-3','NA','NA','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1','AVL-3','AVL-2','AVL-1','AVL-1','RAC-10','NA','WL-5','WL-3','WL-3','NA','NA','NA']",
+        "Class: SL": "['AVL-5','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','WL-1','NA','NA','WL-4','NA','NA','NA']"
+    },
+    {
+        "Date": "['Tue, 21-Apr','Wed, 22-Apr','Thr, 23-Apr','Fri, 24-Apr','Sat, 25-Apr','Sun, 26-Apr','Mon, 27-Apr','Tue, 28-Apr','Wed, 29-Apr','Thr, 30-Apr','Fri, 01-May','Sat,02-May']",
+        "Class: 1A": "['AVL-3','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','NA','NA','WL-4','NA']",
+        "Class: 2A": "['AVL-2','AVL-1','NA','AVL-3','AVL-2','AVL-1','AVL-1','NA','RAC-6',''WL-2','WL-3','NA']",
+        "Class: 3A": "['AVL-4','AVL-2','AVL-1','AVL-3','AVL-2','AVL-1','AVL-1','RAC-10','NA',''WL-1','NA','NA']",
+        "Class: SL": "['AVL-5','NA','NA','AVL-3','AVL-2','AVL-1','AVL-1','WL-5',''WL-2',''WL-3',''WL-4','NA']"
+    }
+
+]
