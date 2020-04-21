@@ -13,9 +13,9 @@ import { TicketService } from '../../../services/ticket.service';
 })
 export class ShowticketsComponent implements OnInit {
 
-  tickets = null;
+  tickets = [];
   noOfPassengers: number = 0;
-  passengersArray = null;
+  passengersArray = [];
   loading: boolean = false;
   ticketId: string = ''
   cancelForm: FormGroup;
@@ -45,9 +45,11 @@ export class ShowticketsComponent implements OnInit {
     })
 
     this.ticketService.getTickets().subscribe(response => {
-      this.tickets = response.tickets;
-      this.passengersArray = this.tickets.map(ticket => ticket.passengerDetails);
-      this.noOfPassengers = this.passengersArray[0].length;
+      if (response.tickets) {
+        this.tickets = response.tickets;
+        this.passengersArray = this.tickets.map(ticket => ticket.passengerDetails);
+        this.noOfPassengers = this.passengersArray[0].length;
+      }
     })
   }
 

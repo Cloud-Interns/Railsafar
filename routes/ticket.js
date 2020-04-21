@@ -145,9 +145,21 @@ router.get("/gettickets", verifytoken, async (req, res) => {
 router.delete("/cancelticket/:ticketId", async (req, res) => {
   try {
     let ticket = await Ticket.findOne({ ticketId: req.params.ticketId });
+
     if (ticket) {
+      //Getting passengers array
+      const passengers = [];
+      for (let i = 0; i < ticket.passengerDetails.length; i++) {
+        passengers.push(ticket.passengerDetails[i]);
+      }
       await Ticket.deleteOne({ ticketId: req.params.ticketId });
-      await PnrDetails.deleteMany({ ticketId: ticket.ticketId });
+      passengers.map(async (passenger) => {
+        await PnrDetails.updateMany(
+          { pnrNo: passenger.pnrNo },
+          { $set: { status: "Cancelled" } }
+        );
+      });
+
       return res.status(200).json({ status: "success" });
     } else {
       return res.json({ status: "error" });

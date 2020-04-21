@@ -68,9 +68,17 @@
       <div class="card">
         <div class="card-header">
           PNR Details
-          <span class="badge badge-pill badge-success">{{
-            pnrDetails.status
-          }}</span>
+
+          <span
+            *ngIf="pnrDetails.status === 'Confirmed'"
+            class="badge badge-pill badge-success"
+            >{{ pnrDetails.status }}</span
+          >
+          <span
+            *ngIf="pnrDetails.status === 'Cancelled'"
+            class="badge badge-pill badge-danger"
+            >{{ pnrDetails.status }}</span
+          >
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">PNR Number : {{ pnrDetails.pnrNo }}</li>
