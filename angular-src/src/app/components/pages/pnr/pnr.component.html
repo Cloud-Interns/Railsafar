@@ -38,6 +38,12 @@
           [disabled]="!pnrForm.valid"
           click="onSubmit()"
         >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
           Check
         </button>
       </div>
@@ -68,6 +74,11 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">PNR Number : {{ pnrDetails.pnrNo }}</li>
+          <li class="list-group-item">Train : {{ pnrDetails.train }}</li>
+          <li class="list-group-item">Class : {{ pnrDetails.class }}</li>
+          <li class="list-group-item">
+            DOJ : {{ pnrDetails.doj | date: "shortDate" }}
+          </li>
           <li class="list-group-item">Name : {{ pnrDetails.name }}</li>
           <li class="list-group-item">Age : {{ pnrDetails.age }}</li>
           <li class="list-group-item">Gender : {{ pnrDetails.gender }}</li>

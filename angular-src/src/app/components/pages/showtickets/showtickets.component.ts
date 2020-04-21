@@ -70,4 +70,8 @@ export class ShowticketsComponent implements OnInit {
     this.router.navigate(['../show-tickets']);
   }
 
+  onBack() {
+    this.router.navigate(['/dashboard']);
+  }
+
 }

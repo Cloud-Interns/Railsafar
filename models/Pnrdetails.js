@@ -6,8 +6,24 @@ const pnrDetailsSchema = new Schema({
     type: Number,
     required: true,
   },
+  ticketId: {
+    type: Number,
+    required: true,
+  },
   name: {
     type: String,
+    required: true,
+  },
+  train: {
+    type: String,
+    required: true,
+  },
+  class: {
+    type: String,
+    required: true,
+  },
+  doj: {
+    type: Date,
     required: true,
   },
   age: {

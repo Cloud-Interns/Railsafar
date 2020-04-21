@@ -44,7 +44,6 @@ export class PnrComponent implements OnInit {
       this.loading = false;
       if (response.status === 'success') {
         this.pnrDetails = response.pnrDetails;
-        console.log(this.pnrDetails);
       } else {
         this.showError();
       }
@@ -54,6 +53,7 @@ export class PnrComponent implements OnInit {
 
   onClear() {
     this.pnrForm.reset();
+    this.pnrDetails = null;
   }
 
   onBack() {

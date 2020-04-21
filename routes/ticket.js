@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 
 const Ticket = require("../models/Ticket");
 const User = require("../models/User");
-const PnrDetails = require("../models/PnrDetails");
+const PnrDetails = require("../models/Pnrdetails");
 const verifytoken = require("../middleware/verifytoken");
 
 //<--------------------TICKET BOOKING ---------------------------------------------------------->
@@ -30,10 +30,10 @@ router.post("/bookticket", verifytoken, async (req, res) => {
     return res.json({ status: "fatal" });
   }
   //Generating 10 digit random ticket ID
-  ticketId = Math.floor(Math.random() * 9000000000) + 1000000000;
+  const ticketId = Math.floor(Math.random() * 9000000000) + 1000000000;
 
   //Fare
-  fare = 1050 * passenger.length;
+  const fare = 1050 * passenger.length;
 
   try {
     let user = await User.findById(req.user).select("-password");
@@ -57,6 +57,10 @@ router.post("/bookticket", verifytoken, async (req, res) => {
 
     //creating 10 digit PNR No & 3 digit Seat No for each passenger and saving it in Pnr collection
     passengers.map(async (passenger) => {
+      passenger.ticketId = ticketId;
+      passenger.train = train;
+      passenger.class = className;
+      passenger.doj = doj;
       passenger.pnrNo = Math.floor(Math.random() * 9000000000) + 1000000000;
       passenger.seatNo = Math.floor(Math.random() * 900) + 100;
       let pnrDetails = new PnrDetails(passenger);
@@ -143,6 +147,7 @@ router.delete("/cancelticket/:ticketId", async (req, res) => {
     let ticket = await Ticket.findOne({ ticketId: req.params.ticketId });
     if (ticket) {
       await Ticket.deleteOne({ ticketId: req.params.ticketId });
+      await PnrDetails.deleteMany({ ticketId: ticket.ticketId });
       return res.status(200).json({ status: "success" });
     } else {
       return res.json({ status: "error" });
