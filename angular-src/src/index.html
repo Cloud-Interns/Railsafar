@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--Favicon Icon-->
-    <link rel="icon" type="image/metro-icon" href="./assets/images/metro.svg" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="./assets/images/favicon.jpg"
+    />
     <!--Google Font-->
     <link
-      href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap"
+      href="https://fonts.googleapis.com/css?family=Rubik:300&display=swap"
       rel="stylesheet"
+      <!--Bootstrap
+      CDN--
     />
-    <!--Bootstrap CDN-->
     <!-- Latest compiled and minified CSS -->
     <link
       rel="stylesheet"
@@ -45,14 +50,14 @@
     <!--P5 js CDN-->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
     <script>
-      $(function() {
+      $(function () {
         $("#password")
           .popover({
             title: "Password",
             content:
-              "Must be atleast 8 characters long with one uppercase, one lowercase, one number & one special character!"
+              "Must be atleast 8 characters long with one uppercase, one lowercase, one number & one special character!",
           })
-          .blur(function() {
+          .blur(function () {
             $(this).popover("hide");
           });
       });
