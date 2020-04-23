@@ -5,7 +5,13 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class TicketService {
-    constructor(private http: HttpClient) { }
+    
+
+
+    
+    constructor(private http: HttpClient) { 
+        
+    }
 
     //Book Ticket
     bookTicket(bookingDetails): Observable<any> {
@@ -37,5 +43,7 @@ export class TicketService {
             .delete(`http://localhost:8000/api/ticket/cancelticket/${ticketId}`)
             .pipe(map((response: any) => response));
     }
+
+   
 }
 

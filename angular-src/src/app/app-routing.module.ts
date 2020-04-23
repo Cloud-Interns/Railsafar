@@ -18,7 +18,8 @@ import { BookticketComponent } from './components/pages/bookticket/bookticket.co
 import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
 import { PnrComponent } from './components/pages/pnr/pnr.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
-
+import { TrainScheduleComponent } from './components/pages/train-schedule/train-schedule.component';
+import { SeatAvlComponent } from './components/pages/seat-avl/seat-avl.component';
 //Services Imports
 import {
   AuthGuardService as AuthGuard
@@ -40,6 +41,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'livestatus', component: LiveStatusComponent, canActivate: [AuthGuard] },
   { path: 'check-pnr', component: PnrComponent, canActivate: [AuthGuard] },
+  {path:'get-schedule', component:TrainScheduleComponent,canActivate: [AuthGuard]},
+  {path:'avl-seat',component:SeatAvlComponent,canActivate: [AuthGuard]},
   { path: '**', component: ErrorComponent }
 
 ];

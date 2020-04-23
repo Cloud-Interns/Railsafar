@@ -31,7 +31,8 @@ import { BookticketComponent } from './components/pages/bookticket/bookticket.co
 import { ShowticketsComponent } from './components/pages/showtickets/showtickets.component';
 import { PnrComponent } from './components/pages/pnr/pnr.component';
 import { ProfileComponent } from './components/pages//profile/profile.component';
-
+import { TrainScheduleComponent } from './components/pages/train-schedule/train-schedule.component';
+import { SeatAvlComponent } from './components/pages/seat-avl/seat-avl.component';
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -43,6 +44,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 
 //Custom Directives Imports./components/pages/profile/profile.component
 import { ShPasswordDirective } from './directives/sh-password.directive';
+
 
 
 
@@ -65,7 +67,9 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     BookticketComponent,
     ShowticketsComponent,
     PnrComponent,
-    ProfileComponent
+    ProfileComponent,
+    TrainScheduleComponent,
+    SeatAvlComponent
   ],
   imports: [
     BrowserModule,

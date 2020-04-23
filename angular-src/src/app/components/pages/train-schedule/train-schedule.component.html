@@ -1,0 +1,66 @@
+<div class="row">
+    <div
+      class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+    >
+      <img
+        src="../../assets/images/calender.svg"
+        alt="Login"
+        class="img-responsive"
+        style="width: 70px; position: absolute; top: -18%; left: 42%;"
+      /><br /><br />
+      <h3 style="text-align: center; letter-spacing: 0.03cm;">
+        Train Timechart
+      </h3>
+      <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()" id="schedule">
+        <br />
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text" id="btnGroupAddon">
+                <i class="fa fa-calendar fa-lg fa-fw"></i>
+              </div>
+            </div>
+            <select
+            type="number"
+            id="trainNo"
+            formControlName="trainNo"
+            name="trainNo"
+            class="form-control"
+          >
+            <option>12565</option>
+            <option>12933</option>
+            <option>19034</option>
+            <option>11406</option>
+            <option>69105</option>
+            <option>69131</option>
+            <option>59163</option>
+          </select>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <button
+            type="submit"
+            class="btn btn-primary form-control"
+            [disabled]="!scheduleForm.valid"
+            click="onSubmit()"
+          >
+            Get Schedule
+          </button>
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-light btn-md" (click)="onClear()">
+            Clear</button
+          >&nbsp;
+          <button
+            type="button"
+            class="btn btn-secondary btn-md"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+      </div>
+    </div>
+   

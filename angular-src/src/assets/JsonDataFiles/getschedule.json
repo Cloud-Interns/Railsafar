@@ -2,12 +2,12 @@
     {
         "trainNo": "12565",
         "train" : "BIHAR S KRANTI",
-        "sr_no":"['1','2','3','4','5','6','7','8','9']",
-        "stations": "['DARBHANGA JN','SAMASTIPUR J','MUZAFFARPUR','HAJIPUR JN.','LUCKNOW JN.','KANPUR CENTR','CHHAPRA JN','SIWAN JN','NEW DELHI']",
-        "arrivingTime": "['10:00 AM','11:00 AM','12:05 PM','1:00 PM','2:15 PM','3:00 PM','4:05 PM','4:45','5:30']",
-        "departureTime": "['10:00 AM','11:05 AM','12:15 PM','1:10 PM','2:30 PM','3:12 PM','4:15 PM','5:00','6:00']",
-        "Halt":"['0','2 min','0','0','5 min','0','2 min','0','1 min']",
-        "platformNo": "['1','2','2','1','1','4','9','4','3']"
+        "sr_no":["1","2","3","4","5","6","7","8","9"],
+        "stations": ["DARBHANGA JN","SAMASTIPUR J","MUZAFFARPUR","HAJIPUR JN.","LUCKNOW JN.","KANPUR CENTR","CHHAPRA JN","SIWAN JN","NEW DELHI"],
+        "arrivingTime": ["10:00 AM","11:00 AM","12:05 PM","1:00 PM","2:15 PM","3:00 PM","4:05 PM","4:45","5:30"],
+        "departureTime": ["10:00 AM","11:05 AM","12:15 PM","1:10 PM","2:30 PM","3:12 PM","4:15 PM","5:00","6:00"],
+        "Halt":["0","2 min","0","0","5 min","0","2 min","0","1 min"],
+        "platformNo": ["1","2","2","1","1","4","9","4","3"]
       },
       {
         "trainNo": "12933",
