@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.static("angular-src"));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/angular-src/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/angular-src/index.html"));
 });
 
 //Init Middleware
