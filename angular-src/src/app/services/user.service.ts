@@ -15,7 +15,7 @@ export class UserService {
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
     return this.http
-      .post("http://localhost:8000/api/user/register", newUser, { headers: headers })
+      .post("/api/user/register", newUser, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
@@ -27,7 +27,7 @@ export class UserService {
     }
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post("http://localhost:8000/api/user/login", userDetails, { headers: headers })
+    return this.http.post("/api/user/login", userDetails, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
@@ -39,7 +39,7 @@ export class UserService {
     }
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post("http://localhost:8000/api/user/updateProfile", updationDetails, { headers: headers })
+    return this.http.post("/api/user/updateProfile", updationDetails, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
@@ -48,7 +48,7 @@ export class UserService {
     const userEmail = { email };
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post("http://localhost:8000/api/user/sendemail", userEmail, { headers: headers })
+    return this.http.post("/api/user/sendemail", userEmail, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
@@ -57,13 +57,13 @@ export class UserService {
     const password = { newPassword }
     const headers = new HttpHeaders();
     headers.append("Content-Type", "application/json");
-    return this.http.post(`http://localhost:8000/api/user/resetpassword/${id}`, password, { headers: headers })
+    return this.http.post(`/api/user/resetpassword/${id}`, password, { headers: headers })
       .pipe(map((response: any) => response));
   }
 
   //Get Loggedin user details
   getUserDetails(): Observable<any> {
-    return this.http.get('http://localhost:8000/api/user/details')
+    return this.http.get('/api/user/details')
       .pipe(map((response: any) => response));
 
   }
