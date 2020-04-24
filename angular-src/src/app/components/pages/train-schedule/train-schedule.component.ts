@@ -14,27 +14,29 @@ export class TrainScheduleComponent implements OnInit {
   FirstData: string;
 
   constructor(
-    private router:Router) { }
+    private router: Router) { }
 
-   
-    ngOnInit(): void {
-      this.scheduleForm = new FormGroup({
-        'trainNo': new FormControl(null, [Validators.required]),
-      })
-    }
-    onSubmit() {
-      let x =  (<HTMLInputElement>document.getElementById("trainNo")).value;
-      this.Data = require('src/assets/JsonDataFiles/schedule.json');
-      this.trainSchedule = this.Data.filter(d => d.number === x);
-      this.FirstData  = this.trainSchedule[0];
-    }
-  
-    onClear() {
-      this.scheduleForm.reset();
-    }
-  
-    onBack() {
-      this.router.navigate(['/dashboard']);
-    }
+
+  ngOnInit(): void {
+    this.scheduleForm = new FormGroup({
+      'trainNo': new FormControl(null, [Validators.required]),
+    })
+  }
+  onSubmit() {
+    let x = (<HTMLInputElement>document.getElementById("trainNo")).value;
+    this.Data = require('src/assets/JsonDataFiles/schedule.json');
+    this.trainSchedule = this.Data.filter(d => d.number === x);
+    this.FirstData = this.trainSchedule[0];
+  }
+
+  onClear() {
+    this.scheduleForm.reset();
+    this.trainSchedule = null;
+    this.FirstData = null;
+  }
+
+  onBack() {
+    this.router.navigate(['/dashboard']);
+  }
 
 }

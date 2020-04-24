@@ -1,26 +1,26 @@
 <div class="row">
-    <div
-      class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
-    >
-      <img
-        src="../../assets/images/calender.svg"
-        alt="Login"
-        class="img-responsive"
-        style="width: 70px; position: absolute; top: -18%; left: 42%;"
-      /><br /><br />
-      <h3 style="text-align: center; letter-spacing: 0.03cm;">
-        Train Timechart
-      </h3>
-      <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()" id="schedule">
-        <br />
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text" id="btnGroupAddon">
-                <i class="fa fa-calendar fa-lg fa-fw"></i>
-              </div>
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <img
+      src="../../assets/images/calender.svg"
+      alt="Login"
+      class="img-responsive"
+      style="width: 70px; position: absolute; top: -18%; left: 42%;"
+    /><br /><br />
+    <h3 style="text-align: center; letter-spacing: 0.03cm;">
+      Train Timechart
+    </h3>
+    <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()" id="schedule">
+      <br />
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-calendar fa-lg fa-fw"></i>
             </div>
-            <select
+          </div>
+          <select
             type="number"
             id="trainNo"
             formControlName="trainNo"
@@ -33,59 +33,65 @@
             <option>22953</option>
             <option>59163</option>
           </select>
-          </div>
         </div>
-        <br />
-        <div class="form-group">
-          <button
-            type="submit"
-            class="btn btn-primary form-control"
-            [disabled]="!scheduleForm.valid"
-            click="onSubmit()"
-          >
-            Get Schedule
-          </button>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-light btn-md" (click)="onClear()">
-            Clear</button
-          >&nbsp;
-          <button
-            type="button"
-            class="btn btn-secondary btn-md"
-            (click)="onBack()"
-          >
-            Back
-          </button>
-        </div>
-      </form>
       </div>
+      <br />
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary form-control"
+          [disabled]="!scheduleForm.valid"
+          click="onSubmit()"
+        >
+          Get Schedule
+        </button>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-light btn-md" (click)="onClear()">
+          Clear</button
+        >&nbsp;
+        <button
+          type="button"
+          class="btn btn-secondary btn-md"
+          (click)="onBack()"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div>
+  <hr *ngIf="this.trainSchedule" />
+  <div>
+    <div class="table-responsive" *ngIf="this.FirstData">
+      <span class="badge badge-pill badge-success">{{
+        this.FirstData["number"]
+      }}</span
+      >&nbsp;&nbsp;<span class="badge badge-pill badge-primary">{{
+        this.FirstData["name"]
+      }}</span>
     </div>
-    <div>
-      <hr *ngIf="this.trainSchedule">
-      <div>
-        <div class="table-responsive" style="color: blue;font-weight:700;" *ngIf="this.FirstData">Schedule Of:
-         {{this.FirstData["name"]}}&nbsp;&nbsp;({{this.FirstData["number"]}})
-        </div><hr *ngIf="this.trainSchedule"><br/>
-     <div class="table-responsive"  *ngIf= "this.trainSchedule">
-         <table class="table table-striped"> 
-           <thead>
-             <tr *ngIf= "this.trainSchedule">
-                 <th scope="col">Stations</th>
-                 <th scope="col">Arrival Time</th>
-                 <th scope="col">Departure Time</th>
-                 <th scope="col">Platform_No</th>
-             </tr>
-           </thead>
-           <tbody *ngFor="let data of this.trainSchedule">
-            <tr>
-              <td>{{data.station}}</td>
-              <td>{{data.arrivalTime}}</td>
-              <td>{{data.departureTime}}</td>
-              <td>{{data.platform}}</td>
-            </tr>
-           </tbody>
-           
-         </table>
-     </div>      
-   
+    <br />
+    <div class="table-responsive" *ngIf="this.trainSchedule">
+      <table class="table table-striped">
+        <thead>
+          <tr *ngIf="this.trainSchedule">
+            <th scope="col">Stations</th>
+            <th scope="col">Arrival Time</th>
+            <th scope="col">Departure Time</th>
+            <th scope="col">Platform_No</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let data of this.trainSchedule">
+          <tr>
+            <td>{{ data.station }}</td>
+            <td>{{ data.arrivalTime }}</td>
+            <td>{{ data.departureTime }}</td>
+            <td>{{ data.platform }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -15,31 +15,32 @@ export class SeatAvlComponent implements OnInit {
   data2: any;
 
   constructor(
-    private router:Router) { }
+    private router: Router) { }
 
-   
-    ngOnInit(): void {
-      this.AvlForm = new FormGroup({
-        'trainNo': new FormControl(null, [Validators.required]),
-      })
-    }
-    onSubmit() {
-      let x =  (<HTMLInputElement>document.getElementById("trainNo")).value;
-      this.Data = require('src/assets/JsonDataFiles/availability.json');
-      this.trainSeat = this.Data.filter(d => d.number === x);
-   // console.log(this.trainSeat)
-    }
-  
-    onClear() {
-      this.AvlForm.reset();
-    }
-  
-    onBack() {
-      this.router.navigate(['/dashboard']);
-    }
+
+  ngOnInit(): void {
+    this.AvlForm = new FormGroup({
+      'trainNo': new FormControl(null, [Validators.required]),
+    })
+  }
+  onSubmit() {
+    let x = (<HTMLInputElement>document.getElementById("trainNo")).value;
+    this.Data = require('src/assets/JsonDataFiles/availability.json');
+    this.trainSeat = this.Data.filter(d => d.number === x);
+    // console.log(this.trainSeat)
+  }
+
+  onClear() {
+    this.AvlForm.reset();
+    this.trainSeat = null;
+  }
+
+  onBack() {
+    this.router.navigate(['/dashboard']);
+  }
 
 }
 
 
- 
+
 

@@ -1,26 +1,26 @@
 <div class="row">
-    <div
-      class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
-    >
-      <img
-        src="../../assets/images/arrangement.svg"
-        alt="Login"
-        class="img-responsive"
-        style="width: 70px; position: absolute; top: -18%; left: 42%;"
-      /><br /><br />
-      <h3 style="text-align: center; letter-spacing: 0.03cm;">
-        Train Seat Availability
-      </h3>
-      <form [formGroup]="AvlForm" (ngSubmit)="onSubmit()" id="seat">
-        <br />
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text" id="btnGroupAddon">
-                <i class="fa fa-braille fa-lg fa-fw" style="font-size:24px"></i>
-              </div>
+  <div
+    class="col-xs-4 offset-xs-4 col-sm-4 offset-sm-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4"
+  >
+    <img
+      src="../../assets/images/arrangement.svg"
+      alt="Login"
+      class="img-responsive"
+      style="width: 70px; position: absolute; top: -18%; left: 42%;"
+    /><br /><br />
+    <h3 style="text-align: center; letter-spacing: 0.03cm;">
+      Train Seat Availability
+    </h3>
+    <form [formGroup]="AvlForm" (ngSubmit)="onSubmit()" id="seat">
+      <br />
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">
+              <i class="fa fa-braille fa-lg fa-fw" style="font-size: 24px;"></i>
             </div>
-            <select
+          </div>
+          <select
             type="number"
             id="trainNo"
             formControlName="trainNo"
@@ -39,94 +39,93 @@
             <option>49922</option>
             <option>96170</option>
           </select>
-          </div>
         </div>
-        <br />
-        <div class="form-group">
-          <button
-            type="submit"
-            class="btn btn-primary form-control"
-            [disabled]="!AvlForm.valid"
-            click="onSubmit()"
-          >
-            Seat Details
-          </button>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-light btn-md" (click)="onClear()">
-            Clear</button
-          >&nbsp;
-          <button
-            type="button"
-            class="btn btn-secondary btn-md"
-            (click)="onBack()"
-          >
-            Back
-          </button>
-        </div>
-      </form>
       </div>
-    </div>
-   <br/>
-   <div>
-     <div class="table-responsive" style="color: blue;font-weight:700;" *ngFor="let data of this.trainSeat">Available Seat Of:
-      {{data.name}}&nbsp;&nbsp;({{data.number}})
-     </div>
-   </div><br/>
-    <div class="table-responsive"  *ngIf= "this.trainSeat">
-        <table class="table table-striped"> 
-          <thead>
-            <tr *ngIf= "this.trainSeat">
-                <th scope="col">Class Type</th>
-                <th scope="col">Available Seat</th>
-            </tr>
-          </thead>
-          <tbody *ngFor="let data of this.trainSeat">
-            <tr>
-              <td>First&nbsp;&nbsp;Ac</td>
-              <td>{{data.classes[0].firstAc}}</td>
-            </tr>
-            <tr>
-              <td>Executive&nbsp;&nbsp;Anubhuti</td>
-             <td>{{data.classes[0].executiveAnubhuti}}</td>
-            </tr>
-            <tr>
-              <td>AcExecutive&nbsp;&nbsp;Class</td>
-              <td>{{data.classes[0].acExecutiveClass}}</td>
-            </tr>
-            <tr>
-              <td>Second&nbsp;&nbsp;Ac</td>
-              <td>{{data.classes[0].secondAc}}</td>
-            </tr>
-            <tr>
-              <td>First&nbsp;&nbsp;Class</td>
-              <td>{{data.classes[0].firstClass}}</td>
-            </tr>
-            <tr>
-              <td>Third&nbsp;&nbsp;Ac</td>
-              <td>{{data.classes[0].thirdAc}}</td>
-            </tr>
-            <tr>
-              <td>ThirdAc &nbsp;&nbsp;Economy</td>
-              <td>{{data.classes[0].thirdAcEconomy}}</td>
-            </tr>
-            <tr>
-              <td>AcChair&nbsp;&nbsp;Class</td>
-              <td>{{data.classes[0].acChairClass}}</td>
-            </tr>
-            <tr>
-              <td>Sleeper</td>
-              <td>{{data.classes[0].sleeper}}</td>
-            </tr>
-            <tr>
-              <td>Second&nbsp;&nbsp;Seating</td>
-              <td>{{data.classes[0].secondSeating}}</td>
-            </tr>
-          </tbody>
-          
-        </table>
-    </div>      
-        
-        
-  
-   
+      <br />
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary form-control"
+          [disabled]="!AvlForm.valid"
+          click="onSubmit()"
+        >
+          Seat Details
+        </button>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-light btn-md" (click)="onClear()">
+          Clear</button
+        >&nbsp;
+        <button
+          type="button"
+          class="btn btn-secondary btn-md"
+          (click)="onBack()"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<br />
+<div>
+  <div class="table-responsive" *ngFor="let data of this.trainSeat">
+    <span class="badge badge-pill badge-success">{{ data.number }}</span
+    >&nbsp;&nbsp;<span class="badge badge-pill badge-primary">{{
+      data.name
+    }}</span>
+  </div>
+</div>
+<br />
+<div class="table-responsive" *ngIf="this.trainSeat">
+  <table class="table table-striped">
+    <thead>
+      <tr *ngIf="this.trainSeat">
+        <th scope="col">Class Type</th>
+        <th scope="col">Available Seat</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of this.trainSeat">
+      <tr>
+        <td>First&nbsp;&nbsp;Ac</td>
+        <td>{{ data.classes[0].firstAc }}</td>
+      </tr>
+      <tr>
+        <td>Executive&nbsp;&nbsp;Anubhuti</td>
+        <td>{{ data.classes[0].executiveAnubhuti }}</td>
+      </tr>
+      <tr>
+        <td>AcExecutive&nbsp;&nbsp;Class</td>
+        <td>{{ data.classes[0].acExecutiveClass }}</td>
+      </tr>
+      <tr>
+        <td>Second&nbsp;&nbsp;Ac</td>
+        <td>{{ data.classes[0].secondAc }}</td>
+      </tr>
+      <tr>
+        <td>First&nbsp;&nbsp;Class</td>
+        <td>{{ data.classes[0].firstClass }}</td>
+      </tr>
+      <tr>
+        <td>Third&nbsp;&nbsp;Ac</td>
+        <td>{{ data.classes[0].thirdAc }}</td>
+      </tr>
+      <tr>
+        <td>ThirdAc &nbsp;&nbsp;Economy</td>
+        <td>{{ data.classes[0].thirdAcEconomy }}</td>
+      </tr>
+      <tr>
+        <td>AcChair&nbsp;&nbsp;Class</td>
+        <td>{{ data.classes[0].acChairClass }}</td>
+      </tr>
+      <tr>
+        <td>Sleeper</td>
+        <td>{{ data.classes[0].sleeper }}</td>
+      </tr>
+      <tr>
+        <td>Second&nbsp;&nbsp;Seating</td>
+        <td>{{ data.classes[0].secondSeating }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
