@@ -27,12 +27,10 @@
             name="trainNo"
             class="form-control"
           >
-            <option>12565</option>
-            <option>12933</option>
+            <option>14311</option>
+            <option>12129</option>
             <option>19034</option>
-            <option>11406</option>
-            <option>69105</option>
-            <option>69131</option>
+            <option>22953</option>
             <option>59163</option>
           </select>
           </div>
@@ -63,4 +61,31 @@
       </form>
       </div>
     </div>
+    <div>
+      <hr *ngIf="this.trainSchedule">
+      <div>
+        <div class="table-responsive" style="color: blue;font-weight:700;" *ngIf="this.FirstData">Schedule Of:
+         {{this.FirstData["name"]}}&nbsp;&nbsp;({{this.FirstData["number"]}})
+        </div><hr *ngIf="this.trainSchedule"><br/>
+     <div class="table-responsive"  *ngIf= "this.trainSchedule">
+         <table class="table table-striped"> 
+           <thead>
+             <tr *ngIf= "this.trainSchedule">
+                 <th scope="col">Stations</th>
+                 <th scope="col">Arrival Time</th>
+                 <th scope="col">Departure Time</th>
+                 <th scope="col">Platform_No</th>
+             </tr>
+           </thead>
+           <tbody *ngFor="let data of this.trainSchedule">
+            <tr>
+              <td>{{data.station}}</td>
+              <td>{{data.arrivalTime}}</td>
+              <td>{{data.departureTime}}</td>
+              <td>{{data.platform}}</td>
+            </tr>
+           </tbody>
+           
+         </table>
+     </div>      
    

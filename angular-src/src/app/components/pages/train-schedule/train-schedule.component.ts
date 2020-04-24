@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 export class TrainScheduleComponent implements OnInit {
   trainNo: string = '';
   scheduleForm: FormGroup;
-  loading: boolean = false;
   trainSchedule: string;
   Data: any;
+  FirstData: string;
 
   constructor(
     private router:Router) { }
@@ -24,9 +24,10 @@ export class TrainScheduleComponent implements OnInit {
     }
     onSubmit() {
       let x =  (<HTMLInputElement>document.getElementById("trainNo")).value;
-      this.Data = require('src/assets/JsonDataFiles/getschedule.json');
-      this.trainSchedule = this.Data.filter(d => d.trainNo === x);
-      console.log(this.trainSchedule);
+      this.Data = require('src/assets/JsonDataFiles/schedule.json');
+      this.trainSchedule = this.Data.filter(d => d.number === x);
+      this.FirstData  = this.trainSchedule[0];
+      console.log(this.FirstData["name"]);
     }
   
     onClear() {
