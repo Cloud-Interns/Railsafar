@@ -1,0 +1,402 @@
+[
+  {
+    "_id": "5ea1cfa00215d8bfd475563c",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "arrivalTime": "02:01",
+    "departureTime": "02:03",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa07589e8d71139f865",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "arrivalTime": "06:13",
+    "departureTime": "06:15",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa02d41abae60355062",
+    "number": "18235",
+    "name": "Bilaspur Express",
+    "arrivalTime": "09:14",
+    "departureTime": "09:16",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0d4aafc6accb7f4ee",
+    "number": "18203",
+    "name": "Betwa Express",
+    "arrivalTime": "10:50",
+    "departureTime": "10:54",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa033a479804ae6c5ee",
+    "number": "12759",
+    "name": "Charminar Express",
+    "arrivalTime": "07:03",
+    "departureTime": "07:05",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0a052af58f2f923d4",
+    "number": "13247",
+    "name": "Capital Express",
+    "arrivalTime": "12:45",
+    "departureTime": "12:50",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0645462143ced5838",
+    "number": "11007",
+    "name": "Deccan Express",
+    "arrivalTime": "08:38",
+    "departureTime": "08:40",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0be8584c5f63e1048",
+    "number": "12357",
+    "name": "Durgiana Express",
+    "arrivalTime": "01:13",
+    "departureTime": "01:15",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa09e0d47abbb6eadf4",
+    "number": "14795",
+    "name": "Ekta Express",
+    "arrivalTime": "01:10",
+    "departureTime": "01:12",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0776664bc5ce2ad40",
+    "number": "18645",
+    "name": "East Coast Express",
+    "arrivalTime": "03:46",
+    "departureTime": "03:48",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0567db5d9b46ca855",
+    "number": "12921",
+    "name": "Flying Ranee Express",
+    "arrivalTime": "07:24",
+    "departureTime": "07:30",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0c88321f5c9e53de4",
+    "number": "12703",
+    "name": "Falaknuma Express",
+    "arrivalTime": "04:11",
+    "departureTime": "04:14",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa048cdab7f59f8d14d",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "arrivalTime": "05:29",
+    "departureTime": "05:30",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0dfa81ea7cbeda42c",
+    "number": "12507",
+    "name": "Guwahati Express",
+    "arrivalTime": "06:55",
+    "departureTime": "07:00",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa02c00fc77da270dc9",
+    "number": "13113",
+    "name": "Hazarduari Express",
+    "arrivalTime": "06:21",
+    "departureTime": "06:24",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa087b12b82b57cbbb4",
+    "number": "16317",
+    "name": "Himsagar Express",
+    "arrivalTime": "10:12",
+    "departureTime": "10:15",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa0c8c0b6a78792f4ba",
+    "number": "16526",
+    "name": "Island Express",
+    "arrivalTime": "10:40",
+    "departureTime": "10:42",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa0ea2adfccfa24b2bb",
+    "number": "22105",
+    "name": "Indrayani Express",
+    "arrivalTime": "12:46",
+    "departureTime": "12:50",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa08e3d8afebcaa6b10",
+    "number": "12101",
+    "name": "Jnaneshwari Express",
+    "arrivalTime": "11:03",
+    "departureTime": "11:05",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0605c455cc9e12003",
+    "number": "11077",
+    "name": "Jhelum Express",
+    "arrivalTime": "03:58",
+    "departureTime": "04:00",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0514e4e1ce786f673",
+    "number": "12509",
+    "name": "Kaziranga Express",
+    "arrivalTime": "07:15",
+    "departureTime": "07:17",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa02fa8e014e36456f1",
+    "number": "12934",
+    "name": "Karnvati Express",
+    "arrivalTime": "11:39",
+    "departureTime": "11:40",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa097e53e29ee6d8232",
+    "number": "22927",
+    "name": "Lok Shakti Express",
+    "arrivalTime": "12:50",
+    "departureTime": "12:52",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0c5a66d7156b32a4a",
+    "number": "12229",
+    "name": "Lucknow Mail",
+    "arrivalTime": "12:04",
+    "departureTime": "12:05",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa04cac932f1bd2f9de",
+    "number": "12619",
+    "name": "Matsyagandha Superfast Express",
+    "arrivalTime": "05:16",
+    "departureTime": "05:18",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0adf3ec8f5ce35131",
+    "number": "12907",
+    "name": "Maharashtra Sampark Kranti Express Express",
+    "arrivalTime": "03:18",
+    "departureTime": "03:19",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa008300db6c3cacc76",
+    "number": "16345",
+    "name": "Netravati Express",
+    "arrivalTime": "01:43",
+    "departureTime": "01:48",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0230a1dc996589e0e",
+    "number": "12505",
+    "name": "North East Express",
+    "arrivalTime": "03:17",
+    "departureTime": "03:20",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa010478c8077b8ee65",
+    "number": "12137",
+    "name": "Punjab Mail",
+    "arrivalTime": "03:30",
+    "departureTime": "03:31",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa091f4d837f65816a9",
+    "number": "12711",
+    "name": "Pinakini Express",
+    "arrivalTime": "11:14",
+    "departureTime": "11:16",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa0c64d489d03c7f8d3",
+    "number": "12957",
+    "name": "Rajdhani Express",
+    "arrivalTime": "07:02",
+    "departureTime": "07:04",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0539664cee68e04b7",
+    "number": "13575",
+    "name": "Ratna Express",
+    "arrivalTime": "10:35",
+    "departureTime": "10:40",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0ac1789fc7a74fded",
+    "number": "19310",
+    "name": "Shanti Express",
+    "arrivalTime": "03:20",
+    "departureTime": "03:30",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa07ed3abd923781661",
+    "number": "19168",
+    "name": "Sabaramti Express",
+    "arrivalTime": "12:54",
+    "departureTime": "12:55",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0a9295bf52478deaa",
+    "number": "12723",
+    "name": "Telangana Express",
+    "arrivalTime": "10:56",
+    "departureTime": "10:58",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa09e73a81ab5b13ee7",
+    "number": "13161",
+    "name": "Tebagha Express",
+    "arrivalTime": "09:07",
+    "departureTime": "09:09",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa0c7cf487bb3adea47",
+    "number": "12173",
+    "name": "Udyognagri Express",
+    "arrivalTime": "09:06",
+    "departureTime": "09:09",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa01b1b5f061e991097",
+    "number": "11301",
+    "name": "Udyan Express",
+    "arrivalTime": "06:30",
+    "departureTime": "06:38",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa035dffdcf962ca958",
+    "number": "12105",
+    "name": "Vidarbha Express",
+    "arrivalTime": "12:36",
+    "departureTime": "12:38",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa0434abcf5a2eba698",
+    "number": "17015",
+    "name": "Vishakha Express",
+    "arrivalTime": "11:20",
+    "departureTime": "11:24",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0851e865b5ecbe5cb",
+    "number": "22637",
+    "name": "West Coast Express",
+    "arrivalTime": "04:17",
+    "departureTime": "04:19",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0f5be97bc432890a7",
+    "number": "12251",
+    "name": "Wainganga Express",
+    "arrivalTime": "09:34",
+    "departureTime": "09:36",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa01aab8fe71bd1de09",
+    "number": "22649",
+    "name": "Yercaud Express",
+    "arrivalTime": "03:48",
+    "departureTime": "03:50",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa02fa0fe4f36115c27",
+    "number": "19031",
+    "name": "Yoga Express",
+    "arrivalTime": "03:29",
+    "departureTime": "03:30",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0f9f399b88ce1e404",
+    "number": "82901",
+    "name": "Tejas Express",
+    "arrivalTime": "03:49",
+    "departureTime": "03:51",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa00455c96dc141e617",
+    "number": "12010",
+    "name": "Shatabdi Express",
+    "arrivalTime": "03:30",
+    "departureTime": "03:35",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0ad9587b4461f424e",
+    "number": "11464",
+    "name": "Somnath Express",
+    "arrivalTime": "07:45",
+    "departureTime": "07:47",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa0e882643dd400a46a",
+    "number": "19034",
+    "name": "Gujarat Queen Express",
+    "arrivalTime": "07:57",
+    "departureTime": "07:59",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa0a0f7b28ba7c04fa2",
+    "number": "19217",
+    "name": "Saurashtra Janta Express",
+    "arrivalTime": "04:03",
+    "departureTime": "04:07",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa07710fdf48ae4e52c",
+    "number": "19216",
+    "name": "Saurashtra Express",
+    "arrivalTime": "08:07",
+    "departureTime": "08:09",
+    "platform": 5
+  }
+]
