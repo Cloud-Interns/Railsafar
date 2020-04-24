@@ -8321,7 +8321,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function bookTicket(bookingDetails) {
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
           headers.append("Content-Type", "application/json");
-          return this.http.post("http://localhost:8000/api/ticket/bookticket", bookingDetails, {
+          return this.http.post("/api/ticket/bookticket", bookingDetails, {
             headers: headers
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
@@ -8331,7 +8331,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getTickets",
         value: function getTickets() {
-          return this.http.get("http://localhost:8000/api/ticket/gettickets").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
+          return this.http.get("api/ticket/gettickets").pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
           }));
         } //Get PNR Details of logged in user
@@ -8339,7 +8339,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getPnrDetails",
         value: function getPnrDetails(pnrNo) {
-          return this.http.get("http://localhost:8000/api/ticket/getPnrDetails/".concat(pnrNo)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
+          return this.http.get("api/ticket/getPnrDetails/".concat(pnrNo)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
           }));
         } //Cancel Ticket
@@ -8347,7 +8347,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "cancelTicket",
         value: function cancelTicket(ticketId) {
-          return this.http["delete"]("http://localhost:8000/api/ticket/cancelticket/".concat(ticketId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
+          return this.http["delete"]("api/ticket/cancelticket/".concat(ticketId)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
           }));
         }
@@ -8449,7 +8449,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function registerUsers(newUser) {
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
           headers.append("Content-Type", "application/json");
-          return this.http.post("http://localhost:8000/api/user/register", newUser, {
+          return this.http.post("api/user/register", newUser, {
             headers: headers
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
@@ -8465,7 +8465,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
           headers.append("Content-Type", "application/json");
-          return this.http.post("http://localhost:8000/api/user/login", userDetails, {
+          return this.http.post("api/user/login", userDetails, {
             headers: headers
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
@@ -8481,7 +8481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
           headers.append("Content-Type", "application/json");
-          return this.http.post("http://localhost:8000/api/user/updateProfile", updationDetails, {
+          return this.http.post("api/user/updateProfile", updationDetails, {
             headers: headers
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
@@ -8496,7 +8496,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
           headers.append("Content-Type", "application/json");
-          return this.http.post("http://localhost:8000/api/user/sendemail", userEmail, {
+          return this.http.post("api/user/sendemail", userEmail, {
             headers: headers
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
@@ -8511,7 +8511,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
           headers.append("Content-Type", "application/json");
-          return this.http.post("http://localhost:8000/api/user/resetpassword/".concat(id), password, {
+          return this.http.post("api/user/resetpassword/".concat(id), password, {
             headers: headers
           }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
@@ -8521,7 +8521,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getUserDetails",
         value: function getUserDetails() {
-          return this.http.get('http://localhost:8000/api/user/details').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
+          return this.http.get('api/user/details').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (response) {
             return response;
           }));
         }

@@ -3226,25 +3226,25 @@ class TicketService {
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .post("http://localhost:8000/api/ticket/bookticket", bookingDetails, { headers: headers })
+            .post("/api/ticket/bookticket", bookingDetails, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Get Tickets of logged in user
     getTickets() {
         return this.http
-            .get("http://localhost:8000/api/ticket/gettickets")
+            .get("api/ticket/gettickets")
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Get PNR Details of logged in user
     getPnrDetails(pnrNo) {
         return this.http
-            .get(`http://localhost:8000/api/ticket/getPnrDetails/${pnrNo}`)
+            .get(`api/ticket/getPnrDetails/${pnrNo}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Cancel Ticket
     cancelTicket(ticketId) {
         return this.http
-            .delete(`http://localhost:8000/api/ticket/cancelticket/${ticketId}`)
+            .delete(`api/ticket/cancelticket/${ticketId}`)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
 }
@@ -3302,7 +3302,7 @@ class UserService {
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
         headers.append("Content-Type", "application/json");
         return this.http
-            .post("http://localhost:8000/api/user/register", newUser, { headers: headers })
+            .post("api/user/register", newUser, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Authenticate a user
@@ -3313,7 +3313,7 @@ class UserService {
         };
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
         headers.append("Content-Type", "application/json");
-        return this.http.post("http://localhost:8000/api/user/login", userDetails, { headers: headers })
+        return this.http.post("api/user/login", userDetails, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Update Profile
@@ -3324,7 +3324,7 @@ class UserService {
         };
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
         headers.append("Content-Type", "application/json");
-        return this.http.post("http://localhost:8000/api/user/updateProfile", updationDetails, { headers: headers })
+        return this.http.post("api/user/updateProfile", updationDetails, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Send Email containing link to reset password
@@ -3332,7 +3332,7 @@ class UserService {
         const userEmail = { email };
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
         headers.append("Content-Type", "application/json");
-        return this.http.post("http://localhost:8000/api/user/sendemail", userEmail, { headers: headers })
+        return this.http.post("api/user/sendemail", userEmail, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Reset User's Password
@@ -3340,12 +3340,12 @@ class UserService {
         const password = { newPassword };
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]();
         headers.append("Content-Type", "application/json");
-        return this.http.post(`http://localhost:8000/api/user/resetpassword/${id}`, password, { headers: headers })
+        return this.http.post(`api/user/resetpassword/${id}`, password, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
     //Get Loggedin user details
     getUserDetails() {
-        return this.http.get('http://localhost:8000/api/user/details')
+        return this.http.get('api/user/details')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((response) => response));
     }
 }
