@@ -25,7 +25,7 @@ export class TicketService {
     //Get Tickets of logged in user
     getTickets(): Observable<any> {
         return this.http
-            .get("/api/ticket/gettickets")
+            .get("api/ticket/gettickets")
             .pipe(map((response: any) => response));
 
     }
@@ -33,14 +33,14 @@ export class TicketService {
     //Get PNR Details of logged in user
     getPnrDetails(pnrNo): Observable<any> {
         return this.http
-            .get(`/api/ticket/getPnrDetails/${pnrNo}`)
+            .get(`api/ticket/getPnrDetails/${pnrNo}`)
             .pipe(map((response: any) => response));
     }
 
     //Cancel Ticket
     cancelTicket(ticketId): Observable<any> {
         return this.http
-            .delete(`/api/ticket/cancelticket/${ticketId}`)
+            .delete(`api/ticket/cancelticket/${ticketId}`)
             .pipe(map((response: any) => response));
     }
 
