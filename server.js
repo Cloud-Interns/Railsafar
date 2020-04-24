@@ -15,11 +15,11 @@ connectDB();
 app.use(cors());
 
 //setting static folder for angular
-app.use(express.static("angular-src"));
+app.use(express.static("angular-src/index.html"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve("angular-src/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve("angular-src/index.html"));
+// });
 
 //Init Middleware
 app.use(express.json({ extended: false }));
