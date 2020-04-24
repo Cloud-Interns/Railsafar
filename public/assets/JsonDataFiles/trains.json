@@ -1,0 +1,42 @@
+[
+  {
+    "trainNo": "12914",
+    "train": "Karnavati SF Express"
+  },
+  {
+    "trainNo": "12924",
+    "train": "Double Decker SF Express"
+  },
+  {
+    "trainNo": "12934",
+    "train": "Tejas SF Express"
+  },
+  {
+    "trainNo": "12944",
+    "train": "Howrah SF Express"
+  },
+  {
+    "trainNo": "12954",
+    "train": "Gujarat SF Express"
+  },
+  {
+    "trainNo": "12964",
+    "train": "Navjeevan SF Express"
+  },
+  {
+    "trainNo": "12974",
+    "train": "Porbandar Mail"
+  },
+  {
+    "trainNo": "12984",
+    "train": "Prerna SF Express"
+  },
+  {
+    "trainNo": "12994",
+    "train": "Intercity SF Express"
+  },
+  {
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  }
+]

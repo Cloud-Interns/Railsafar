@@ -1,0 +1,952 @@
+[
+  {
+    "_id": "5ea1326070766b9856343f70",
+    "number": "25973",
+    "name": "Mumbai Central Maheshtala Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 39,
+        "secondAc": 49,
+        "firstClass": 44,
+        "thirdAc": 66,
+        "thirdAcEconomy": 79,
+        "acChairClass": 51,
+        "sleeper": 77,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326047d25742a8e9e413",
+    "number": "43581",
+    "name": "Udaipur Delhi Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 36,
+        "secondAc": 49,
+        "firstClass": 47,
+        "thirdAc": 68,
+        "thirdAcEconomy": 81,
+        "acChairClass": 60,
+        "sleeper": 74,
+        "secondSeating": 92
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260439bca65c9ccbd69",
+    "number": "96101",
+    "name": "Bangalore Jalgaon Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 30,
+        "secondAc": 51,
+        "firstClass": 42,
+        "thirdAc": 66,
+        "thirdAcEconomy": 74,
+        "acChairClass": 53,
+        "sleeper": 74,
+        "secondSeating": 100
+      }
+    ]
+  },
+  {
+    "_id": "5ea132603a8499d301311831",
+    "number": "48967",
+    "name": "Hyderabad Gaya Express",
+    "classes": [
+      {
+        "firstAc": 18,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 36,
+        "secondAc": 52,
+        "firstClass": 48,
+        "thirdAc": 71,
+        "thirdAcEconomy": 75,
+        "acChairClass": 52,
+        "sleeper": 76,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260a01cb6427c47203d",
+    "number": "51138",
+    "name": "Ahmedabad Malegaon Express",
+    "classes": [
+      {
+        "firstAc": 21,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 40,
+        "secondAc": 51,
+        "firstClass": 46,
+        "thirdAc": 70,
+        "thirdAcEconomy": 76,
+        "acChairClass": 53,
+        "sleeper": 74,
+        "secondSeating": 97
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260d506441704e48d06",
+    "number": "60760",
+    "name": "Chennai Tirunelveli Express",
+    "classes": [
+      {
+        "firstAc": 19,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 33,
+        "secondAc": 53,
+        "firstClass": 45,
+        "thirdAc": 67,
+        "thirdAcEconomy": 75,
+        "acChairClass": 54,
+        "sleeper": 75,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260d8d4c7274cbe4236",
+    "number": "51952",
+    "name": "Kolkata Ambattur Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 31,
+        "secondAc": 52,
+        "firstClass": 44,
+        "thirdAc": 65,
+        "thirdAcEconomy": 72,
+        "acChairClass": 50,
+        "sleeper": 76,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260939615fc7aa51d70",
+    "number": "27728",
+    "name": "Surat Mangalore Express",
+    "classes": [
+      {
+        "firstAc": 24,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 38,
+        "secondAc": 49,
+        "firstClass": 48,
+        "thirdAc": 68,
+        "thirdAcEconomy": 76,
+        "acChairClass": 58,
+        "sleeper": 77,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260955fbfc3379f1216",
+    "number": "23448",
+    "name": "Jammu Belgaum Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 40,
+        "secondAc": 50,
+        "firstClass": 49,
+        "thirdAc": 65,
+        "thirdAcEconomy": 81,
+        "acChairClass": 57,
+        "sleeper": 78,
+        "secondSeating": 97
+      }
+    ]
+  },
+  {
+    "_id": "5ea132601c4dadefc680d413",
+    "number": "44130",
+    "name": "Nellore Bandra Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 31,
+        "secondAc": 50,
+        "firstClass": 43,
+        "thirdAc": 72,
+        "thirdAcEconomy": 74,
+        "acChairClass": 51,
+        "sleeper": 79,
+        "secondSeating": 92
+      }
+    ]
+  },
+  {
+    "_id": "5ea132606cbffaa722c534eb",
+    "number": "49922",
+    "name": "Jhansi Ulhasnagar Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 27,
+        "acExecutiveClass": 30,
+        "secondAc": 53,
+        "firstClass": 44,
+        "thirdAc": 64,
+        "thirdAcEconomy": 74,
+        "acChairClass": 55,
+        "sleeper": 79,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260fa0e8a0e605d8513",
+    "number": "67189",
+    "name": "Siliguri Loni Express",
+    "classes": [
+      {
+        "firstAc": 19,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 35,
+        "secondAc": 50,
+        "firstClass": 46,
+        "thirdAc": 65,
+        "thirdAcEconomy": 75,
+        "acChairClass": 60,
+        "sleeper": 73,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea132602905c4a1cc528ce5",
+    "number": "96170",
+    "name": "Jamnagar Ujjain Express",
+    "classes": [
+      {
+        "firstAc": 21,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 33,
+        "secondAc": 48,
+        "firstClass": 46,
+        "thirdAc": 68,
+        "thirdAcEconomy": 77,
+        "acChairClass": 50,
+        "sleeper": 73,
+        "secondSeating": 100
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260e897a49a4a9dde69",
+    "number": "92641",
+    "name": "Gulbarga Ajmer Express",
+    "classes": [
+      {
+        "firstAc": 18,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 38,
+        "secondAc": 53,
+        "firstClass": 48,
+        "thirdAc": 64,
+        "thirdAcEconomy": 76,
+        "acChairClass": 51,
+        "sleeper": 76,
+        "secondSeating": 99
+      }
+    ]
+  },
+  {
+    "_id": "5ea132606d6f9c5c47bd13b7",
+    "number": "18172",
+    "name": "Asansol Kolapur Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 35,
+        "secondAc": 51,
+        "firstClass": 47,
+        "thirdAc": 70,
+        "thirdAcEconomy": 79,
+        "acChairClass": 55,
+        "sleeper": 73,
+        "secondSeating": 96
+      }
+    ]
+  },
+  {
+    "_id": "5ea132606f35e0cdf9f66ab7",
+    "number": "33279",
+    "name": "Dehradun Durgapur Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 30,
+        "secondAc": 52,
+        "firstClass": 49,
+        "thirdAc": 64,
+        "thirdAcEconomy": 77,
+        "acChairClass": 50,
+        "sleeper": 76,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326026cba9ffa8061dc4",
+    "number": "99716",
+    "name": "Kochi Firozabad Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 34,
+        "secondAc": 51,
+        "firstClass": 44,
+        "thirdAc": 70,
+        "thirdAcEconomy": 80,
+        "acChairClass": 58,
+        "sleeper": 76,
+        "secondSeating": 91
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260bb028a8f3e0c3329",
+    "number": "68403",
+    "name": "Warangal Cuttack Express",
+    "classes": [
+      {
+        "firstAc": 24,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 39,
+        "secondAc": 49,
+        "firstClass": 50,
+        "thirdAc": 71,
+        "thirdAcEconomy": 74,
+        "acChairClass": 54,
+        "sleeper": 78,
+        "secondSeating": 96
+      }
+    ]
+  },
+  {
+    "_id": "5ea132608031c1c8c61f36e4",
+    "number": "33264",
+    "name": "Jamshedpur Borivalli Express",
+    "classes": [
+      {
+        "firstAc": 21,
+        "executiveAnubhuti": 27,
+        "acExecutiveClass": 39,
+        "secondAc": 49,
+        "firstClass": 45,
+        "thirdAc": 64,
+        "thirdAcEconomy": 77,
+        "acChairClass": 51,
+        "sleeper": 76,
+        "secondSeating": 91
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260dee8195405addbf6",
+    "number": "78317",
+    "name": "Amravati Noida Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 31,
+        "secondAc": 50,
+        "firstClass": 40,
+        "thirdAc": 69,
+        "thirdAcEconomy": 76,
+        "acChairClass": 50,
+        "sleeper": 80,
+        "secondSeating": 90
+      }
+    ]
+  },
+  {
+    "_id": "5ea132600b4c3193305101af",
+    "number": "55897",
+    "name": "Guntur Bikaner Express",
+    "classes": [
+      {
+        "firstAc": 24,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 32,
+        "secondAc": 49,
+        "firstClass": 40,
+        "thirdAc": 64,
+        "thirdAcEconomy": 79,
+        "acChairClass": 57,
+        "sleeper": 78,
+        "secondSeating": 91
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260f025ff72b494f7f0",
+    "number": "81862",
+    "name": "Saharanpur Bhiwandi Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 38,
+        "secondAc": 51,
+        "firstClass": 50,
+        "thirdAc": 68,
+        "thirdAcEconomy": 72,
+        "acChairClass": 56,
+        "sleeper": 79,
+        "secondSeating": 98
+      }
+    ]
+  },
+  {
+    "_id": "5ea132601d08c44d973d3482",
+    "number": "81693",
+    "name": "Gorakhpur Thiruvananthpuram Express",
+    "classes": [
+      {
+        "firstAc": 19,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 31,
+        "secondAc": 54,
+        "firstClass": 50,
+        "thirdAc": 71,
+        "thirdAcEconomy": 76,
+        "acChairClass": 53,
+        "sleeper": 80,
+        "secondSeating": 94
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326010ed70a7f247fdd0",
+    "number": "44008",
+    "name": "Salem Bhubaneshwar Express",
+    "classes": [
+      {
+        "firstAc": 24,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 31,
+        "secondAc": 53,
+        "firstClass": 41,
+        "thirdAc": 69,
+        "thirdAcEconomy": 79,
+        "acChairClass": 54,
+        "sleeper": 79,
+        "secondSeating": 99
+      }
+    ]
+  },
+  {
+    "_id": "5ea132603d82c018b97d71c2",
+    "number": "16047",
+    "name": "Tiruchirappalli Jalandhar Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 35,
+        "secondAc": 52,
+        "firstClass": 44,
+        "thirdAc": 65,
+        "thirdAcEconomy": 80,
+        "acChairClass": 52,
+        "sleeper": 75,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326047e092fe136dd39f",
+    "number": "42589",
+    "name": "Aligarh Gurgaon Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 37,
+        "secondAc": 51,
+        "firstClass": 40,
+        "thirdAc": 69,
+        "thirdAcEconomy": 78,
+        "acChairClass": 51,
+        "sleeper": 79,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260d7159e4d4de292df",
+    "number": "78229",
+    "name": "Mysore Muradabad Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 37,
+        "secondAc": 51,
+        "firstClass": 47,
+        "thirdAc": 68,
+        "thirdAcEconomy": 76,
+        "acChairClass": 55,
+        "sleeper": 79,
+        "secondSeating": 97
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260fc7410d51cda8abf",
+    "number": "93188",
+    "name": "Bareilly Hubli Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 31,
+        "secondAc": 50,
+        "firstClass": 45,
+        "thirdAc": 65,
+        "thirdAcEconomy": 77,
+        "acChairClass": 56,
+        "sleeper": 76,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260d1aa1311386afe43",
+    "number": "99614",
+    "name": "Solapur Chandigarh Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 32,
+        "secondAc": 49,
+        "firstClass": 45,
+        "thirdAc": 67,
+        "thirdAcEconomy": 79,
+        "acChairClass": 60,
+        "sleeper": 79,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea132607f9dabacbf8c461c",
+    "number": "51616",
+    "name": "Kota Guwahati Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 35,
+        "secondAc": 48,
+        "firstClass": 42,
+        "thirdAc": 65,
+        "thirdAcEconomy": 79,
+        "acChairClass": 51,
+        "sleeper": 74,
+        "secondSeating": 98
+      }
+    ]
+  },
+  {
+    "_id": "5ea132605735cca5f382b3c6",
+    "number": "21069",
+    "name": "Raipur Madurai Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 38,
+        "secondAc": 50,
+        "firstClass": 43,
+        "thirdAc": 70,
+        "thirdAcEconomy": 76,
+        "acChairClass": 52,
+        "sleeper": 80,
+        "secondSeating": 99
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260410155c56c0322cc",
+    "number": "27575",
+    "name": "Jodhpur Vijayawada Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 27,
+        "acExecutiveClass": 31,
+        "secondAc": 50,
+        "firstClass": 41,
+        "thirdAc": 66,
+        "thirdAcEconomy": 79,
+        "acChairClass": 55,
+        "sleeper": 79,
+        "secondSeating": 96
+      }
+    ]
+  },
+  {
+    "_id": "5ea132602ae23a0b4dcbc1a3",
+    "number": "45968",
+    "name": "Jabalpur Gwalior Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 32,
+        "secondAc": 49,
+        "firstClass": 48,
+        "thirdAc": 71,
+        "thirdAcEconomy": 77,
+        "acChairClass": 54,
+        "sleeper": 79,
+        "secondSeating": 99
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260686266b0c7aaa7cc",
+    "number": "31567",
+    "name": "Coimbatore Haora Express",
+    "classes": [
+      {
+        "firstAc": 19,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 40,
+        "secondAc": 50,
+        "firstClass": 48,
+        "thirdAc": 72,
+        "thirdAcEconomy": 72,
+        "acChairClass": 57,
+        "sleeper": 73,
+        "secondSeating": 94
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260dbb822e571cabaef",
+    "number": "82440",
+    "name": "Ranchi Allahabad Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 36,
+        "secondAc": 49,
+        "firstClass": 40,
+        "thirdAc": 66,
+        "thirdAcEconomy": 80,
+        "acChairClass": 56,
+        "sleeper": 74,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea132602676df7ab55124d4",
+    "number": "46687",
+    "name": "Navi Mumbai Amritsar Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 32,
+        "secondAc": 50,
+        "firstClass": 47,
+        "thirdAc": 70,
+        "thirdAcEconomy": 76,
+        "acChairClass": 52,
+        "sleeper": 72,
+        "secondSeating": 91
+      }
+    ]
+  },
+  {
+    "_id": "5ea132606230256138274081",
+    "number": "18197",
+    "name": "Dhanbad Aurangabad Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 40,
+        "secondAc": 54,
+        "firstClass": 43,
+        "thirdAc": 69,
+        "thirdAcEconomy": 77,
+        "acChairClass": 52,
+        "sleeper": 79,
+        "secondSeating": 95
+      }
+    ]
+  },
+  {
+    "_id": "5ea132607fcd4e61c812108c",
+    "number": "46103",
+    "name": "Srinagar Varanasi Express",
+    "classes": [
+      {
+        "firstAc": 22,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 30,
+        "secondAc": 50,
+        "firstClass": 44,
+        "thirdAc": 72,
+        "thirdAcEconomy": 75,
+        "acChairClass": 53,
+        "sleeper": 73,
+        "secondSeating": 98
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260ae8105e4fe8169be",
+    "number": "11826",
+    "name": "Vasai Kalyan Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 26,
+        "acExecutiveClass": 39,
+        "secondAc": 50,
+        "firstClass": 44,
+        "thirdAc": 64,
+        "thirdAcEconomy": 77,
+        "acChairClass": 50,
+        "sleeper": 80,
+        "secondSeating": 97
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326036d279734142100f",
+    "number": "33381",
+    "name": "Rajkot Meerut Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 36,
+        "secondAc": 48,
+        "firstClass": 47,
+        "thirdAc": 64,
+        "thirdAcEconomy": 81,
+        "acChairClass": 51,
+        "sleeper": 73,
+        "secondSeating": 96
+      }
+    ]
+  },
+  {
+    "_id": "5ea132608ff83ce5ba48fc41",
+    "number": "11200",
+    "name": "Faridabad Nashik Express",
+    "classes": [
+      {
+        "firstAc": 24,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 32,
+        "secondAc": 50,
+        "firstClass": 48,
+        "thirdAc": 70,
+        "thirdAcEconomy": 80,
+        "acChairClass": 60,
+        "sleeper": 78,
+        "secondSeating": 98
+      }
+    ]
+  },
+  {
+    "_id": "5ea132602b729fc2d760b89a",
+    "number": "64190",
+    "name": "Agra Ludhiana Express",
+    "classes": [
+      {
+        "firstAc": 18,
+        "executiveAnubhuti": 28,
+        "acExecutiveClass": 33,
+        "secondAc": 50,
+        "firstClass": 48,
+        "thirdAc": 66,
+        "thirdAcEconomy": 75,
+        "acChairClass": 55,
+        "sleeper": 79,
+        "secondSeating": 90
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260760fb917b76f5e22",
+    "number": "19926",
+    "name": "Ghaziabad Vadodra Express",
+    "classes": [
+      {
+        "firstAc": 24,
+        "executiveAnubhuti": 27,
+        "acExecutiveClass": 38,
+        "secondAc": 53,
+        "firstClass": 43,
+        "thirdAc": 71,
+        "thirdAcEconomy": 81,
+        "acChairClass": 51,
+        "sleeper": 72,
+        "secondSeating": 94
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260251ede194b3a91a3",
+    "number": "77882",
+    "name": "Patna Pimpri Express",
+    "classes": [
+      {
+        "firstAc": 20,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 39,
+        "secondAc": 50,
+        "firstClass": 44,
+        "thirdAc": 68,
+        "thirdAcEconomy": 73,
+        "acChairClass": 55,
+        "sleeper": 76,
+        "secondSeating": 94
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326033de8f6e8213e72b",
+    "number": "60571",
+    "name": "Vishakhaptnam Bhopal Express",
+    "classes": [
+      {
+        "firstAc": 21,
+        "executiveAnubhuti": 29,
+        "acExecutiveClass": 31,
+        "secondAc": 51,
+        "firstClass": 41,
+        "thirdAc": 65,
+        "thirdAcEconomy": 74,
+        "acChairClass": 58,
+        "sleeper": 75,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260690c84f3fd6af316",
+    "number": "64038",
+    "name": "Thane Mohali Express",
+    "classes": [
+      {
+        "firstAc": 19,
+        "executiveAnubhuti": 27,
+        "acExecutiveClass": 39,
+        "secondAc": 52,
+        "firstClass": 43,
+        "thirdAc": 65,
+        "thirdAcEconomy": 76,
+        "acChairClass": 52,
+        "sleeper": 77,
+        "secondSeating": 93
+      }
+    ]
+  },
+  {
+    "_id": "5ea13260735c5c1ef3f09df9",
+    "number": "18017",
+    "name": "Nagpur Kanpur Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 30,
+        "acExecutiveClass": 38,
+        "secondAc": 54,
+        "firstClass": 46,
+        "thirdAc": 66,
+        "thirdAcEconomy": 76,
+        "acChairClass": 55,
+        "sleeper": 72,
+        "secondSeating": 100
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326094bf657aea6da6c9",
+    "number": "45690",
+    "name": "Lucknow Jaipur Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 27,
+        "acExecutiveClass": 31,
+        "secondAc": 53,
+        "firstClass": 47,
+        "thirdAc": 67,
+        "thirdAcEconomy": 74,
+        "acChairClass": 50,
+        "sleeper": 79,
+        "secondSeating": 97
+      }
+    ]
+  },
+  {
+    "_id": "5ea1326048dcd2100a23ff67",
+    "number": "77969",
+    "name": "Pune Surat Express",
+    "classes": [
+      {
+        "firstAc": 19,
+        "executiveAnubhuti": 24,
+        "acExecutiveClass": 39,
+        "secondAc": 51,
+        "firstClass": 48,
+        "thirdAc": 68,
+        "thirdAcEconomy": 79,
+        "acChairClass": 54,
+        "sleeper": 79,
+        "secondSeating": 99
+      }
+    ]
+  },
+  {
+    "_id": "5ea132603ae79bae2e3939e0",
+    "number": "79282",
+    "name": "Indore Gandhinagar Express",
+    "classes": [
+      {
+        "firstAc": 23,
+        "executiveAnubhuti": 25,
+        "acExecutiveClass": 39,
+        "secondAc": 49,
+        "firstClass": 40,
+        "thirdAc": 69,
+        "thirdAcEconomy": 74,
+        "acChairClass": 56,
+        "sleeper": 79,
+        "secondSeating": 90
+      }
+    ]
+  }
+]

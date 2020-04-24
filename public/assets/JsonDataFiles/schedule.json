@@ -1,0 +1,302 @@
+[
+  {
+    "_id": "5ea1cfa00215d8bfd475563c",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "station":"BAREILLY JN",
+    "arrivalTime": "02:01 PM",
+    "departureTime": "02:03 PM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa07589e8d71139f865",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "station":"PUNE JN",
+    "arrivalTime": "06:13 AM",
+    "departureTime": "06:15 AM",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa02d41abae60355062",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "station":"AHMADNAGAR",
+    "arrivalTime": "09:14 AM",
+    "departureTime": "09:16 AM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0d4aafc6accb7f4ee",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "station":"AKOLA JN",
+    "arrivalTime": "10:50 AM",
+    "departureTime": "10:54 AM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa033a479804ae6c5ee",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "station":"NAGPUR JN",
+    "arrivalTime": "07:03 PM",
+    "departureTime": "07:05 PM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0a052af58f2f923d4",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "station":"KHARAGPUR",
+    "arrivalTime": "12:45 AM",
+    "departureTime": "12:50 AM",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0645462143ced5838",
+    "number": "12129",
+    "name": "Azad Hind Express",
+    "station":"HOWRAH JN",
+    "arrivalTime": "08:38 AM",
+    "departureTime": "08:40 AM",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0be8584c5f63e1048",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "station":"DELHI JN",
+    "arrivalTime": "03:13 PM",
+    "departureTime": "03:15 PM",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa09e0d47abbb6eadf4",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "station":"GANDHINAGAR",
+    "arrivalTime": "10:00 PM",
+    "departureTime": "10:10 PM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0776664bc5ce2ad40",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "station":"JAIPUR JN",
+    "arrivalTime": "01:00 AM",
+    "departureTime": "01:10 AM",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0567db5d9b46ca855",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "station":"ABU ROAD",
+    "arrivalTime": "06:00 AM",
+    "departureTime": "06:15 AM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0c88321f5c9e53de4",
+    "number": "14311",
+    "name": "Ala Hazrat Express",
+    "station":"NEW BHUJ",
+    "arrivalTime": "09:00 AM",
+    "departureTime": "09:15 AM",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa048cdab7f59f8d14d",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"MUMBAI CENTR",
+    "arrivalTime": "05:29 AM",
+    "departureTime": "05:30 AM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0dfa81ea7cbeda42c",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"VAPI",
+    "arrivalTime": "06:55 AM",
+    "departureTime": "07:00 AM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa02c00fc77da270dc9",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"VALSAD",
+    "arrivalTime": "07:45 AM",
+    "departureTime": "07:50 AM",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa087b12b82b57cbbb4",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"SURAT",
+    "arrivalTime": "10:12 AM",
+    "departureTime": "10:15 AM",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa0c8c0b6a78792f4ba",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"BHARUCH JN",
+    "arrivalTime": "12:00 PM",
+    "departureTime": "12:10 PM",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa0ea2adfccfa24b2bb",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"VADODARA",
+    "arrivalTime": "12:46 PM",
+    "departureTime": "12:50 PM",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa08e3d8afebcaa6b10",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"NADIAD JN",
+    "arrivalTime": "2:15 PM",
+    "departureTime": "2:20 PM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0605c455cc9e12003",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"MAHEMADAVAD",
+    "arrivalTime": "03:58 PM",
+    "departureTime": "04:00 PM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0514e4e1ce786f673",
+    "number": "22953",
+    "name": "Gujarat Express",
+    "station":"AHMEDABAD",
+    "arrivalTime": "04:20 PM",
+    "departureTime": "04:30 PM",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa02fa8e014e36456f1",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"AHMEDABAD",
+    "arrivalTime": "05:16 AM" ,
+    "departureTime": "05:20 AM",
+    "platform": 1
+  },
+  
+  {
+    "_id": "5ea1cfa0c5a66d7156b32a4a",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"BAREJADI NAN",
+    "arrivalTime": "06:00 AM",
+    "departureTime": "06:05 AM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa04cac932f1bd2f9de",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"MAHEMDABAD",
+    "arrivalTime": "06:45 AM",
+    "departureTime": "06:50 AM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa0adf3ec8f5ce35131",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"NADIAD JN",
+    "arrivalTime": "07:30 AM",
+    "departureTime": "07:35 AM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa008300db6c3cacc76",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"KANJARI BORI",
+    "arrivalTime": "08:00 AM",
+    "departureTime": "08:05 AM",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa0230a1dc996589e0e",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"ANAND JN",
+    "arrivalTime": "09:30 AM",
+    "departureTime": "09:35 AM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa010478c8077b8ee65",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"VALSAD JN",
+    "arrivalTime": "10:05 AM",
+    "departureTime": "10:10 AM",
+    "platform": 4
+  },
+  {
+    "_id": "5ea1cfa091f4d837f65816a9",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"VADODARA JN",
+    "arrivalTime": "11:14 AM",
+    "departureTime": "11:16 AM",
+    "platform": 5
+  },
+  {
+    "_id": "5ea1cfa0c64d489d03c7f8d3",
+    "number": "19034",
+    "name": "Gujarat Queen",
+    "station":"BHARUCH JN",
+    "arrivalTime": "12:00 PM",
+    "departureTime": "12:05 PM",
+    "platform": 3
+  },
+  {
+    "_id": "5ea1cfa097e53e29ee6d8232",
+    "number": "59163",
+    "name": "Anand Vadtal Passenger",
+    "station":"ANAND",
+    "arrivalTime": "12:05 PM",
+    "departureTime": "12:10 PM",
+    "platform": 2
+  },
+  {
+    "_id": "5ea1cfa0ac1789fc7a74fded",
+    "number": "59163",
+    "name": "Anand Vadtal Passenger",
+    "station":"KANJARI BORI",
+    "arrivalTime": "12:30 PM",
+    "departureTime": "12:33 PM",
+    "platform": 1
+  },
+  {
+    "_id": "5ea1cfa07ed3abd923781661",
+    "number": "59163",
+    "name": "Anand Vadtal Passenger",
+    "station":"VADTAL SWAMI",
+    "arrivalTime": "12:45 PM",
+    "departureTime": "12:55 PM",
+    "platform": 1
+  }
+
+]
+  

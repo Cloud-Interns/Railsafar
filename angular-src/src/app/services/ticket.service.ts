@@ -5,12 +5,12 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class TicketService {
-    
 
 
-    
-    constructor(private http: HttpClient) { 
-        
+
+
+    constructor(private http: HttpClient) {
+
     }
 
     //Book Ticket
@@ -18,14 +18,14 @@ export class TicketService {
         const headers = new HttpHeaders();
         headers.append("Content-Type", "application/json");
         return this.http
-            .post("http://localhost:8000/api/ticket/bookticket", bookingDetails, { headers: headers })
+            .post("/api/ticket/bookticket", bookingDetails, { headers: headers })
             .pipe(map((response: any) => response));
     }
 
     //Get Tickets of logged in user
     getTickets(): Observable<any> {
         return this.http
-            .get("http://localhost:8000/api/ticket/gettickets")
+            .get("api/ticket/gettickets")
             .pipe(map((response: any) => response));
 
     }
@@ -33,17 +33,17 @@ export class TicketService {
     //Get PNR Details of logged in user
     getPnrDetails(pnrNo): Observable<any> {
         return this.http
-            .get(`http://localhost:8000/api/ticket/getPnrDetails/${pnrNo}`)
+            .get(`api/ticket/getPnrDetails/${pnrNo}`)
             .pipe(map((response: any) => response));
     }
 
     //Cancel Ticket
     cancelTicket(ticketId): Observable<any> {
         return this.http
-            .delete(`http://localhost:8000/api/ticket/cancelticket/${ticketId}`)
+            .delete(`api/ticket/cancelticket/${ticketId}`)
             .pipe(map((response: any) => response));
     }
 
-   
+
 }
 

@@ -80,8 +80,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     AppRoutingModule,
     JwtModule.forRoot({
       config: {
-        //tokenGetter: tokenGetter,
-        //whitelistedDomains: ["example.com"],
+        tokenGetter: getToken,
+        whitelistedDomains: ['127.0.0.1:8000']
         //blacklistedRoutes: ["example.com/examplebadroute/"]
       }
     })
@@ -94,3 +94,6 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function getToken() {
+  return localStorage.getItem('currentUser');
+}
