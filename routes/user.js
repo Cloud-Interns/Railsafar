@@ -121,7 +121,7 @@ router.post("/sendemail", async (req, res) => {
                 <h2>You requested for the password reset</h2>
                 <img src="https://png.pngtree.com/png-clipart/20190614/original/pngtree-padlock-vector-icon-png-image_3725460.jpg" class="img-responsive" style="width:100px;height:100px" alt="image" />
                 <h1 style="align : center;">Click on the below link to reset password</h1>         
-                <a href="http://localhost:4200/resetpassword/${tokenID}">Click here</a><br />
+                <a href="http://railsafar.herokuapp.com/resetpassword/${tokenID}">Click here</a><br />
                 <strong>Note : </strong><b>This link is valid only for 24 hours!!</b>
                 <p>Please do not share with anyone!</p>
                 <p>Have a great day ahead :)</p>

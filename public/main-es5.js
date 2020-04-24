@@ -3665,6 +3665,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "onClear",
         value: function onClear() {
           this.livestatusForm.reset();
+          this.liveStatus = null;
+          this.FirstData = null;
         }
       }, {
         key: "onBack",

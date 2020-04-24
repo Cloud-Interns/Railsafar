@@ -10,33 +10,35 @@ export class LiveStatusComponent implements OnInit {
 
   trainNo: string = '';
   livestatusForm: FormGroup;
-  liveStatus: string;
+  liveStatus: any;
   Data: any;
-  FirstData: string;
+  FirstData: any;
 
   constructor(
-    private router:Router) { }
+    private router: Router) { }
 
-   
-    ngOnInit(): void {
-      this.livestatusForm = new FormGroup({
-        'trainNo': new FormControl(null, [Validators.required]),
-      })
-    }
-    onSubmit() {
-      let x =  (<HTMLInputElement>document.getElementById("trainNo")).value;
-      this.Data = require('src/assets/JsonDataFiles/schedule.json');
-      this.liveStatus = this.Data.filter(d => d.number === x);
-      this.FirstData  = this.liveStatus[0];
-    }
-  
-    onClear() {
-      this.livestatusForm.reset();
-    }
-  
-    onBack() {
-      this.router.navigate(['/dashboard']);
-    }
+
+  ngOnInit(): void {
+    this.livestatusForm = new FormGroup({
+      'trainNo': new FormControl(null, [Validators.required]),
+    })
+  }
+  onSubmit() {
+    let x = (<HTMLInputElement>document.getElementById("trainNo")).value;
+    this.Data = require('src/assets/JsonDataFiles/schedule.json');
+    this.liveStatus = this.Data.filter(d => d.number === x);
+    this.FirstData = this.liveStatus[0];
+  }
+
+  onClear() {
+    this.livestatusForm.reset();
+    this.liveStatus = null;
+    this.FirstData = null;
+  }
+
+  onBack() {
+    this.router.navigate(['/dashboard']);
+  }
 
 }
 

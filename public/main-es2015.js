@@ -1365,6 +1365,8 @@ class LiveStatusComponent {
     }
     onClear() {
         this.livestatusForm.reset();
+        this.liveStatus = null;
+        this.FirstData = null;
     }
     onBack() {
         this.router.navigate(['/dashboard']);
