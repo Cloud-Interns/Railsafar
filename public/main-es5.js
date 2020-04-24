@@ -850,7 +850,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           path: "**",
           component: _components_pages_error_error_component__WEBPACK_IMPORTED_MODULE_54__["ErrorComponent"]
         }]];
-      }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_33__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ɵangular_packages_router_router_f"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_23__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_55__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_55__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JwtModule"], _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JwtModule"], [[3, _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JwtModule"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵAPP_ROOT"], true, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_26__["ANIMATION_MODULE_TYPE"], "BrowserAnimations", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_29__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_29__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JWT_OPTIONS"], {}, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, ngx_toastr__WEBPACK_IMPORTED_MODULE_37__["TOAST_CONFIG"], {
+      }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_33__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ɵangular_packages_router_router_f"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_23__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_33__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_33__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_55__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_55__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JwtModule"], _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JwtModule"], [[3, _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JwtModule"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵAPP_ROOT"], true, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_26__["ANIMATION_MODULE_TYPE"], "BrowserAnimations", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_29__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_29__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_30__["JWT_OPTIONS"], {
+        tokenGetter: _app_module__WEBPACK_IMPORTED_MODULE_1__["getToken"],
+        whitelistedDomains: ["127.0.0.1:8000"]
+      }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, ngx_toastr__WEBPACK_IMPORTED_MODULE_37__["TOAST_CONFIG"], {
         "default": ngx_toastr__WEBPACK_IMPORTED_MODULE_37__["DefaultGlobalConfig"],
         config: {}
       }, [])]);
@@ -865,7 +868,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/app.module.ts ***!
     \*******************************/
 
-  /*! exports provided: AppModule */
+  /*! exports provided: AppModule, getToken */
 
   /***/
   function srcAppAppModuleTs(module, __webpack_exports__, __webpack_require__) {
@@ -878,10 +881,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     __webpack_require__.d(__webpack_exports__, "AppModule", function () {
       return AppModule;
     });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "getToken", function () {
+      return getToken;
+    });
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
+
+    function getToken() {
+      return localStorage.getItem('currentUser');
+    }
     /***/
 
   },
