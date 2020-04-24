@@ -27,7 +27,6 @@ export class TrainScheduleComponent implements OnInit {
       this.Data = require('src/assets/JsonDataFiles/schedule.json');
       this.trainSchedule = this.Data.filter(d => d.number === x);
       this.FirstData  = this.trainSchedule[0];
-      console.log(this.FirstData["name"]);
     }
   
     onClear() {
