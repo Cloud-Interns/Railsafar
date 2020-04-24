@@ -1,0 +1,8 @@
+
+select.ng-invalid.ng-touched {
+    border-color: red;
+  }
+  
+  select.ng-valid {
+    border-color: rgb(100, 204, 100);
+  }

@@ -27,7 +27,6 @@
             name="trainNo"
             class="form-control"
           >
-            <option></option>
             <option>25973</option>
             <option>43581</option>
             <option>96101</option>
@@ -68,6 +67,7 @@
   </div>
 </div>
 <br />
+<hr *ngIf="this.trainSeat" />
 <div>
   <div class="table-responsive" *ngFor="let data of this.trainSeat">
     <span class="badge badge-pill badge-success">{{ data.number }}</span
