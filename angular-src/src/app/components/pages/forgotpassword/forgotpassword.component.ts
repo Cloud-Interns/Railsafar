@@ -14,7 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ForgotpasswordComponent implements OnInit {
 
 
-  emailForm: FormGroup;
+  forgotPwdForm: FormGroup;
   loading: boolean = false;
   message: string = '';
   displayAlert: Boolean = false;
@@ -22,7 +22,11 @@ export class ForgotpasswordComponent implements OnInit {
   private email: string;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private toastr: ToastrService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UserService,
+    private toastr: ToastrService) { }
 
 
   //Toast Methods
@@ -46,14 +50,14 @@ export class ForgotpasswordComponent implements OnInit {
 
 
   ngOnInit() {
-    this.emailForm = new FormGroup({
+    this.forgotPwdForm = new FormGroup({
       'email': new FormControl(this.email, [Validators.required, Validators.email])
     })
   }
 
   onSubmit() {
     this.loading = true;
-    this.email = this.emailForm.value.email;
+    this.email = this.forgotPwdForm.value.email;
     this.userService.sendEmail(this.email).subscribe(response => {
       this.loading = false;
       if (response.status === 'success') {
@@ -64,12 +68,14 @@ export class ForgotpasswordComponent implements OnInit {
         this.showError();
       }
     });
-    this.emailForm.reset();
+    this.forgotPwdForm.reset();
   }
 
-  onCancel() {
+  onBack() {
     this.router.navigate(['../login'], { relativeTo: this.route });
-
   }
 
+  onClear() {
+    this.forgotPwdForm.reset();
+  }
 }

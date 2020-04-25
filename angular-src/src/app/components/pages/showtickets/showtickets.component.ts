@@ -17,6 +17,7 @@ export class ShowticketsComponent implements OnInit {
   noOfPassengers: number = 0;
   passengersArray = [];
   loading: boolean = false;
+  isTickets: boolean = false;
   ticketId: string = ''
   cancelForm: FormGroup;
 
@@ -46,6 +47,7 @@ export class ShowticketsComponent implements OnInit {
 
     this.ticketService.getTickets().subscribe(response => {
       if (response.tickets) {
+        this.isTickets = true;
         this.tickets = response.tickets;
         this.passengersArray = this.tickets.map(ticket => ticket.passengerDetails);
         this.noOfPassengers = this.passengersArray[0].length;

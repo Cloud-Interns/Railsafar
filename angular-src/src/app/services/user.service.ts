@@ -61,6 +61,16 @@ export class UserService {
       .pipe(map((response: any) => response));
   }
 
+  //Update User's Password
+  updatePassword(oldPassword: string, newPassword: string): Observable<any> {
+    const passwords = { oldPassword, newPassword }
+    const headers = new HttpHeaders();
+    headers.append("Content-Type", "application/json");
+    return this.http.post(`api/user/updatePassword`, passwords, { headers: headers })
+      .pipe(map((response: any) => response));
+  }
+
+
   //Get Loggedin user details
   getUserDetails(): Observable<any> {
     return this.http.get('api/user/details')

@@ -171,6 +171,42 @@ router.post("/resetpassword/:token", async (req, res) => {
   }
 });
 
+//@route POST api/user/updatepassword
+//@desc  Update user's password
+//@access Private
+router.post("/updatePassword", verifytoken, async (req, res) => {
+  try {
+    const id = req.user;
+    const { oldPassword, newPassword } = req.body;
+
+    //get the user based on ID
+    let user = await User.findById(id);
+
+    //comparing the entered old password and old password in database
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
+
+    if (!isMatch) {
+      return res.json({
+        status: "warning",
+      });
+    } else {
+      //generating SALT(like a secret code or key) using bcryptjs
+      const salt = await bcrypt.genSalt(10);
+
+      //hashing and encrypting  new password before it is being saved in database
+      user.password = await bcrypt.hash(newPassword, salt);
+
+      //updating DB
+      await user.save();
+      return res.status(200).json({ status: "success" });
+    }
+  } catch (err) {
+    return res.status(500).json({
+      status: "error",
+    });
+  }
+});
+
 //@route POST api/user/updateProfile
 //@desc Update User's Profile
 //@access Private

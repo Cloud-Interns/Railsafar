@@ -18,7 +18,7 @@ export class TicketService {
         const headers = new HttpHeaders();
         headers.append("Content-Type", "application/json");
         return this.http
-            .post("/api/ticket/bookticket", bookingDetails, { headers: headers })
+            .post("api/ticket/bookticket", bookingDetails, { headers: headers })
             .pipe(map((response: any) => response));
     }
 

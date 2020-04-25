@@ -15,7 +15,7 @@ connectDB();
 app.use(cors());
 
 //setting static folder for angular
-app.use(express.static(path.join(__dirname, "public")));
+//app.use(express.static(path.join(__dirname, "public")));
 
 //Init Middleware
 app.use(express.json({ extended: false }));
@@ -25,9 +25,9 @@ app.use("/api/user", require("./routes/user"));
 app.use("/api/user", require("./routes/auth"));
 app.use("/api/ticket", require("./routes/ticket"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public/index.html"));
+// });
 
 //Starting server
 app.listen(PORT, () => {

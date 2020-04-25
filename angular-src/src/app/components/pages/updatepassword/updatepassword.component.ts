@@ -1,36 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 
 import { UserService } from 'src/app/services/user.service';
 import { ConfirmPasswordValidator } from '../../shared/confirmPassword-validator';
 
-@Component({
-  selector: 'app-resetpassword',
-  templateUrl: './resetpassword.component.html',
-  styleUrls: ['./resetpassword.component.css']
-})
-export class ResetpasswordComponent implements OnInit {
 
-  resetForm: FormGroup;
+@Component({
+  selector: 'app-updatepassword',
+  templateUrl: './updatepassword.component.html',
+  styleUrls: ['./updatepassword.component.css']
+})
+export class UpdatepasswordComponent implements OnInit {
+
+  updatePwdForm: FormGroup;
   loading: boolean = false;
 
-  constructor(private route: ActivatedRoute,
+  constructor(
     private userService: UserService,
     private router: Router,
     private toastr: ToastrService) { }
 
   //Toast Methods
   showSuccess() {  //FOR Success
-    this.toastr.success('Success', 'Password changed successfully!', {
+    this.toastr.success('Success', 'Password updated successfully!', {
       timeOut: 3000
     });
   }
 
   showWarning() {  // FOR Warnings
-    this.toastr.warning('Warning', 'No such user exists!', {
+    this.toastr.warning('Warning', 'Entered old password is incorrect!', {
       timeOut: 3000
     });
   }
@@ -43,26 +44,27 @@ export class ResetpasswordComponent implements OnInit {
 
 
   ngOnInit() {
-    this.resetForm = new FormGroup({
-      password: new FormControl(null, [
+    this.updatePwdForm = new FormGroup({
+      oldPassword: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+      ]),
+      newPassword: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
       ]),
       confirmPassword: new FormControl(null, Validators.required),
-    }, { validators: ConfirmPasswordValidator.MatchPassword }
+    }, { validators: ConfirmPasswordValidator.MatchPassword2 }
     );
   }
 
   onSubmit() {
     this.loading = true;
-    const newPassword = this.resetForm.value.password;
-    let token = 0;
-    this.route.params.subscribe((params: Params) => {
-      token = params['token'];
-    });
+    const oldPassword = this.updatePwdForm.value.oldPassword;
+    const newPassword = this.updatePwdForm.value.newPassword;
 
-    //calling method in user service to call API to change password
-    this.userService.resetPassword(newPassword, token).subscribe(response => {
+    //calling method in user service to call API to update password
+    this.userService.updatePassword(oldPassword, newPassword).subscribe(response => {
       this.loading = false;
       if (response.status === 'success') {
         this.showSuccess();
@@ -73,13 +75,10 @@ export class ResetpasswordComponent implements OnInit {
       }
 
     })
-    this.resetForm.reset();
-
+    this.updatePwdForm.reset();
   }
 
-  onLogin() {
-    localStorage.removeItem('currentUser');
-    this.router.navigate(['../../login'], { relativeTo: this.route });
+  onBack() {
+    this.router.navigate(['/dashboard']);
   }
-
 }

@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
 
   //Toast Methods
   showSuccess() {  //FOR Success
-    this.toastr.success('Success', 'Please verify your email!', {
+    this.toastr.success('Successfully Registered!', 'Kindly Login!', {
       timeOut: 3000
     });
   }
@@ -63,6 +63,7 @@ export class SignupComponent implements OnInit {
     this.userService.registerUsers(newUser).subscribe(response => {
       this.loading = false;
       if (response.status === 'success') {
+        this.router.navigate(["/login"]);
         this.showSuccess();
       }
       else if (response.status === 'warning') {

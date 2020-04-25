@@ -33,6 +33,7 @@ import { PnrComponent } from './components/pages/pnr/pnr.component';
 import { ProfileComponent } from './components/pages//profile/profile.component';
 import { TrainScheduleComponent } from './components/pages/train-schedule/train-schedule.component';
 import { SeatAvlComponent } from './components/pages/seat-avl/seat-avl.component';
+import { UpdatepasswordComponent } from './components/pages/updatepassword/updatepassword.component';
 
 //Services Imports
 import { UserService } from './services/user.service';
@@ -44,6 +45,7 @@ import { TokenInterceptor } from './services/token.interceptor';
 
 //Custom Directives Imports./components/pages/profile/profile.component
 import { ShPasswordDirective } from './directives/sh-password.directive';
+
 
 
 
@@ -69,7 +71,8 @@ import { ShPasswordDirective } from './directives/sh-password.directive';
     PnrComponent,
     ProfileComponent,
     TrainScheduleComponent,
-    SeatAvlComponent
+    SeatAvlComponent,
+    UpdatepasswordComponent
   ],
   imports: [
     BrowserModule,

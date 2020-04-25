@@ -20,6 +20,7 @@ import { PnrComponent } from './components/pages/pnr/pnr.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { TrainScheduleComponent } from './components/pages/train-schedule/train-schedule.component';
 import { SeatAvlComponent } from './components/pages/seat-avl/seat-avl.component';
+import { UpdatepasswordComponent } from './components/pages/updatepassword/updatepassword.component';
 //Services Imports
 import {
   AuthGuardService as AuthGuard
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact-us', component: ContactusComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'updatepassword', component: UpdatepasswordComponent },
   { path: 'resetpassword/:token', component: ResetpasswordComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
@@ -41,8 +43,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'livestatus', component: LiveStatusComponent, canActivate: [AuthGuard] },
   { path: 'check-pnr', component: PnrComponent, canActivate: [AuthGuard] },
-  {path:'get-schedule', component:TrainScheduleComponent,canActivate: [AuthGuard]},
-  {path:'avl-seat',component:SeatAvlComponent,canActivate: [AuthGuard]},
+  { path: 'get-schedule', component: TrainScheduleComponent, canActivate: [AuthGuard] },
+  { path: 'avl-seat', component: SeatAvlComponent, canActivate: [AuthGuard] },
   { path: '**', component: ErrorComponent }
 
 ];
