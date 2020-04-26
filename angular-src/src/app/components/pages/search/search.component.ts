@@ -12,10 +12,15 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
+  source: string;
+  searchData: any;
   x: any;
-  loading: boolean = false;
-  userDetails = {};
-  constructor(private router: Router, private toastr: ToastrService) { }
+  trains: null;
+  destination: string;
+
+  constructor(
+    private router: Router,
+    private toastr: ToastrService) { }
 
   //Toast Methods
   showError() {   // FOR Errors 
@@ -34,18 +39,20 @@ export class SearchComponent implements OnInit {
       destination: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^[A-Za-z -]+$/)
-      ]),
-      doj: new FormControl(null, Validators.required)
+      ])
     });
   }
 
   onSubmit() {
-    this.loading = true;
-    console.log(this.searchForm);
+    let source = this.searchForm.value.source;
+    let destination = this.searchForm.value.destination;
+    this.searchData = require('src/assets/JsonDataFiles/trains.json');
+    this.trains = this.searchData.filter(data => data.source === source && data.destination === destination);
   }
 
   onClear() {
     this.searchForm.reset();
+    this.trains = null;
   }
 
   onBack() {

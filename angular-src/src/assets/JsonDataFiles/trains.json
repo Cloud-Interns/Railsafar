@@ -1,41 +1,109 @@
 [
   {
+    "source": "Surat",
+    "destination": "Mumbai",
     "trainNo": "12914",
     "train": "Karnavati SF Express"
   },
   {
+    "source": "Surat",
+    "destination": "Bandra",
     "trainNo": "12924",
     "train": "Double Decker SF Express"
   },
   {
+    "source": "Mumbai",
+    "destination": "Delhi",
     "trainNo": "12934",
     "train": "Tejas SF Express"
   },
   {
+    "source": "Surat",
+    "destination": "Ahmedabad",
     "trainNo": "12944",
     "train": "Howrah SF Express"
   },
   {
+    "source": "Delhi",
+    "destination": "Mumbai",
     "trainNo": "12954",
     "train": "Gujarat SF Express"
   },
   {
+    "source": "Delhi",
+    "destination": "Mumbai",
     "trainNo": "12964",
     "train": "Navjeevan SF Express"
   },
   {
+    "source": "Mumbai",
+    "destination": "Delhi",
     "trainNo": "12974",
     "train": "Porbandar Mail"
   },
   {
+    "source": "Howrah",
+    "destination": "Delhi",
     "trainNo": "12984",
     "train": "Prerna SF Express"
   },
   {
+    "source": "Howrah",
+    "destination": "Delhi",
     "trainNo": "12994",
     "train": "Intercity SF Express"
   },
   {
+    "source": "Mumbai",
+    "destination": "Pune",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Mumbai",
+    "destination": "Pune",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Pune",
+    "destination": "Mumbai",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Pune",
+    "destination": "Mumbai",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Pune",
+    "destination": "Delhi",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Pune",
+    "destination": "Delhi",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Delhi",
+    "destination": "Pune",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Jaipur",
+    "destination": "Mumbai",
+    "trainNo": "12813",
+    "train": "Shatabdi SF Express"
+  },
+  {
+    "source": "Mumbai",
+    "destination": "Jaipur",
     "trainNo": "12813",
     "train": "Shatabdi SF Express"
   }
