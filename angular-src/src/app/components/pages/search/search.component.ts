@@ -32,14 +32,12 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
 
     this.searchForm = new FormGroup({
-      source: new FormControl(null, [
-        Validators.required,
-        Validators.pattern(/^[A-Za-z -]+$/)
-      ]),
-      destination: new FormControl(null, [
-        Validators.required,
-        Validators.pattern(/^[A-Za-z -]+$/)
-      ])
+      source: new FormControl(null,
+        Validators.required
+      ),
+      destination: new FormControl(null,
+        Validators.required
+      )
     });
   }
 

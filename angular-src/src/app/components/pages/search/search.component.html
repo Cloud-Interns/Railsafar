@@ -19,14 +19,20 @@
               <i class="fa fa-subway fa-fw"></i>
             </div>
           </div>
-          <input
+          <select
             type="text"
-            class="form-control"
+            id="source"
             formControlName="source"
-            id="soure"
-            placeholder="From"
-            #v
-          />
+            name="source"
+            class="form-control"
+          >
+            <option>Surat</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Howrah</option>
+            <option>Pune</option>
+            <option>Jaipur</option>
+          </select>
         </div>
       </div>
 
@@ -46,14 +52,20 @@
               <i class="fa fa-subway fa-fw"></i>
             </div>
           </div>
-          <input
+          <select
             type="text"
-            class="form-control"
-            formControlName="destination"
             id="destination"
-            placeholder="To"
-            #v1
-          />
+            formControlName="destination"
+            name="destination"
+            class="form-control"
+          >
+            <option>Ahmedabad</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Bandra</option>
+            <option>Pune</option>
+            <option>Jaipur</option>
+          </select>
         </div>
       </div>
       <div class="form-group">

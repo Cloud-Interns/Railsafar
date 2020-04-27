@@ -46,7 +46,7 @@ export class ShowticketsComponent implements OnInit {
     })
 
     this.ticketService.getTickets().subscribe(response => {
-      if (response.tickets) {
+      if (response.tickets !== null) {
         this.isTickets = true;
         this.tickets = response.tickets;
         this.passengersArray = this.tickets.map(ticket => ticket.passengerDetails);
