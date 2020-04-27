@@ -9,12 +9,17 @@
       style="width: 70px; position: absolute; top: -15%; left: 42%;"
     />
     <h3 style="text-align: center; letter-spacing: 0.1cm;">Book Ticket</h3>
+    <p style="font-size: smaller; font-weight: lighter; color: red;">
+      Fields marked with asterisk (*) are mandatory.
+    </p>
     <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" id="booking">
       <div class="form-group form-row">
         <div class="input-group col">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-subway fa-fw"></i>
+              <i class="fa fa-subway fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -29,7 +34,9 @@
         <div class="input-group col">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-subway fa-fw"></i>
+              <i class="fa fa-subway fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -47,7 +54,9 @@
         <div class="input-group date">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-calendar fa-fw"></i>
+              <i class="fa fa-calendar fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -65,7 +74,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-train fa-fw"></i>
+              <i class="fa fa-train fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <select
@@ -89,7 +100,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-bed fa-fw"></i>
+              <i class="fa fa-bed fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <select

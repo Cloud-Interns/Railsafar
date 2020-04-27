@@ -29,6 +29,13 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  showInputError() {   // FOR Input Errors 
+    this.toastr.error('Sorry!!', 'Source & Destination cannot be same!', {
+      timeOut: 3000
+    });
+  }
+
+
   ngOnInit(): void {
 
     this.searchForm = new FormGroup({
@@ -44,7 +51,8 @@ export class SearchComponent implements OnInit {
   onSubmit() {
     let source = this.searchForm.value.source;
     let destination = this.searchForm.value.destination;
-    this.searchData = require('src/assets/JsonDataFiles/trains.json');
+    source === destination ? this.showInputError() :
+      this.searchData = require('src/assets/JsonDataFiles/trains.json');
     this.trains = this.searchData.filter(data => data.source === source && data.destination === destination);
   }
 

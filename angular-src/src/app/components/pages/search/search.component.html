@@ -10,13 +10,18 @@
       style="width: 70px; position: absolute; top: -18%; left: 38%;"
     /><br />
     <h3 style="text-align: center; letter-spacing: 0.1cm;">Search Trains</h3>
+    <p style="font-size: smaller; font-weight: lighter; color: red;">
+      Fields marked with asterisk (*) are mandatory.
+    </p>
     <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
       <!-- search model -->
       <div class="form-group">
         <div class="input-group date">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-subway fa-fw"></i>
+              <i class="fa fa-subway fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <select
@@ -26,12 +31,9 @@
             name="source"
             class="form-control"
           >
-            <option>Surat</option>
             <option>Delhi</option>
             <option>Mumbai</option>
-            <option>Howrah</option>
             <option>Pune</option>
-            <option>Jaipur</option>
           </select>
         </div>
       </div>
@@ -49,7 +51,9 @@
         <div class="input-group date">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-subway fa-fw"></i>
+              <i class="fa fa-subway fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <select
@@ -59,12 +63,9 @@
             name="destination"
             class="form-control"
           >
-            <option>Ahmedabad</option>
             <option>Delhi</option>
             <option>Mumbai</option>
-            <option>Bandra</option>
             <option>Pune</option>
-            <option>Jaipur</option>
           </select>
         </div>
       </div>

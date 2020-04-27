@@ -47,6 +47,12 @@ export class BookticketComponent implements OnInit {
     });
   }
 
+  showInputError() {   // FOR Input Error
+    this.toastr.error('Sorry!!', 'Source & Destination cannot be same!', {
+      timeOut: 5000
+    });
+  }
+
   ngOnInit() {
     let passengerDetails = new FormArray([]);
 
@@ -62,7 +68,8 @@ export class BookticketComponent implements OnInit {
 
   //Submitting form
   onSubmit() {
-    this.loading = true;
+    this.bookingForm.value.sourceName === this.bookingForm.value.destinationName ? this.showInputError() :
+      this.loading = true;
     this.ticketService.bookTicket(this.bookingForm.value).subscribe(response => {
       this.loading = false;
       if (response.status === 'success') {
