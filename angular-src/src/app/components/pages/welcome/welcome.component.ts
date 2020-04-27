@@ -9,17 +9,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class WelcomeComponent implements OnInit {
 
 
-  constructor(private route : ActivatedRoute, private router : Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-  onLogin(){
-    this.router.navigate(['/login'],{relativeTo:this.route});
+  onLogin() {
+    this.router.navigate(['/login'], { relativeTo: this.route });
   }
 
-  onRegister(){
-    this.router.navigate(['/register'],{relativeTo:this.route});
+  onRegister() {
+    this.router.navigate(['/register'], { relativeTo: this.route });
   }
 
   ngOnInit() {
+    localStorage.getItem('currentUser') ? this.router.navigate(['/dashboard']) : this.router.navigate(['/welcome'])
   }
 
 

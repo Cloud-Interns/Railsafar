@@ -8778,7 +8778,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          localStorage.getItem('currentUser') ? this.router.navigate(['/dashboard']) : this.router.navigate(['/welcome']);
+        }
       }]);
 
       return WelcomeComponent;

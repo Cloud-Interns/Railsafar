@@ -3297,6 +3297,7 @@ class WelcomeComponent {
         this.router.navigate(['/register'], { relativeTo: this.route });
     }
     ngOnInit() {
+        localStorage.getItem('currentUser') ? this.router.navigate(['/dashboard']) : this.router.navigate(['/welcome']);
     }
 }
 
