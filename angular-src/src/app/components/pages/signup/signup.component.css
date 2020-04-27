@@ -2,7 +2,7 @@ input.ng-invalid.ng-touched {
   border-color: red;
 }
 
-input.ng-valid {
+input.ng-valid.ng-touched {
   border-color: rgb(100, 204, 100);
 }
 

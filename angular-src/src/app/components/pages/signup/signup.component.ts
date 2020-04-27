@@ -16,6 +16,9 @@ import { UserService } from "../../../services/user.service";
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
   loading: boolean = false;
+  todayDate = new Date();
+  nextDate: Date = new Date(new Date(this.todayDate).setDate(this.todayDate.getDate() - 1));
+  maxDate = this.nextDate.toISOString().split('T')[0];
 
   constructor(private router: Router, private route: ActivatedRoute, private userService: UserService, private toastr: ToastrService) { }
 
@@ -43,7 +46,7 @@ export class SignupComponent implements OnInit {
     this.signUpForm = new FormGroup(
       {
         firstName: new FormControl(null, Validators.required),
-        lastName: new FormControl(null, Validators.required),
+        lastName: new FormControl(null),
         email: new FormControl(null, [Validators.required, Validators.email]),
         password: new FormControl(null, [
           Validators.required,

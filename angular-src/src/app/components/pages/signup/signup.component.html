@@ -9,12 +9,17 @@
       style="width: 70px; position: absolute; top: -15%; left: 42%;"
     />
     <h3 style="text-align: center; letter-spacing: 0.1cm;">Sign Up</h3>
+    <p style="font-size: smaller; font-weight: lighter; color: red;">
+      Fields marked with asterisk (*) are mandatory.
+    </p>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" id="signup">
       <div class="form-group form-row">
         <div class="input-group col">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-user-circle fa-fw"></i>
+              <i class="fa fa-user-circle fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -47,7 +52,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-envelope fa-fw"></i>
+              <i class="fa fa-envelope fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -64,7 +71,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-lock fa-fw"></i>
+              <i class="fa fa-lock fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -82,7 +91,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-lock fa-fw"></i>
+              <i class="fa fa-lock fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -111,7 +122,9 @@
         <div class="input-group date">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-calendar fa-fw"></i>
+              <i class="fa fa-calendar fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -121,6 +134,7 @@
             name="dob"
             value="12-02-2000"
             class="form-control"
+            max="{{ maxDate }}"
           />
         </div>
       </div>
@@ -129,7 +143,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-male fa-fw"></i>
+              <i class="fa fa-male fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <select
@@ -149,7 +165,9 @@
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text" id="btnGroupAddon">
-              <i class="fa fa-phone fa-fw"></i>
+              <i class="fa fa-phone fa-fw"
+                ><span style="color: red;">&nbsp;*</span></i
+              >
             </div>
           </div>
           <input
@@ -185,7 +203,7 @@
         </button>
       </div>
     </form>
-    <br />&nbsp;
+    &nbsp;
     <a style="cursor: pointer;" routerLink="/login"
       >Already have account ? Login</a
     >
